@@ -2,30 +2,11 @@ import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import Container from "../../components/container";
 import Layout from "../../components/layout";
-import {
-  getProject,
-  getAllProjects,
-  PROJECT_FC_TEXTBLOCK,
-  PROJECT_FC_QUOTEBLOCK,
-  PROJECT_FC_IMAGEBLOCK,
-} from "../../lib/api";
+import { getProject, getAllProjects } from "../../lib/api";
 import Head from "next/head";
-import Image from "next/image";
 import styles from "./Projects.module.css";
 import { Widgets } from "../../components/Widgets";
-
-// project.projectFields.flexibleContent.forEach((block) => {
-//   // console.log(block.fieldGroupName);
-//   if (block.fieldGroupName?.includes(PROJECT_FC_TEXTBLOCK)) {
-//     console.log("Type = text");
-//   }
-//   if (block.fieldGroupName?.includes(PROJECT_FC_IMAGEBLOCK)) {
-//     console.log("Type = image");
-//   }
-//   if (block.fieldGroupName?.includes(PROJECT_FC_QUOTEBLOCK)) {
-//     console.log("Type = pull quote");
-//   }
-// });
+import { extract } from "oembed-parser";
 
 export default function Project({ project }) {
   const router = useRouter();
@@ -33,12 +14,6 @@ export default function Project({ project }) {
   if (!router.isFallback && !project?.slug) {
     return <ErrorPage statusCode={404} />;
   }
-
-  const oImgHeight = project.featuredImage?.node?.mediaDetails.height;
-  const oImgWidth = project.featuredImage?.node?.mediaDetails.width;
-
-  const maxImgWidth = 1000;
-  let imgHeight = Math.round(oImgHeight * (maxImgWidth / oImgWidth));
 
   const details = project.projectFields.details;
 
@@ -63,13 +38,7 @@ export default function Project({ project }) {
             </div>
             <div dangerouslySetInnerHTML={{ __html: project.content }} />
             <Widgets widgets={project.projectFields.flexibleContent} />
-            <div className={styles.imageConstrained}>
-              {/* <Image
-                src={project.featuredImage?.node?.sourceUrl}
-                width={oImgWidth}
-                height={oImgHeight}
-              /> */}
-            </div>
+            {/* <div className={styles.imageConstrained}></div> */}
           </article>
         )}
       </Container>
@@ -77,8 +46,28 @@ export default function Project({ project }) {
   );
 }
 
+const getOembed = async (item) => {
+  const fieldName = "project_Projectfields_FlexibleContent_EmbedBlock";
+
+  if (item.fieldGroupName === fieldName) {
+    item.oembedDetails = await extract(item.oembed);
+    return Promise.resolve(item);
+  } else {
+    return Promise.resolve(item);
+  }
+};
+
+const getOEmbeds = async (flexContent) => {
+  return Promise.all(flexContent.map((item) => getOembed(item)));
+};
+
 export async function getStaticProps({ params }) {
-  const data = await getProject(params.slug);
+  let data = await getProject(params.slug);
+
+  data.project.projectFields.flexibleContent = await getOEmbeds(
+    data.project.projectFields.flexibleContent
+  );
+
   return {
     props: {
       project: data.project,

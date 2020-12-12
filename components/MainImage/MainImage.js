@@ -1,4 +1,5 @@
 import Image from "next/image";
+import styles from "./MainImage.module.css";
 
 export const MainImage = (image) => {
   const oImgHeight = image.image?.mediaDetails.height;
@@ -9,8 +10,9 @@ export const MainImage = (image) => {
 
   return (
     <>
-      <div>{image.text}</div>
+      <div>{image.context}</div>
       <Image
+        className={styles.mainimage}
         src={image?.image?.sourceUrl}
         width={maxImgWidth}
         height={imgHeight}

@@ -1,44 +1,60 @@
-import Head from 'next/head'
-import Container from '../components/container'
-import MoreStories from '../components/more-stories'
-import HeroPost from '../components/hero-post'
-import Intro from '../components/intro'
-import Layout from '../components/layout'
-import { getAllPostsForHome } from '../lib/api'
-import { CMS_NAME } from '../lib/constants'
+import Head from "next/head";
+import Container from "../components/container";
+import { ProjectList } from "../components/ProjectList";
+import Intro from "../components/intro";
+import Layout from "../components/layout";
+import {
+  getAllPostsForHome,
+  getAnnouncements,
+  getAllProjects,
+} from "../lib/api";
+import { CMS_NAME } from "../lib/constants";
 
-export default function Index({ allPosts: { edges }, preview }) {
-  const heroPost = edges[0]?.node
-  const morePosts = edges.slice(1)
+import { AnnouncementLink } from "../components/Announcements";
 
+export default function Index({
+  allPosts,
+  allProjects,
+  allAnnouncements,
+  preview,
+}) {
+  let announcements = allAnnouncements.edges;
+  let projects = allProjects.edges;
   return (
     <>
       <Layout preview={preview}>
         <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
+          <title>Blind Ditch</title>
         </Head>
         <Container>
           <Intro />
-          {heroPost && (
-            <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.featuredImage?.node}
-              date={heroPost.date}
-              author={heroPost.author?.node}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
-            />
-          )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+          <div>
+            <h2>Announcements</h2>
+            {announcements.length &&
+              announcements.map(({ node }, idx) => (
+                <AnnouncementLink
+                  key={idx}
+                  slug={node.slug}
+                  title={node.title}
+                  details={node.announcementFields}
+                />
+              ))}
+          </div>
+          <hr />
+          <h1>Work</h1>
+          <ProjectList key={"test"} projects={projects} />
         </Container>
       </Layout>
     </>
-  )
+  );
 }
 
 export async function getStaticProps({ preview = false }) {
-  const allPosts = await getAllPostsForHome(preview)
+  const allPosts = await getAllPostsForHome(preview);
+  const allAnnouncements = await getAnnouncements();
+  const allProjects = await getAllProjects();
+
   return {
-    props: { allPosts, preview },
-  }
+    props: { allPosts, allAnnouncements, allProjects, preview },
+  };
 }
