@@ -4,10 +4,10 @@ export const ProjectList = ({ projects }, idx) => {
   return (
     <>
       {projects.map(({ node }, idx) => (
-        <>
-          <ProjectListItem key={idx} project={node} />
+        <React.Fragment key={idx}>
+          <ProjectListItem project={node} />
           <hr />
-        </>
+        </React.Fragment>
       ))}
     </>
   );
