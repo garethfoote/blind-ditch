@@ -1,0 +1,17 @@
+.title {
+  @apply tracking-widest;
+  @apply text-xl text-center;
+  @apply uppercase;
+  @apply inline;
+  @apply relative;
+  padding-bottom: 5px;
+  @apply my-xl;
+}
+
+.title::after {
+  content: "";
+  @apply absolute bottom-0 left-0;
+  height: 1px;
+  width: 98%;
+  background: linear-gradient(to left, #000, #000);
+}

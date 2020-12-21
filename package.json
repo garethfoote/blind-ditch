@@ -10,14 +10,16 @@
     "classnames": "2.2.6",
     "date-fns": "2.14.0",
     "next": "latest",
+    "postcss-preset-env": "^6.7.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
     "oembed-parser": "^1.4.3",
+    "postcss": "^8.1.7",
+    "autoprefixer": "10.0.2",
     "postcss-flexbugs-fixes": "4.2.1",
-    "postcss-preset-env": "^6.7.0",
-    "tailwindcss": "^1.4.6"
+    "tailwindcss": "^2.0.1"
   },
   "license": "MIT"
 }

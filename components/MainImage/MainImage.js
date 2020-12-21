@@ -1,22 +1,43 @@
+import { HighlightBox } from "../../components/HighlightBox";
 import Image from "next/image";
 import styles from "./MainImage.module.css";
+import classnames from "classnames";
+import Container from "../../components/container";
 
-export const MainImage = (image) => {
-  const oImgHeight = image.image?.mediaDetails.height;
-  const oImgWidth = image.image?.mediaDetails.width;
-
-  const maxImgWidth = 1050;
-  let imgHeight = Math.round(oImgHeight * (maxImgWidth / oImgWidth));
+export const MainImage = ({
+  image,
+  context,
+  contextPos = "br",
+  width = 550,
+  height = 0,
+}) => {
+  const imgHeight =
+    width * (image.mediaDetails.height / image.mediaDetails.width);
 
   return (
-    <>
-      <div>{image.context}</div>
-      <Image
-        className={styles.mainimage}
-        src={image?.image?.sourceUrl}
-        width={maxImgWidth}
-        height={imgHeight}
-      />
-    </>
+    <Container>
+      <div className={classnames(styles.mainimage)}>
+        {/* <div>{context}</div> */}
+        <span>
+          <Image
+            className="box-block-shadow"
+            src={image.sourceUrl}
+            width={width}
+            height={imgHeight}
+            layout="responsive"
+          />
+        </span>
+        {context && (
+          <div
+            className={classnames(
+              styles.context,
+              styles[`position-${contextPos}`]
+            )}
+          >
+            <HighlightBox html={context} />
+          </div>
+        )}
+      </div>
+    </Container>
   );
 };

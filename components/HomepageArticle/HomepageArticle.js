@@ -2,10 +2,10 @@ import Image from "next/image";
 import styles from "./HomepageArticle.module.css";
 
 const proportionalScale = (oWidth, oHeight, newWidth, newHeight) => {
-  var ratio = oWidth / oHeight;
+  let ratio = oWidth / oHeight;
 
-  var maximizedToWidth = { width: newWidth, height: newWidth / ratio };
-  var maximizedToHeight = { width: newHeight * ratio, height: newHeight };
+  const maximizedToWidth = { width: newWidth, height: newWidth / ratio };
+  const maximizedToHeight = { width: newHeight * ratio, height: newHeight };
 
   if (maximizedToWidth.height < newHeight) {
     return maximizedToHeight;
@@ -16,7 +16,6 @@ const proportionalScale = (oWidth, oHeight, newWidth, newHeight) => {
 
 export const HomepageArticle = ({ page: { node } }) => {
   const image = node.featuredImage?.node;
-
   const maxWidth = 506;
   const maxHeight = 424;
 

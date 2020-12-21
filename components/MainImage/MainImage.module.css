@@ -1,4 +1,59 @@
 .mainimage {
-  background-color: red;
+  @apply relative;
 }
 
+.mainimage:after {
+  content: "";
+  @apply absolute top-3 left-3;
+  @apply w-full h-full;
+  @apply bg-offwhite-dark;
+  @apply z-0;
+}
+
+.mainimage img {
+  @apply z-10;
+  @apply bg-blue;
+  @apply border-2 border-black border-solid !important;
+}
+
+.context {
+  @apply absolute;
+  @apply z-10;
+  @apply max-w-3/4;
+}
+
+.position-br {
+  @apply bottom-0 right-0;
+  transform: translate(3%, 30%);
+}
+.position-bl {
+  @apply bottom-0 left-0;
+  transform: translate(-10%, 30%);
+}
+.position-tr {
+  @apply top-0 right-0;
+  transform: translate(10%, -30%);
+}
+.position-tl {
+  @apply top-0 left-0;
+  transform: translate(-10%, -30%);
+}
+
+@screen md {
+  .position-br {
+    @apply bottom-0 right-0;
+    transform: translate(10%, 30%);
+  }
+  .position-bl {
+    @apply bottom-0 left-0;
+    transform: translate(-10%, 30%);
+  }
+  .position-tr {
+    @apply top-0 right-0;
+    transform: translate(10%, -30%);
+  }
+  .position-tl {
+    @apply top-0 left-0;
+    transform: translate(-10%, -30%);
+  }
+}

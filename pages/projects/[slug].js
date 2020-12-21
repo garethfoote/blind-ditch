@@ -7,6 +7,8 @@ import Head from "next/head";
 import styles from "./Projects.module.css";
 import { Widgets } from "../../components/Widgets";
 import { extract } from "oembed-parser";
+import Intro from "../../components/intro";
+import { Text } from "../../components/Text";
 
 export default function Project({ project }) {
   const router = useRouter();
@@ -28,6 +30,7 @@ export default function Project({ project }) {
             <Head>
               <title>{project.title}</title>
             </Head>
+            <Intro />
             <h1>{project.title}</h1>
             <div>
               <time dateTime={details.yearStart}>{details.yearStart}</time>
@@ -36,7 +39,8 @@ export default function Project({ project }) {
                 <time dateTime={details.yearEnd}>{details.yearEnd}</time>
               )}
             </div>
-            <div dangerouslySetInnerHTML={{ __html: project.content }} />
+            <Text isLarge={true} content={project.content} />
+            {/* <div dangerouslySetInnerHTML={{ __html: project.content }} /> */}
             <Widgets widgets={project.projectFields.flexibleContent} />
             {/* <div className={styles.imageConstrained}></div> */}
           </article>

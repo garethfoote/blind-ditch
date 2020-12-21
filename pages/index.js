@@ -6,14 +6,15 @@ import { ProjectList } from "../components/ProjectList";
 import { HomepageArticle } from "../components/HomepageArticle";
 import Intro from "../components/intro";
 import Layout from "../components/layout";
+import { HighlightBox } from "../components/HighlightBox";
+import { AnnouncementLink } from "../components/Announcements";
+
 import {
   getAllPostsForHome,
   getAnnouncements,
   getAllProjects,
   getPages,
 } from "../lib/api";
-
-import { AnnouncementLink } from "../components/Announcements";
 
 export default function Index({
   allProjects,
@@ -50,6 +51,12 @@ export default function Index({
           <hr />
           <h1>Work</h1>
           <ProjectList projects={projects} />
+          <div
+            className="container mx-auto"
+            style={{ width: "300px", height: "150px" }}
+          >
+            <HighlightBox html={"<h1>Hello, World!</h1>"} />
+          </div>
         </Container>
       </Layout>
     </>

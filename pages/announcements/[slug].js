@@ -4,7 +4,7 @@ import Container from "../../components/container";
 import Layout from "../../components/layout";
 import { getAnnouncement, getAnnouncements } from "../../lib/api";
 import Head from "next/head";
-import Image from "next/image";
+import Intro from "../../components/intro";
 
 export default function Project({ announcement }) {
   const router = useRouter();
@@ -26,6 +26,7 @@ export default function Project({ announcement }) {
             <Head>
               <title>{announcement.title}</title>
             </Head>
+            <Intro />
             <h2>{details.type}</h2>
             {details.date && (
               <time dateTime={details.date}>{details.date}</time>

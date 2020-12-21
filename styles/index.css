@@ -1,6 +1,55 @@
 @tailwind base;
 
 /* Write your own custom base styles here */
+@layer base {
+  html,
+  body {
+    @apply bg-offwhite;
+    @apply font-main;
+  }
+
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+
+  @font-face {
+    font-family: "TerminalGrotesque";
+    src: url("/font/terminal-grotesque.eot");
+    src: url("/font/terminal-grotesque.eot?#iefix") format("embedded-opentype"),
+      url("/font/terminal-grotesque.woff2") format("woff2"),
+      url("/font/terminal-grotesque.woff") format("woff"),
+      url("/font/terminal-grotesque.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "UniversLTStd";
+    src: url("/font/UniversLTStd.eot");
+    src: url("/font/UniversLTStd.eot?#iefix") format("embedded-opentype"),
+      url("/font/UniversLTStd.otf") format("opentype"),
+      url("/font/UniversLTStd.svg") format("svg"),
+      url("/font/UniversLTStd.ttf") format("truetype"),
+      url("/font/UniversLTStd.woff") format("woff"),
+      url("/font/UniversLTStd.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "UniversLTStd";
+    src: url("/font/UniversLTStd-Bold.eot");
+    src: url("/font/UniversLTStd-Bold.eot?#iefix") format("embedded-opentype"),
+      url("/font/UniversLTStd-Bold.otf") format("opentype"),
+      url("/font/UniversLTStd-Bold.svg") format("svg"),
+      url("/font/UniversLTStd-Bold.ttf") format("truetype"),
+      url("/font/UniversLTStd-Bold.woff") format("woff"),
+      url("/font/UniversLTStd-Bold.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+  }
+}
 
 /* Start purging... */
 @tailwind components;
@@ -13,7 +62,9 @@
 /* Stop purging. */
 
 /* Your own custom utilities */
-
+@layer utilities {
+}
+/* 
 .has-text-align-left {
   @apply text-left;
 }
@@ -82,7 +133,7 @@
 
 .wp-block-button a:hover,
 .wp-block-file a.wp-block-file__button:hover {
-  @apply bg-blue-400 cursor-pointer;
+  @apply bg-red-400 cursor-pointer;
 }
 
 .wp-block-file a:first-of-type {
@@ -101,4 +152,4 @@
 
 .wp-block-media-text {
   @apply grid grid-cols-2 gap-4;
-}
+} */

@@ -1,0 +1,16 @@
+.container {
+  @apply font-accent;
+  @apply bg-mint;
+  @apply border-2 border-black shadow;
+  @apply w-full h-full;
+  @apply text-sm;
+  @apply p-4;
+  @apply relative;
+  @apply z-10;
+}
+
+@screen sm {
+  .container {
+    @apply text-base;
+  }
+}

@@ -1,33 +1,55 @@
 module.exports = {
-  purge: ['./components/**/*.js', './pages/**/*.js'],
+  purge: ["./components/**/*.js", "./pages/**/*.js"],
   theme: {
+    boxShadow: {
+      DEFAULT: "0 5px 5px rgba(0, 0, 0, 0.15)",
+    },
+
     extend: {
       colors: {
-        'accent-1': '#FAFAFA',
-        'accent-2': '#EAEAEA',
-        'accent-7': '#333',
-        success: '#0070f3',
-        cyan: '#79FFE1',
+        offwhite: {
+          dark: "#D7D3C1",
+          DEFAULT: "#F4F3EE",
+        },
+        yellow: "#FFFF6E",
+        mint: "#B1FBE6",
+        blue: "#0044F3",
+        yellow: "#FFFF6E",
+        black: "#1F1F1F",
       },
       spacing: {
-        28: '7rem',
+        sm: "8px",
+        md: "16px",
+        lg: "24px",
+        xl: "48px",
       },
       letterSpacing: {
-        tighter: '-.04em',
+        tighter: "-.04em",
+        widest: "0.5rem",
       },
-      lineHeight: {
-        tight: 1.2,
+      fontFamily: {
+        main: ["UniversLTStd", "Helvetica", "Arial", "sans-serif"],
+        accent: ["TerminalGrotesque", "Courier New"],
       },
       fontSize: {
-        '5xl': '2.5rem',
-        '6xl': '2.75rem',
-        '7xl': '4.5rem',
-        '8xl': '6.25rem',
+        xsm: "0.875rem" /* 14 */,
+        sm: "1rem" /* 16 */,
+        base: "1.125rem" /* 18 */,
+        md: "1.375rem" /* 22 */,
+        lg: "1.5rem" /* 24 */,
+        xl: "2rem" /* 32 */,
+        "2xl": "3rem" /* 48 */,
+        "3xl": "4.5rem" /* 72 */,
       },
-      boxShadow: {
-        small: '0 5px 10px rgba(0, 0, 0, 0.12)',
-        medium: '0 8px 30px rgba(0, 0, 0, 0.12)',
+      width: {
+        // "max-image": "40rem",
+        // "max-col": "53.75rem",
+      },
+      maxWidth: {
+        "1/4": "25%",
+        "1/2": "50%",
+        "3/4": "75%",
       },
     },
   },
-}
+};

@@ -1,8 +1,13 @@
-export const PullQuote = (quote) => {
+import { HighlightBox } from "../../components/HighlightBox";
+import styles from "./PullQuote.module.css";
+
+export const PullQuote = ({ quote, context }) => {
   return (
-    <>
-      <h1>{quote.quote}</h1>
-      <div>{quote.context}</div>
-    </>
+    <div className="max-w-2xl my-xl mx-auto text-center">
+      <div className={styles.pullQuote}>
+        <HighlightBox html={quote} />
+      </div>
+      {/* <div>{quote.context}</div> */}
+    </div>
   );
 };
