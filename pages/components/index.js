@@ -27,7 +27,12 @@ export default function Components() {
         <Head>
           <title>Blind Ditch</title>
         </Head>
+        <div classNames="max-w-4xl my-md">
+          Abritrary div that makes sure <code>.max-w-4xl</code> and{" "}
+          <code>.my-md</code> are not purged.
+        </div>
         <Intro />
+
         <ProjectPageTitle
           title="This City's Centre"
           date="2008 - 2012"
@@ -50,6 +55,7 @@ export default function Components() {
             altText: "",
           }}
         />
+
         <Text
           makeLarge={true}
           content="Based on interviews with 40 city centre residents about the views from their windows, this dispersed, digital portrait of Exeter uses a range of social and participatory art practice, to gently explore the meeting points of public and private space."
