@@ -13,10 +13,11 @@ import { Text } from "../../components/Text";
 import { MainImage } from "../../components/MainImage";
 import { HighlightBox } from "../../components/HighlightBox";
 import { PullQuote } from "../../components/PullQuote";
-import { GalleryTwo } from "../../components/GalleryTwo";
 import { GalleryOne } from "../../components/GalleryOne";
+import { GalleryTwo } from "../../components/GalleryTwo";
 import { GalleryCarousel } from "../../components/GalleryCarousel";
 import { PageBreak } from "../../components/PageBreak";
+import { OEmbed } from "../../components/OEmbed";
 // import { Image } from "../../components/Image";
 
 export default function Components() {
@@ -68,9 +69,24 @@ export default function Components() {
         <Text content="During the development of the work we experienced and shared life in This City’s Centre from new and surprising angles – from the privacy of other people’s homes – through other people’s eyes. Inviting us to think more deeply about how daily life in this … and any British provincial city, can shape us, provoke us, define us." />
         <SectionTitle>Projects</SectionTitle>
         <MainImage
-          contextPos="bl"
+          contextPos="br"
           context="Image context & credit Image context & credit Image context & credit Image context & credit Image context & credit Image context & credit "
-          width={860}
+          image={{
+            mediaDetails: {
+              height: 1707,
+              width: 2560,
+            },
+            sourceUrl:
+              "http://garfoo.dreamhosters.com/wp-content/uploads/2020/11/IMG_0433-scaled.jpg",
+            altText: "",
+          }}
+        />
+        <Text content="During the development of the work we experienced and shared life in This City’s Centre from new and surprising angles – from the privacy of other people’s homes – through other people’s eyes. Inviting us to think more deeply about how daily life in this … and any British provincial city, can shape us, provoke us, define us." />
+
+        <MainImage
+          contextPos="bl"
+          maxWidth="4xl"
+          context="Image context & credit Image context & credit Image context & credit Image context & credit Image context & credit Image context & credit "
           image={{
             mediaDetails: {
               height: 1707,
@@ -133,6 +149,12 @@ export default function Components() {
           }}
         />
         <Text content="During the development of the work we experienced and shared life in This City’s Centre from new and surprising angles – from the privacy of other people’s homes – through other people’s eyes. Inviting us to think more deeply about how daily life in this … and any British provincial city, can shape us, provoke us, define us." />
+        <OEmbed
+          oembedDetails={{
+            html:
+              '<iframe width="200" height="113" src="https://www.youtube.com/embed/5dJeC6IgBsk?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+          }}
+        />
         {/* 
         <div className="max-w-6xl mx-auto my-xl">
           <GalleryCarousel

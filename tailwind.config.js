@@ -4,7 +4,6 @@ module.exports = {
     boxShadow: {
       DEFAULT: "0 5px 5px rgba(0, 0, 0, 0.15)",
     },
-
     extend: {
       colors: {
         offwhite: {
