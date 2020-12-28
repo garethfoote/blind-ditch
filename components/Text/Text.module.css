@@ -1,7 +1,5 @@
 .text {
   @apply font-main;
-  @apply mx-auto my-md;
-  @apply max-w-2xl;
   @apply text-sm leading-7;
 }
 

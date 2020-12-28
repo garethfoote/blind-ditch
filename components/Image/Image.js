@@ -8,7 +8,6 @@ export const ImageFill = ({ image, width, height = 0, altText = "" }) => {
   if (height === 0) {
     height = width * (oHeight > oWidth ? oHeight / oWidth : oWidth / oHeight);
   }
-  console.log(width, height, oWidth / oHeight);
 
   return (
     <Image

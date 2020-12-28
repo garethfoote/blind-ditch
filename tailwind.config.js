@@ -22,6 +22,7 @@ module.exports = {
         md: "16px",
         lg: "24px",
         xl: "48px",
+        "2xl": "64px",
       },
       letterSpacing: {
         tighter: "-.04em",
@@ -44,8 +45,16 @@ module.exports = {
       width: {
         // "max-image": "40rem",
         // "max-col": "53.75rem",
+        // "w-xl": "36rem",
+        // "w-2xl": "42rem",
+        // "w-4xl": "56rem",
+        // "w-6xl": "72rem",
       },
       maxWidth: {
+        // max-w-xl  = 36rem = 576px
+        // max-w-2xl = 42rem = 672px
+        // max-w-4xl = 56rem = 896px
+        // max-w-6xl = 72rem = 1152px
         "1/4": "25%",
         "1/2": "50%",
         "3/4": "75%",

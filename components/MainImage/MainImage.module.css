@@ -2,13 +2,13 @@
   @apply relative;
 }
 
-.mainimage:after {
+/* .mainimage:after {
   content: "";
-  @apply absolute top-3 left-3;
+  @apply absolute top-4 left-4;
   @apply w-full h-full;
   @apply bg-offwhite-dark;
   @apply z-0;
-}
+} */
 
 .mainimage img {
   @apply z-10;
@@ -24,22 +24,22 @@
 
 .position-br {
   @apply bottom-0 right-0;
-  transform: translate(3%, 30%);
+  transform: translate(3%, 20%);
 }
 .position-bl {
   @apply bottom-0 left-0;
-  transform: translate(-10%, 30%);
+  transform: translate(-3%, 20%);
 }
 .position-tr {
   @apply top-0 right-0;
-  transform: translate(10%, -30%);
+  transform: translate(10%, -20%);
 }
 .position-tl {
   @apply top-0 left-0;
-  transform: translate(-10%, -30%);
+  transform: translate(-10%, -20%);
 }
 
-@screen md {
+@screen lg {
   .position-br {
     @apply bottom-0 right-0;
     transform: translate(10%, 30%);

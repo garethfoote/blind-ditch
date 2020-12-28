@@ -37,6 +37,8 @@ export const Widgets = ({ widgets }) => (
       if (widgetElements) {
         const { Component, dataMapper } = widgetElements;
         const data = dataMapper(widget);
+        data.isFirst = idx === 0;
+        data.previousType = idx > 0 ? widgets[idx - 1].fieldGroupName : "";
         return <Component {...data} key={widget.fieldGroupName + idx} />;
       }
 

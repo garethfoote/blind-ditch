@@ -1,29 +1,27 @@
-import { HighlightBox } from "../../components/HighlightBox";
-import Image from "next/image";
-import styles from "./MainImage.module.css";
 import classnames from "classnames";
+import Image from "next/image";
+
+import { HighlightBox } from "../../components/HighlightBox";
 import Container from "../../components/container";
+
+import styles from "./MainImage.module.css";
 
 export const MainImage = ({
   image,
   context,
   contextPos = "br",
-  width = 550,
-  height = 0,
+  maxWidth = "2xl",
+  isFirst,
 }) => {
-  const imgHeight =
-    width * (image.mediaDetails.height / image.mediaDetails.width);
-
   return (
-    <Container>
-      <div className={classnames(styles.mainimage)}>
-        {/* <div>{context}</div> */}
+    <Container max={isFirst ? "4xl" : maxWidth} spacing="xl">
+      <div className={classnames("image-shadow", styles.mainimage)}>
         <span>
           <Image
             className="box-block-shadow"
             src={image.sourceUrl}
-            width={width}
-            height={imgHeight}
+            width={image.mediaDetails.width}
+            height={image.mediaDetails.height}
             layout="responsive"
           />
         </span>

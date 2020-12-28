@@ -5,7 +5,6 @@
   @apply inline;
   @apply relative;
   padding-bottom: 5px;
-  @apply my-xl;
 }
 
 .title::after {

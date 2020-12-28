@@ -6,6 +6,17 @@
   body {
     @apply bg-offwhite;
     @apply font-main;
+    @apply text-black;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    @apply text-black;
   }
 
   h1 {
@@ -63,6 +74,13 @@
 
 /* Your own custom utilities */
 @layer utilities {
+  .image-shadow:after {
+    content: "";
+    @apply absolute top-4 left-4;
+    @apply w-full h-full;
+    @apply bg-offwhite-dark;
+    @apply z-0;
+  }
 }
 /* 
 .has-text-align-left {

@@ -1,0 +1,27 @@
+.title {
+  @apply tracking-widest;
+  @apply leading-tight;
+  @apply text-center;
+  @apply uppercase;
+  @apply inline;
+}
+
+.date {
+  @apply font-accent;
+}
+
+.type {
+  @apply uppercase;
+  @apply font-accent;
+  @apply text-base;
+  @apply leading-normal;
+  letter-spacing: 1px;
+}
+
+.type span {
+  @apply bg-yellow;
+}
+
+.description {
+  @apply leading-normal;
+}

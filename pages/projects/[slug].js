@@ -1,14 +1,12 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-import Container from "../../components/container";
-import Layout from "../../components/layout";
 import { getProject, getAllProjects } from "../../lib/api";
 import Head from "next/head";
-import styles from "./Projects.module.css";
 import { Widgets } from "../../components/Widgets";
-import { extract } from "oembed-parser";
+import Layout from "../../components/layout";
 import Intro from "../../components/intro";
-import { Text } from "../../components/Text";
+import { extract } from "oembed-parser";
+import { ProjectPageTitle } from "../../components/ProjectPageTitle";
 
 export default function Project({ project }) {
   const router = useRouter();
@@ -19,33 +17,46 @@ export default function Project({ project }) {
 
   const details = project.projectFields.details;
 
+  const date = (
+    <>
+      <time dateTime={details.yearStart}>{details.yearStart}</time>
+      {details.yearEnd && " - "}
+      {details.yearEnd && (
+        <time dateTime={details.yearEnd}>{details.yearEnd}</time>
+      )}
+    </>
+  );
+
   return (
     <Layout>
-      <Container>
-        {router.isFallback ? (
-          <h1>Loading…</h1>
-        ) : (
-          <article>
-            {" "}
-            <Head>
-              <title>{project.title}</title>
-            </Head>
-            <Intro />
-            <h1>{project.title}</h1>
-            <div>
-              <time dateTime={details.yearStart}>{details.yearStart}</time>
-              {details.yearEnd && " - "}
-              {details.yearEnd && (
-                <time dateTime={details.yearEnd}>{details.yearEnd}</time>
-              )}
-            </div>
-            <Text isLarge={true} content={project.content} />
-            {/* <div dangerouslySetInnerHTML={{ __html: project.content }} /> */}
-            <Widgets widgets={project.projectFields.flexibleContent} />
-            {/* <div className={styles.imageConstrained}></div> */}
-          </article>
-        )}
-      </Container>
+      {router.isFallback ? (
+        <h1>Loading…</h1>
+      ) : (
+        <article>
+          {" "}
+          <Head>
+            <title>{project.title}</title>
+          </Head>
+          <Intro />
+          <ProjectPageTitle
+            title={project.title}
+            date={date}
+            types={details.projectTypes}
+            description={project.content}
+          />
+          {/* <div>
+            <time dateTime={details.yearStart}>{details.yearStart}</time>
+            {details.yearEnd && " - "}
+            {details.yearEnd && (
+              <time dateTime={details.yearEnd}>{details.yearEnd}</time>
+            )}
+          </div> */}
+          {/* <Text isLarge={true} content={project.content} /> */}
+          {/* <div dangerouslySetInnerHTML={{ __html: project.content }} /> */}
+          <Widgets widgets={project.projectFields.flexibleContent} />
+          {/* <div className={styles.imageConstrained}></div> */}
+        </article>
+      )}
     </Layout>
   );
 }
