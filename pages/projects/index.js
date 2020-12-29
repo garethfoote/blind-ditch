@@ -25,5 +25,6 @@ export async function getStaticProps() {
   const allProjects = await getAllProjects();
   return {
     props: { allProjects },
+    revalidate: 1, // In seconds
   };
 }

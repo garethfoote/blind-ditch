@@ -46,6 +46,7 @@ export async function getStaticProps({ params }) {
     props: {
       announcement: data.announcement,
     },
+    revalidate: 1, // In seconds
   };
 }
 

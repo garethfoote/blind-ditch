@@ -75,5 +75,6 @@ export async function getStaticProps({ preview = false }) {
 
   return {
     props: { allPosts, allAnnouncements, allProjects, hpPages, preview },
+    revalidate: 1, // In seconds
   };
 }
