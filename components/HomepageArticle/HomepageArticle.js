@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+
 import styles from "./HomepageArticle.module.css";
 
 const proportionalScale = (oWidth, oHeight, newWidth, newHeight) => {
@@ -14,8 +16,8 @@ const proportionalScale = (oWidth, oHeight, newWidth, newHeight) => {
   }
 };
 
-export const HomepageArticle = ({ page: { node } }) => {
-  const image = node.featuredImage?.node;
+export const HomepageArticle = ({ page }) => {
+  const image = page.featuredImage?.node;
   const maxWidth = 506;
   const maxHeight = 424;
 
@@ -25,7 +27,7 @@ export const HomepageArticle = ({ page: { node } }) => {
     maxWidth,
     maxHeight
   );
-  const details = node.pageFields;
+  const details = page.pageFields;
 
   return (
     <>
@@ -36,14 +38,22 @@ export const HomepageArticle = ({ page: { node } }) => {
           height: `${maxHeight}px`,
         }}
       >
-        <Image
-          alt={image.altText || node.title || image.title}
-          src={image.sourceUrl}
-          layout="fill"
-          objectFit="cover"
-        />
+        <Link as={`/page/${page.slug}`} href="/page/[slug]">
+          <a>
+            <Image
+              alt={image.altText || page.title || image.title}
+              src={image.sourceUrl}
+              layout="fill"
+              objectFit="cover"
+            />
+          </a>
+        </Link>
       </div>
-      <h2>{node.title}</h2>
+      <Link as={`/page/${page.slug}`} href="/page/[slug]">
+        <a>
+          <h2>{page.title}</h2>
+        </a>
+      </Link>
       <div dangerouslySetInnerHTML={{ __html: details?.summary }} />
     </>
   );

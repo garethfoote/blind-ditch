@@ -4,7 +4,7 @@ import { getProject, getAllProjects } from "../../lib/api";
 import Head from "next/head";
 import { Widgets } from "../../components/Widgets";
 import Layout from "../../components/layout";
-import Intro from "../../components/intro";
+import { Intro } from "../../components/Intro";
 import { extract } from "oembed-parser";
 import { ProjectPageTitle } from "../../components/ProjectPageTitle";
 

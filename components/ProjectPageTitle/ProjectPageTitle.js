@@ -6,7 +6,7 @@ import styles from "./ProjectPageTitle.module.css";
 
 export const ProjectPageTitle = ({ title, date, types, description }) => {
   return (
-    <Container spacing="xl">
+    <div class="mx-auto px-5 mt-md mb-xl max-w-2xl">
       <div className="text-center">
         <h2 className={classnames("text-2xl sm:text-3xl", styles.title)}>
           {title}
@@ -19,7 +19,7 @@ export const ProjectPageTitle = ({ title, date, types, description }) => {
         >
           ({date})
         </h3>
-        <h4 className={classnames("mx-auto my-lg max-w-xs", styles.type)}>
+        <h4 className={classnames("mx-auto mt-md mb-xl max-w-xs", styles.type)}>
           <ProjectTypes types={types} />
         </h4>
         <div
@@ -32,6 +32,6 @@ export const ProjectPageTitle = ({ title, date, types, description }) => {
           )}
         />
       </div>
-    </Container>
+    </div>
   );
 };

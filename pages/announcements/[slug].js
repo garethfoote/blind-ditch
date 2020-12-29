@@ -4,7 +4,7 @@ import Container from "../../components/container";
 import Layout from "../../components/layout";
 import { getAnnouncement, getAnnouncements } from "../../lib/api";
 import Head from "next/head";
-import Intro from "../../components/intro";
+import { Intro } from "../../components/Intro";
 
 export default function Project({ announcement }) {
   const router = useRouter();

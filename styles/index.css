@@ -81,6 +81,16 @@
     @apply bg-offwhite-dark;
     @apply z-0;
   }
+  .visually-hidden {
+    position: absolute;
+    overflow: hidden;
+    margin: 0;
+    width: 1px;
+    height: 1px;
+    clip-path: inset(100%);
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+  }
 }
 /* 
 .has-text-align-left {

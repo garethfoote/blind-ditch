@@ -3,9 +3,9 @@ import { ProjectListItem } from "./ProjectListItem";
 export const ProjectList = ({ projects }, idx) => {
   return (
     <>
-      {projects.map(({ node }, idx) => (
+      {projects.map((project, idx) => (
         <React.Fragment key={idx}>
-          <ProjectListItem project={node} />
+          <ProjectListItem project={project} />
           <hr />
         </React.Fragment>
       ))}

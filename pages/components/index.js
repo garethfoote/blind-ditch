@@ -2,9 +2,9 @@ import Head from "next/head";
 import Image from "next/image";
 import Layout from "../../components/layout";
 import Container from "../../components/container";
-import Intro from "../../components/intro";
+import { Intro } from "../../components/Intro";
 import { ProjectList } from "../../components/ProjectList";
-import { HomepageArticle } from "../../components/HomepageArticle";
+// import { HomepageArticle } from "../../components/HomepageArticle";
 import { AnnouncementLink } from "../../components/Announcements";
 
 import { SectionTitle } from "../../components/SectionTitle";
@@ -27,10 +27,7 @@ export default function Components() {
         <Head>
           <title>Blind Ditch</title>
         </Head>
-        <div classNames="max-w-4xl my-md">
-          Abritrary div that makes sure <code>.max-w-4xl</code> and{" "}
-          <code>.my-md</code> are not purged.
-        </div>
+
         <Intro />
 
         <ProjectPageTitle
@@ -161,6 +158,10 @@ export default function Components() {
               '<iframe width="200" height="113" src="https://www.youtube.com/embed/5dJeC6IgBsk?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
           }}
         />
+        <div classNames="max-w-4xl my-md">
+          Abritrary div that makes sure <code>.max-w-4xl</code> and{" "}
+          <code>.my-md</code> are not purged.
+        </div>
         {/* 
         <div className="max-w-6xl mx-auto my-xl">
           <GalleryCarousel
