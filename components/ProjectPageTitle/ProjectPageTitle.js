@@ -6,7 +6,7 @@ import styles from "./ProjectPageTitle.module.css";
 
 export const ProjectPageTitle = ({ title, date, types, description }) => {
   return (
-    <div class="mx-auto px-5 mt-md mb-xl max-w-2xl">
+    <div className="mx-auto px-5 mt-md mb-xl max-w-2xl">
       <div className="text-center">
         <h2 className={classnames("text-2xl sm:text-3xl", styles.title)}>
           {title}
