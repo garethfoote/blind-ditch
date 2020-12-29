@@ -94,7 +94,8 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths() {
   const allProjects = await getAllProjects();
   return {
-    paths: allProjects.edges.map(({ node }) => `/projects/${node.slug}`) || [],
+    paths:
+      allProjects.nodes.map((project) => `/projects/${project.slug}`) || [],
     fallback: false,
   };
 }

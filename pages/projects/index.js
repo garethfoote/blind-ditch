@@ -5,7 +5,7 @@ import Head from "next/head";
 
 import { getAllProjects } from "../../lib/api";
 
-export default function Index({ allProjects: { edges } }) {
+export default function Index({ allProjects: { nodes } }) {
   return (
     <>
       <Layout>
@@ -14,7 +14,7 @@ export default function Index({ allProjects: { edges } }) {
         </Head>
         <Container>
           <h1>Work</h1>
-          <ProjectList key={20} projects={edges} />
+          <ProjectList key={20} projects={nodes} />
         </Container>
       </Layout>
     </>
