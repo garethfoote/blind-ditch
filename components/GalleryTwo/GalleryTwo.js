@@ -9,6 +9,7 @@ export const GalleryTwo = ({ images, width }) => {
       <div className="sm:grid grid-cols-2 gap-x-8 md:gap-x-12 items-start">
         <div className="my-lg sm:my-0">
           <Image
+            className="image-loading"
             src={images[0].sourceUrl}
             width={images[0].mediaDetails.width}
             height={images[0].mediaDetails.height}
@@ -18,6 +19,7 @@ export const GalleryTwo = ({ images, width }) => {
         <div className="my-lg sm:my-0">
           <div className={styles.col2Image}>
             <Image
+              className="image-loading"
               src={images[1].sourceUrl}
               width={images[1].mediaDetails.width}
               height={images[1].mediaDetails.height}

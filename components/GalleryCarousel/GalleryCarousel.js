@@ -34,6 +34,7 @@ export const GalleryCarousel = ({ images, height }) => {
         {images.map((image) => {
           return (
             <Image
+              className="image-loading"
               src={image.sourceUrl}
               width={
                 height * (image.mediaDetails.width / image.mediaDetails.height)

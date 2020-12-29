@@ -9,6 +9,7 @@ export const GalleryOne = ({ image, width }) => {
   return (
     <Container max="2xl" spacing="2xl">
       <Image
+        className="image-loading"
         src={image.sourceUrl}
         width={width}
         height={imgHeight}

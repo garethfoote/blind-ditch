@@ -41,6 +41,7 @@ export const HomepageArticle = ({ page }) => {
         <Link as={`/page/${page.slug}`} href="/page/[slug]">
           <a>
             <Image
+              className="image-loading"
               alt={image.altText || page.title || image.title}
               src={image.sourceUrl}
               layout="fill"

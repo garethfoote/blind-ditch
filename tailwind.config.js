@@ -32,7 +32,7 @@ module.exports = {
         accent: ["TerminalGrotesque", "Courier New"],
       },
       fontSize: {
-        xsm: "0.875rem" /* 14 */,
+        xs: "0.875rem" /* 14 */,
         sm: "1rem" /* 16 */,
         base: "1.125rem" /* 18 */,
         md: "1.375rem" /* 22 */,
@@ -45,6 +45,9 @@ module.exports = {
         "1/4": "25%",
         "1/2": "50%",
         "3/4": "75%",
+      },
+      minHeight: {
+        64: "16rem",
       },
     },
   },

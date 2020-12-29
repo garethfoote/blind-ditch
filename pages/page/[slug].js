@@ -4,7 +4,6 @@ import Container from "../../components/container";
 import Layout from "../../components/layout";
 import { getPage, getPages } from "../../lib/api";
 import Head from "next/head";
-import Image from "next/image";
 
 export default function Page({ page }) {
   const router = useRouter();

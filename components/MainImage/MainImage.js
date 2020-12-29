@@ -18,7 +18,7 @@ export const MainImage = ({
       <div className={classnames("image-shadow", styles.mainimage)}>
         <span>
           <Image
-            className="box-block-shadow"
+            className="image-loading"
             src={image.sourceUrl}
             width={image.mediaDetails.width}
             height={image.mediaDetails.height}

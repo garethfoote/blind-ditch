@@ -74,6 +74,40 @@
 
 /* Your own custom utilities */
 @layer utilities {
+  .image-loading {
+    @apply bg-blue;
+  }
+
+  .image-shadow img {
+    @apply z-10;
+    @apply bg-blue;
+    @apply border-2 border-black border-solid !important;
+  }
+
+  .button {
+    @apply relative;
+  }
+
+  .button span {
+    @apply relative z-10;
+    @apply title-accent p-2 bg-mint border border-black border-solid;
+  }
+
+  .button:after {
+    content: "";
+    top: 12px;
+    left: 5px;
+    @apply absolute;
+
+    @apply w-full h-full;
+    @apply bg-black;
+    @apply z-0;
+  }
+
+  .title-accent {
+    @apply font-accent uppercase tracking-wider;
+  }
+
   .image-shadow:after {
     content: "";
     @apply absolute top-4 left-4;

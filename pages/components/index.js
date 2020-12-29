@@ -5,7 +5,7 @@ import Container from "../../components/container";
 import { Intro } from "../../components/Intro";
 import { ProjectList } from "../../components/ProjectList";
 // import { HomepageArticle } from "../../components/HomepageArticle";
-import { AnnouncementLink } from "../../components/Announcements";
+// import { AnnouncementLink } from "../../components/Announcements";
 
 import { SectionTitle } from "../../components/SectionTitle";
 import { ProjectPageTitle } from "../../components/ProjectPageTitle";
@@ -18,7 +18,6 @@ import { GalleryTwo } from "../../components/GalleryTwo";
 import { GalleryCarousel } from "../../components/GalleryCarousel";
 import { PageBreak } from "../../components/PageBreak";
 import { OEmbed } from "../../components/OEmbed";
-// import { Image } from "../../components/Image";
 
 export default function Components() {
   return (
@@ -103,6 +102,7 @@ export default function Components() {
         <Text content="During the development of the work we experienced and shared life in This City’s Centre from new and surprising angles – from the privacy of other people’s homes – through other people’s eyes. Inviting us to think more deeply about how daily life in this … and any British provincial city, can shape us, provoke us, define us." />
         <div className="max-w-2xl mx-auto my-lg">
           <Image
+            className="image-loading"
             src="http://garfoo.dreamhosters.com/wp-content/uploads/2020/11/IMG_0433-scaled.jpg"
             width={860}
             height={860 * (1707 / 2560)}
@@ -158,9 +158,9 @@ export default function Components() {
               '<iframe width="200" height="113" src="https://www.youtube.com/embed/5dJeC6IgBsk?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
           }}
         />
-        <div classNames="max-w-4xl my-md">
-          Abritrary div that makes sure <code>.max-w-4xl</code> and{" "}
-          <code>.my-md</code> are not purged.
+        <div classNames="max-w-4xl max-w-3xl my-md my-xl my-2xl">
+          Abritrary div that makes sure classes (e.g <code>.max-w-4xl</code> and{" "}
+          <code>.my-md</code>) are not purged.
         </div>
         {/* 
         <div className="max-w-6xl mx-auto my-xl">
