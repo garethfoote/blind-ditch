@@ -2,21 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "../container";
 import { Text } from "../Text";
+import { proportionalScale } from "../../lib/utils";
 
 import styles from "./HomepageArticle.module.css";
-
-const proportionalScale = (oWidth, oHeight, newWidth, newHeight) => {
-  let ratio = oWidth / oHeight;
-
-  const maximizedToWidth = { width: newWidth, height: newWidth / ratio };
-  const maximizedToHeight = { width: newHeight * ratio, height: newHeight };
-
-  if (maximizedToWidth.height < newHeight) {
-    return maximizedToHeight;
-  } else {
-    return maximizedToWidth;
-  }
-};
 
 export const HomepageArticle = ({ page }) => {
   const image = page.featuredImage?.node;

@@ -1,6 +1,5 @@
 import styles from "./Text.module.css";
 import classnames from "classnames";
-import Container from "../../components/container";
 
 export const Text = ({ content, isCentred = false, makeLarge = false }) => {
   return (

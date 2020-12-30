@@ -9,7 +9,7 @@ import { ProjectList } from "../../components/ProjectList";
 
 import { SectionTitle } from "../../components/SectionTitle";
 import { ProjectPageTitle } from "../../components/ProjectPageTitle";
-import { Text } from "../../components/Text";
+import { TextWidget as Text } from "../../components/Text/TextWidget";
 import { MainImage } from "../../components/MainImage";
 import { HighlightBox } from "../../components/HighlightBox";
 import { PullQuote } from "../../components/PullQuote";

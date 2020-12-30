@@ -9,7 +9,11 @@ export const Intro = () => {
       <div className="flex items-center justify-center h-24">
         <Link href="/">
           <a className="h-14">
-            <img className="h-full w-auto" src="/logo-black.png" />
+            <img
+              alt="Blind Ditch logo in black"
+              className="h-full w-auto"
+              src="/logo-black.png"
+            />
             <span className="visually-hidden">Blind Ditch</span>
           </a>
         </Link>

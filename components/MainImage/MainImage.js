@@ -15,7 +15,13 @@ export const MainImage = ({
 }) => {
   return (
     <Container max={isFirst ? "4xl" : maxWidth} spacing="xl">
-      <div className={classnames("image-shadow", styles.mainimage)}>
+      <div
+        className={classnames(
+          "image-shadow",
+          { "image-shadow-bl": contextPos === "br" },
+          styles.mainimage
+        )}
+      >
         <span>
           <Image
             className="image-loading"
