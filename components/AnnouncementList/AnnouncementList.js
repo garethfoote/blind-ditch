@@ -27,6 +27,7 @@ export const AnnouncementList = ({ announcements }) => {
               title={announcement.title}
               slug={announcement.slug}
               image={announcement.featuredImage?.node}
+              isPriority={idx === 0}
               {...details}
             />
           </div>
@@ -34,20 +35,26 @@ export const AnnouncementList = ({ announcements }) => {
       })}
       {/* </Transition> */}
 
-      <button
-        onClick={() =>
-          setPosition(position === 0 ? announcements.length - 1 : position - 1)
-        }
-      >
-        previous
-      </button>
-      <button
-        onClick={() =>
-          setPosition(position === announcements.length - 1 ? 0 : position + 1)
-        }
-      >
-        next
-      </button>
+      <div className="text-center pt-8">
+        <button
+          onClick={() =>
+            setPosition(
+              position === 0 ? announcements.length - 1 : position - 1
+            )
+          }
+        >
+          previous
+        </button>
+        <button
+          onClick={() =>
+            setPosition(
+              position === announcements.length - 1 ? 0 : position + 1
+            )
+          }
+        >
+          next
+        </button>
+      </div>
     </>
   );
 };

@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import Container from "../container";
+import { Text } from "../Text";
 
 import styles from "./HomepageArticle.module.css";
 
@@ -30,32 +32,37 @@ export const HomepageArticle = ({ page }) => {
   const details = page.pageFields;
 
   return (
-    <>
-      <div
-        style={{
-          position: "relative",
-          width: `${maxWidth}px`,
-          height: `${maxHeight}px`,
-        }}
-      >
+    <div className="mx-auto px-5 my-md max-w-lg md:max-w-xl">
+      <div className="h-96">
+        <div className="relative w-full h-full image-shadow image-shadow-bl px-5">
+          <Image
+            className="image-loading"
+            alt={image.altText || page.title || image.title}
+            src={image.sourceUrl}
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
+      </div>
+      <div className="max-w-xs sm:max-w-none sm:w-100 bg-offwhite relative z-30 -top-4 left-1/10">
         <Link as={`/page/${page.slug}`} href="/page/[slug]">
           <a>
-            <Image
-              className="image-loading"
-              alt={image.altText || page.title || image.title}
-              src={image.sourceUrl}
-              layout="fill"
-              objectFit="cover"
-            />
+            <h2 className="text-xl sm:text-2xl leading-tight tracking-wider uppercase underline bg-offwhite p-4 box-content ">
+              {page.title}
+            </h2>
           </a>
         </Link>
       </div>
-      <Link as={`/page/${page.slug}`} href="/page/[slug]">
-        <a>
-          <h2>{page.title}</h2>
-        </a>
-      </Link>
-      <div dangerouslySetInnerHTML={{ __html: details?.summary }} />
-    </>
+      <div className="max-w-xs sm:max-w-none sm:w-100 bg-offwhite relative -top-4 left-1/10 p-4 pt-0">
+        <Text content={details.summary} />
+        <Link as={`/page/${page.slug}`} href="/page/[slug]">
+          <a className="button my-sm relative top-4">
+            <span className="title-accent p-2 bg-mint border border-black border-solid">
+              Read More
+            </span>
+          </a>
+        </Link>
+      </div>
+    </div>
   );
 };

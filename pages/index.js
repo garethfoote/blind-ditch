@@ -34,7 +34,7 @@ export default function Index({ hpProperties, preview }) {
         <AnnouncementList announcements={announcements} />
         <PageBreak spacing="xl" />
 
-        <h1>20 Years</h1>
+        {/* <h1>20 Years</h1> */}
         <HomepageArticle page={mainArticle} />
         <h1>Work</h1>
         <ProjectList projects={projects} />

@@ -9,6 +9,7 @@ export const AnnouncementListItem = ({
   date,
   connected,
   image,
+  isPriority = false,
 }) => {
   const as = connected
     ? `/projects/${connected.slug}`
@@ -41,13 +42,14 @@ export const AnnouncementListItem = ({
         </div>
 
         <div className="absolute top-0 bottom-0 left-1/3 sm:left-1/2 right-4 z-10">
-          <div className="w-full h-full image-shadow px-5">
+          <div className="relative w-full h-full image-shadow px-5">
             {image ? (
               <Image
                 className="z-10 image-loading"
                 src={image.sourceUrl}
                 layout="fill"
                 objectFit="cover"
+                priority={isPriority}
               />
             ) : (
               <div className="z-10 image-loading"></div>

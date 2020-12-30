@@ -25,7 +25,9 @@ module.exports = {
       },
       letterSpacing: {
         tighter: "-.04em",
-        widest: "0.5rem",
+        wide: "0.0625rem" /* 1px */,
+        wider: "0.25rem" /* 4px */,
+        widest: "0.5rem" /* 8px */,
       },
       fontFamily: {
         main: ["UniversLTStd", "Helvetica", "Arial", "sans-serif"],
@@ -40,6 +42,13 @@ module.exports = {
         xl: "2rem" /* 32 */,
         "2xl": "3rem" /* 48 */,
         "3xl": "4.5rem" /* 72 */,
+      },
+      inset: {
+        "1/5": "20%",
+        "1/10": "10%",
+      },
+      width: {
+        100: "25rem",
       },
       maxWidth: {
         "1/4": "25%",

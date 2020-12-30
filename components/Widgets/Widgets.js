@@ -1,5 +1,6 @@
 import { PullQuote, pullQuoteDataMapper } from "../PullQuote";
-import { Text, textDataMapper } from "../Text";
+import { TextWidget } from "../Text/TextWidget";
+import { textDataMapper } from "../Text";
 import { MainImage, mainImageDataMapper } from "../MainImage";
 import { OEmbed, oembedDataMapper } from "../OEmbed";
 
@@ -10,7 +11,7 @@ const widgetMapper = {
   },
   project_Projectfields_FlexibleContent_TextBlock: {
     dataMapper: textDataMapper,
-    Component: Text,
+    Component: TextWidget,
   },
   project_Projectfields_FlexibleContent_MainImageBlock: {
     dataMapper: mainImageDataMapper,

@@ -95,17 +95,17 @@
 
   .button:after {
     content: "";
-    top: 12px;
-    left: 5px;
+    top: 6px;
+    left: 6px;
+    height: calc(100% + theme("spacing.2"));
     @apply absolute;
-
-    @apply w-full h-full;
+    @apply w-full;
     @apply bg-black;
     @apply z-0;
   }
 
   .title-accent {
-    @apply font-accent uppercase tracking-wider;
+    @apply font-accent uppercase tracking-wide;
   }
 
   .image-shadow:after {
@@ -115,6 +115,11 @@
     @apply bg-offwhite-dark;
     @apply z-0;
   }
+
+  .image-shadow-bl:after {
+    @apply top-4 -left-4;
+  }
+
   .visually-hidden {
     position: absolute;
     overflow: hidden;
