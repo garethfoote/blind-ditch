@@ -38,7 +38,7 @@ export const ProjectListItem = ({
       <div className="self-end">
         <Link as={`/projects/${slug}`} href="/projects/[slug]">
           <a
-            className="hover:underline text-lg uppercase leading-6 tracking-wide self-end"
+            className="hover:underline text-md sm:text-lg uppercase leading-6 tracking-wide self-end"
             dangerouslySetInnerHTML={{ __html: title }}
           />
         </Link>
@@ -65,7 +65,7 @@ export const ProjectListItem = ({
       <div className="flex-grow self-end">
         <hr className="relative -top-2 mx-4 border border-black border-dashed border-solid" />
       </div>
-      <div className="uppercase self-end">{location}</div>
+      <div className="text-sm sm:text-base uppercase self-end">{location}</div>
     </article>
   );
 };

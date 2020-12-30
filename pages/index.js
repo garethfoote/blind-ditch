@@ -7,6 +7,7 @@ import { AnnouncementList } from "../components/AnnouncementList";
 import { HomepageArticle } from "../components/HomepageArticle";
 import { ProjectList } from "../components/ProjectList";
 import { SectionTitle } from "../components/SectionTitle";
+import { PullQuote } from "../components/PullQuote";
 import { Text } from "../components/Text";
 import Container from "../components/container";
 import { getHomepage } from "../lib/api";
@@ -14,7 +15,8 @@ import { getHomepage } from "../lib/api";
 export default function Index({ hpProperties, preview }) {
   const announcements = hpProperties.page.homepageFields.connectedAnnouncements;
   const projects = hpProperties.page.homepageFields.connectedProjects;
-  const mainArticle = hpProperties.page.homepageFields.connectedArticle;
+  const article = hpProperties.page.homepageFields.connectedArticle;
+  const testimonials = hpProperties.page.homepageFields.testimonials;
 
   projects;
 
@@ -32,12 +34,21 @@ export default function Index({ hpProperties, preview }) {
             content={hpProperties.page.content}
           />
         </Container>
-        <PageBreak spacing="xl" />
+        <div className="max-w-2xl mx-auto px-5 pb-xl">
+          <div className="lg:absolute lg:w-64 xl:w-80 right-10 top-10 h-auto">
+            <PullQuote
+              quote={
+                "<p>Sad to leave Exeter (have discovered that all the best artists are hiding there secretly constructing a creative utopia in which art and ‘real-life’ switch roles intermittently).</p>"
+              }
+            />
+          </div>
+        </div>
+        <PageBreak topSpacing="0" spacing="xl" />
         <AnnouncementList announcements={announcements} />
         <PageBreak spacing="xl" />
 
         {/* <h1>20 Years</h1> */}
-        <HomepageArticle page={mainArticle} />
+        <HomepageArticle page={article} />
         <PageBreak spacing="xl" />
 
         <SectionTitle>Work</SectionTitle>

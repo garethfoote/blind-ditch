@@ -8,7 +8,7 @@ export const Intro = () => {
     <section className="">
       <div className="flex items-center justify-center h-24">
         <Link href="/">
-          <a className="h-14">
+          <a className="h-10 sm:h-14">
             <img
               alt="Blind Ditch logo in black"
               className="h-full w-auto"
