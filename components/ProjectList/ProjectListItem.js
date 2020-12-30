@@ -5,7 +5,10 @@ import classnames from "classnames";
 
 import { ProjectTypes } from "../ProjectTypes";
 import { proportionalScale } from "../../lib/utils";
-
+const handleMouseMove = (ev) => {
+  let boundsX = ev.currentTarget.getBoundingClientRect().x;
+  // console.log(ev.clientX - boundsX);
+};
 export const ProjectListItem = ({
   title,
   slug,
@@ -16,6 +19,7 @@ export const ProjectListItem = ({
   image,
 }) => {
   const [isVisible, setVisibility] = useState(false);
+  const [mousePosX, setMousePosX] = useState(0);
 
   let scaled = proportionalScale(
     image?.mediaDetails.width,
@@ -28,7 +32,8 @@ export const ProjectListItem = ({
     <article
       onMouseEnter={() => setVisibility(true)}
       onMouseLeave={() => setVisibility(false)}
-      className="relative flex align-end h-12"
+      onMouseMove={(ev) => handleMouseMove(ev)}
+      className="relative flex align-end h-8 sm:h-12"
     >
       {/* <div>
         <time dateTime={yearStart}>{yearStart}</time>
@@ -38,7 +43,7 @@ export const ProjectListItem = ({
       <div className="self-end">
         <Link as={`/projects/${slug}`} href="/projects/[slug]">
           <a
-            className="hover:underline text-md sm:text-lg uppercase leading-6 tracking-wide self-end"
+            className="hover:underline text-sm sm:text-md md:text-lg uppercase leading-6 tracking-wide self-end"
             dangerouslySetInnerHTML={{ __html: title }}
           />
         </Link>
@@ -52,7 +57,7 @@ export const ProjectListItem = ({
             )}
           >
             <Image
-              className="image-loading"
+              className="image-loading opacity-80"
               width={scaled.width}
               height={scaled.height}
               alt={image.altText || image.title}
@@ -65,7 +70,9 @@ export const ProjectListItem = ({
       <div className="flex-grow self-end">
         <hr className="relative -top-2 mx-4 border border-black border-dashed border-solid" />
       </div>
-      <div className="text-sm sm:text-base uppercase self-end">{location}</div>
+      <div className="text-xs sm:text-sm md:text-base uppercase self-end">
+        {location}
+      </div>
     </article>
   );
 };
