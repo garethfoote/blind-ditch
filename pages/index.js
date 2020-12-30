@@ -38,7 +38,7 @@ export default function Index({ hpProperties, preview }) {
             content={hpProperties.page.content}
           />
         </Container>
-        <div className="max-w-2xl mx-auto px-5 pb-xl lg:pb-md pt-md">
+        <div className="max-w-2xl mx-auto px-5 pb-lg lg:pb-md pt-md">
           <div className="lg:absolute lg:w-64 xl:w-80 right-10 top-10 h-auto">
             <PullQuote
               quote={

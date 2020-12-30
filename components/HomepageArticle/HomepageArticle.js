@@ -32,7 +32,7 @@ export const HomepageArticle = ({ page }) => {
           />
         </div>
       </div>
-      <div className="max-w-xs sm:max-w-none sm:w-100 bg-offwhite relative z-30 -top-4 left-1/10">
+      <div className="max-w-xs sm:max-w-none sm:w-100 bg-offwhite relative z-30 -top-4 left-4 sm:left-1/10">
         <Link as={`/page/${page.slug}`} href="/page/[slug]">
           <a>
             <h2 className="text-xl sm:text-2xl leading-tight tracking-wider uppercase underline bg-offwhite p-4 box-content ">
@@ -41,7 +41,7 @@ export const HomepageArticle = ({ page }) => {
           </a>
         </Link>
       </div>
-      <div className="max-w-xs sm:max-w-none sm:w-100 bg-offwhite relative -top-4 left-1/10 p-4 pt-0">
+      <div className="max-w-xs sm:max-w-none sm:w-100 bg-offwhite relative -top-4 left-4 sm:left-1/10 p-4 pt-0">
         <Text content={details.summary} />
         <Link as={`/page/${page.slug}`} href="/page/[slug]">
           <a className="button my-sm relative top-4">
