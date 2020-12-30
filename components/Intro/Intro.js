@@ -1,11 +1,12 @@
 import Link from "next/link";
-import { SITE_TITLE } from "../../lib/constants";
+import Nav from "../Nav/Nav";
 
 import styles from "./Intro.module.css";
 
 export const Intro = () => {
   return (
     <section className="">
+      <Nav />
       <div className="flex items-center justify-center h-24">
         <Link href="/">
           <a className="h-10 sm:h-14">

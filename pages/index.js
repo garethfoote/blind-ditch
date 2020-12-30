@@ -58,7 +58,7 @@ export default function Index({ hpProperties, preview }) {
             content="Short description or reminder of the type of work you ususally embark on with a reminder that there is a lot more if people visit the archive or explore by media type."
           />
           <div className="text-center mb-xl">
-            <Link as={`/projects`} href="/projects">
+            <Link href="/projects">
               <a className="button my-md relative top-4">
                 <span className="title-accent px-8">View Full Archive</span>
               </a>

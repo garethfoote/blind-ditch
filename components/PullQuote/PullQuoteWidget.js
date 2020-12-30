@@ -1,6 +1,6 @@
 import styles from "./PullQuote.module.css";
 import Container from "../../components/container";
-import PullQuote from "./PullQuote";
+import { PullQuote } from "./PullQuote";
 
 export const PullQuoteWidget = ({ quote, context }) => {
   return (
