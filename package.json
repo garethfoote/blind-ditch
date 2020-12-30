@@ -2,7 +2,7 @@
   "name": "cms-wordpress",
   "version": "1.0.0",
   "scripts": {
-    "dev": "NODE_OPTIONS='--inspect' next dev",
+    "dev": "NODE_OPTIONS='--inspect' next dev --hostname 0.0.0.0",
     "build": "next build",
     "start": "next start"
   },

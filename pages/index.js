@@ -27,14 +27,18 @@ export default function Index({ hpProperties, preview }) {
           <title>Blind Ditch</title>
         </Head>
         <Intro />
-        <Container max="xl">
+        <Container max="lg">
+          {/* <div
+            className="font-main text-md md:text-lg leading-7 text-center"
+            dangerouslySetInnerHTML={{ __html: hpProperties.page.content }}
+          /> */}
           <Text
             isCentred={true}
-            makeLarge={true}
+            makeLarge={false}
             content={hpProperties.page.content}
           />
         </Container>
-        <div className="max-w-2xl mx-auto px-5 pb-xl">
+        <div className="max-w-2xl mx-auto px-5 pb-xl lg:pb-md pt-md">
           <div className="lg:absolute lg:w-64 xl:w-80 right-10 top-10 h-auto">
             <PullQuote
               quote={

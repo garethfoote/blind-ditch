@@ -25,7 +25,7 @@ export const AnnouncementListItem = ({
           </span>
 
           <Link as={as} href={href}>
-            <a className="block hover:underline text-xl bg-offwhite bg-opacity-50 font-normal text-black my-sm">
+            <a className="block hover:underline text-lg md:text-xl bg-offwhite bg-opacity-50 font-normal text-black my-sm">
               {title}
             </a>
           </Link>

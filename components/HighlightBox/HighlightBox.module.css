@@ -11,6 +11,6 @@
 
 @screen sm {
   .container {
-    @apply text-base;
+    @apply text-sm;
   }
 }
