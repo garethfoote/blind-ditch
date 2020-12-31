@@ -35,7 +35,7 @@ export const AnnouncementList = ({ announcements }) => {
       })}
       {/* </Transition> */}
 
-      <div className="absolute z-20 top-1/2 w-full h-8">
+      <div className="absolute z-20 top-1/2 w-full h-8 opacity-75">
         <div className="relative w-full">
           <button
             className={classnames(

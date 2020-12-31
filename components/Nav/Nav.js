@@ -6,7 +6,7 @@ import classnames from "classnames";
 export default function Nav() {
   const router = useRouter();
   return (
-    <div className="absolute hidden sm:visible top-2 left-1">
+    <div className="absolute sm:visible top-2 left-2">
       <ul className="font-accent uppercase text-xs leading-2">
         <li
           className={classnames(styles.linkItem, {

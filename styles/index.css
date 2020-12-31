@@ -114,22 +114,52 @@
 
   .image-shadow:after {
     content: "";
-    @apply absolute top-4 left-4;
+    @apply absolute top-2 left-2;
     @apply w-full h-full;
     @apply bg-offwhite-dark;
     @apply z-0;
   }
 
   .image-shadow-bl:after {
-    @apply top-4 -left-4;
+    @apply top-2 -left-2;
   }
 
   .image-shadow-tl:after {
-    @apply -top-4 -left-4;
+    @apply -top-2 -left-2;
   }
 
   .image-shadow-tr:after {
-    @apply -top-4 left-4;
+    @apply -top-2 left-2;
+  }
+
+  @screen sm {
+    .image-shadow:after {
+      @apply top-4 left-4;
+    }
+
+    .image-shadow-bl:after {
+      @apply top-4 -left-4;
+    }
+
+    .image-shadow-tl:after {
+      @apply -top-4 -left-4;
+    }
+
+    .image-shadow-tr:after {
+      @apply -top-4 left-4;
+    }
+  }
+
+  .page-break {
+    height: 3px;
+    background-image: linear-gradient(
+      to right,
+      black 57%,
+      rgba(255, 255, 255, 0) 0%
+    );
+    background-position: bottom;
+    background-size: 16px 2px;
+    background-repeat: repeat-x;
   }
 
   .visually-hidden {

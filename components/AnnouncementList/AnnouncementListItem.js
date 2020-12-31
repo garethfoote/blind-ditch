@@ -17,28 +17,30 @@ export const AnnouncementListItem = ({
   const href = connected ? `/projects/[slug]` : `/announcements/[slug]`;
   return (
     <article className="px-5 max-w-4xl mx-auto min-h-64">
-      <div className="relative w-full">
-        <div className="z-20 relative p-5 w-3/4 sm:w-1/2">
-          <span className="title-accent text-xs bg-yellow p-1">
-            {type} {date && " | "}
-            {date && <time dateTime={date}>{date}</time>}
-          </span>
+      <div className="relative">
+        <div className="z-20 relative p-5 w-2/3 sm:w-1/2 min-h-80 sm:min-h-64">
+          <div className="absolute top-1/2 transform -translate-y-1/2">
+            <span className="title-accent text-xs bg-yellow p-1">
+              {type} {date && " | "}
+              {date && <time dateTime={date}>{date}</time>}
+            </span>
 
-          <Link as={as} href={href}>
-            <a className="block hover:underline text-lg md:text-xl bg-offwhite bg-opacity-50 font-normal text-black my-sm">
-              {title}
-            </a>
-          </Link>
+            <Link as={as} href={href}>
+              <a className="block hover:underline text-lg md:text-lg bg-offwhite bg-opacity-50 font-normal text-black my-sm mb-lg">
+                {title}
+              </a>
+            </Link>
 
-          <Link as={as} href={href}>
-            <a className="button my-sm">
-              <span className="title-accent p-2 bg-mint border border-black border-solid">
-                {type.toLowerCase() === "call for participation"
-                  ? "Take Part"
-                  : "Read More"}
-              </span>
-            </a>
-          </Link>
+            <Link as={as} href={href}>
+              <a className="button my-sm">
+                <span className="title-accent p-2 bg-mint border border-black border-solid">
+                  {type.toLowerCase() === "call for participation"
+                    ? "Take Part"
+                    : "Read More"}
+                </span>
+              </a>
+            </Link>
+          </div>
         </div>
 
         <div className="absolute top-0 bottom-0 left-1/3 sm:left-1/2 right-4 z-10">

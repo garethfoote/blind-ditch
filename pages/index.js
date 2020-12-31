@@ -27,7 +27,7 @@ export default function Index({ hpProperties, preview }) {
           <title>Blind Ditch</title>
         </Head>
         <Intro />
-        <Container max="lg">
+        <Container max="md">
           {/* <div
             className="font-main text-md md:text-lg leading-7 text-center"
             dangerouslySetInnerHTML={{ __html: hpProperties.page.content }}
@@ -47,9 +47,10 @@ export default function Index({ hpProperties, preview }) {
             />
           </div>
         </div>
-        <PageBreak topSpacing="0" spacing="xl" />
+        <hr className="page-break mb-md sm:mb-xl mt-sm" />
+        {/* <PageBreak topSpacing="0" spacing="xl" /> */}
         <AnnouncementList announcements={announcements} />
-        <PageBreak spacing="xl" />
+        <hr className="page-break my-md sm:my-xl" />
 
         {/* <h1>20 Years</h1> */}
         <HomepageArticle page={article} />
