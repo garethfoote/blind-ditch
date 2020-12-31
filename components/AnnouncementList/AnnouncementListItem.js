@@ -16,7 +16,7 @@ export const AnnouncementListItem = ({
     : `/announcements/${slug}`;
   const href = connected ? `/projects/[slug]` : `/announcements/[slug]`;
   return (
-    <article className="px-5 max-w-4xl mx-auto min-h-64">
+    <article className="pl-4 pr-2 max-w-4xl mx-auto min-h-64">
       <div className="relative">
         <div className="z-20 relative w-2/3 sm:w-1/2 min-h-80 sm:min-h-64">
           <div className="absolute top-1/2 transform -translate-y-1/2">
