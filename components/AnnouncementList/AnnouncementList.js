@@ -35,13 +35,13 @@ export const AnnouncementList = ({ announcements }) => {
       })}
       {/* </Transition> */}
 
-      <div className="absolute z-20 top-1/2 w-full h-8 opacity-75">
+      <div className="absolute z-20 top-1/2 w-full h-8">
         <div className="relative w-full">
           <button
             className={classnames(
               styles.arrow,
               styles.arrowLeft,
-              "w-8 md:w-12 absolute top-0 left-1 sm:left-2 lg:left-8 xl:left-12"
+              "w-8 md:w-12 absolute top-0 left-1 sm:left-2 lg:left-8 xl:left-12 opacity-60 hover:opacity-100"
             )}
             onClick={() =>
               setPosition(
@@ -62,7 +62,7 @@ export const AnnouncementList = ({ announcements }) => {
             className={classnames(
               styles.arrow,
               styles.arrowRight,
-              "w-8 md:w-12 absolute top-0 right-1 sm:right-2 lg:right-8 xl:right-12"
+              "w-8 md:w-12 absolute top-0 right-1 sm:right-2 lg:right-8 xl:right-12 opacity-60 hover:opacity-100"
             )}
             onClick={() =>
               setPosition(

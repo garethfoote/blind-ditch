@@ -60,6 +60,9 @@
     font-weight: bold;
     font-style: normal;
   }
+  ::selection {
+    @apply bg-blue text-white;
+  }
 }
 
 /* Start purging... */
