@@ -1,11 +1,12 @@
 import { AnnouncementListItem } from "./AnnouncementListItem";
 import React, { useEffect, useState } from "react";
-import { Transition } from "react-transition-group";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import styles from "./AnnouncementList.module.css";
 import classnames from "classnames";
 
 export const AnnouncementList = ({ announcements }) => {
   const [position, setPosition] = useState(0);
+  const [inProp, setInProp] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -18,23 +19,42 @@ export const AnnouncementList = ({ announcements }) => {
 
   return (
     <div className="relative">
-      {/* <Transition in={position} timeout={1500}> */}
-      {announcements.map((announcement, idx) => {
-        const details = announcement.announcementFields;
-        return (
-          <div className={classnames({ hidden: idx !== position })} key={idx}>
-            <AnnouncementListItem
-              title={announcement.title}
-              slug={announcement.slug}
-              image={announcement.featuredImage?.node}
-              isPriority={idx === 0}
-              {...details}
-            />
-          </div>
-        );
-      })}
-      {/* </Transition> */}
-
+      <div className="pl-4 pr-2 max-w-4xl mx-auto h-80 sm:h-64">
+        <div className="relative h-full">
+          {announcements.map((announcement, idx) => {
+            const details = announcement.announcementFields;
+            return (
+              <CSSTransition
+                classNames={{
+                  enterActive: styles["announcement-enter-active"],
+                  enterDone: styles["announcement-enter-done"],
+                  exitActive: styles["announcement-exit-active"],
+                  exitDone: styles["announcement-exit-done"],
+                }}
+                key={idx}
+                in={idx === position}
+                timeout={1000}
+                appear={idx === 0}
+              >
+                {(state) => {
+                  console.log(idx, position, state);
+                  return (
+                    <div key={idx} className={styles.announcement}>
+                      <AnnouncementListItem
+                        title={announcement.title}
+                        slug={announcement.slug}
+                        image={announcement.featuredImage?.node}
+                        isPriority={idx === 0}
+                        {...details}
+                      />
+                    </div>
+                  );
+                }}
+              </CSSTransition>
+            );
+          })}
+        </div>
+      </div>
       <div className="absolute z-20 top-1/2 w-full h-8">
         <div className="relative w-full">
           <button
