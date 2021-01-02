@@ -158,7 +158,7 @@ export default function Components() {
               '<iframe width="200" height="113" src="https://www.youtube.com/embed/5dJeC6IgBsk?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
           }}
         />
-        <div className="mt-0 max-w-4xl max-w-3xl max-w-xl my-md my-xl my-2xl">
+        <div className="mt-0 max-w-md max-w-4xl max-w-3xl max-w-xl my-md my-xl my-2xl">
           Abritrary div that makes sure classes (e.g <code>.max-w-4xl</code> and{" "}
           <code>.my-md</code>) are not purged.
         </div>
