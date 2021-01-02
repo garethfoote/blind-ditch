@@ -1,6 +1,6 @@
 .title {
-  @apply tracking-widest;
-  @apply text-xl text-center;
+  @apply tracking-wider;
+  @apply text-md text-center;
   @apply uppercase;
   @apply inline;
   @apply relative;
@@ -13,4 +13,10 @@
   height: 1px;
   width: 98%;
   background: linear-gradient(to left, #000, #000);
+}
+
+@screen sm {
+  .title {
+    @apply text-xl;
+  }
 }

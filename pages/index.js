@@ -27,18 +27,18 @@ export default function Index({ hpProperties, preview }) {
           <title>Blind Ditch</title>
         </Head>
         <Intro />
-        <Container max="md">
+        <div className="mx-auto px-5 max-w-md mt-md">
           {/* <div
             className="font-main text-md md:text-lg leading-7 text-center"
             dangerouslySetInnerHTML={{ __html: hpProperties.page.content }}
           /> */}
           <Text
             isCentred={true}
-            makeLarge={false}
+            makeLarge={true}
             content={hpProperties.page.content}
           />
-        </Container>
-        <div className="max-w-2xl mx-auto px-5 pb-lg lg:pb-md pt-md">
+        </div>
+        <div className="max-w-2xl mx-auto px-5 pb-lg  pt-md lg:pb-0">
           <div className="lg:absolute lg:w-64 xl:w-80 right-10 top-10 h-auto">
             <PullQuote
               quote={
@@ -50,7 +50,7 @@ export default function Index({ hpProperties, preview }) {
         <hr className="page-break mb-md sm:mb-xl mt-sm" />
         {/* <PageBreak topSpacing="0" spacing="xl" /> */}
         <AnnouncementList announcements={announcements} />
-        <hr className="page-break my-md sm:my-xl" />
+        <hr className="page-break my-lg sm:my-xl" />
 
         {/* <h1>20 Years</h1> */}
         <HomepageArticle page={article} />

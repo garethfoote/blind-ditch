@@ -1,8 +1,8 @@
-import styles from "./GalleryOne.module.css";
+import styles from "./GallerySingle.module.css";
 import Image from "next/image";
 import Container from "../container";
 
-export const GalleryOne = ({ image, width }) => {
+export const GallerySingle = ({ image, width = 672 }) => {
   const imgHeight =
     width * (image.mediaDetails.height / image.mediaDetails.width);
 
@@ -13,7 +13,8 @@ export const GalleryOne = ({ image, width }) => {
         src={image.sourceUrl}
         width={width}
         height={imgHeight}
-        layout="responsive"
+        layout="intrinsic"
+        alt={image.altText || image.title}
       />
     </Container>
   );

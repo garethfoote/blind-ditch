@@ -29,6 +29,7 @@ export const MainImage = ({
             width={image.mediaDetails.width}
             height={image.mediaDetails.height}
             layout="responsive"
+            alt={image.altText || image.title}
           />
         </span>
         {context && (

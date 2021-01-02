@@ -43,6 +43,7 @@ export default function Project({ project }) {
             date={date}
             types={details.projectTypes}
             description={project.content}
+            heroImage={project.featuredImage?.node}
           />
           {/* <div>
             <time dateTime={details.yearStart}>{details.yearStart}</time>

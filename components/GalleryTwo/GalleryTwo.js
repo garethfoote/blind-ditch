@@ -13,6 +13,7 @@ export const GalleryTwo = ({ images, width }) => {
             src={images[0].sourceUrl}
             width={images[0].mediaDetails.width}
             height={images[0].mediaDetails.height}
+            alt={images[0].altText || images[0].title}
             layout="responsive"
           />
         </div>
@@ -23,6 +24,7 @@ export const GalleryTwo = ({ images, width }) => {
               src={images[1].sourceUrl}
               width={images[1].mediaDetails.width}
               height={images[1].mediaDetails.height}
+              alt={images[1].altText || images[1].title}
               layout="responsive"
             />
           </div>

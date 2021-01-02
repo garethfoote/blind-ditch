@@ -13,7 +13,7 @@ import { TextWidget as Text } from "../../components/Text/TextWidget";
 import { MainImage } from "../../components/MainImage";
 import { HighlightBox } from "../../components/HighlightBox";
 import { PullQuote } from "../../components/PullQuote";
-import { GalleryOne } from "../../components/GalleryOne";
+import { GallerySingle } from "../../components/GallerySingle";
 import { GalleryTwo } from "../../components/GalleryTwo";
 import { GalleryCarousel } from "../../components/GalleryCarousel";
 import { PageBreak } from "../../components/PageBreak";
@@ -139,7 +139,7 @@ export default function Components() {
             },
           ]}
         />
-        <GalleryOne
+        <GallerySingle
           width={860}
           image={{
             mediaDetails: {

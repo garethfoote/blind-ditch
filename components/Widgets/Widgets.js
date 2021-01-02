@@ -3,6 +3,9 @@ import { PullQuoteWidget } from "../PullQuote/PullQuoteWidget";
 import { TextWidget } from "../Text/TextWidget";
 import { textDataMapper } from "../Text";
 import { MainImage, mainImageDataMapper } from "../MainImage";
+import { GallerySingle, gallerySingleDataMapper } from "../GallerySingle";
+import { GalleryTwo, galleryTwoDataMapper } from "../GalleryTwo";
+import { SectionTitle, sectionTitleDataMapper } from "../SectionTitle";
 import { OEmbed, oembedDataMapper } from "../OEmbed";
 
 const widgetMapper = {
@@ -26,6 +29,18 @@ const widgetMapper = {
     dataMapper: mainImageDataMapper,
     Component: MainImage,
   },
+  project_Projectfields_FlexibleContent_SectionTitleBlock: {
+    dataMapper: sectionTitleDataMapper,
+    Component: SectionTitle,
+  },
+  project_Projectfields_FlexibleContent_GallerySingleBlock: {
+    dataMapper: gallerySingleDataMapper,
+    Component: GallerySingle,
+  },
+  project_Projectfields_FlexibleContent_GalleryTwoBlock: {
+    dataMapper: galleryTwoDataMapper,
+    Component: GalleryTwo,
+  },
 };
 
 export const Widgets = ({ widgets }) => (
@@ -46,7 +61,7 @@ export const Widgets = ({ widgets }) => (
 
       return (
         <div key={idx}>
-          <p>Could not find {widget.fieldGroupName + idx}</p>
+          <p>Could not find {widget.fieldGroupName}</p>
         </div>
       );
     })}

@@ -1,3 +1,18 @@
+.image {
+  height: calc(50vh + 4rem);
+}
+
+.image:before {
+  content: "";
+  @apply block w-full h-full;
+  @apply bg-white;
+  @apply absolute top-0 left-0;
+}
+
+.imageTint {
+  @apply opacity-75;
+}
+
 .title {
   @apply tracking-widest;
   @apply leading-tight;
@@ -24,4 +39,9 @@
 
 .description {
   @apply leading-normal;
+}
+
+.description p {
+  @apply inline;
+  @apply bg-offwhite;
 }

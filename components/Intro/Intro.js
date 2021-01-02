@@ -5,11 +5,11 @@ import styles from "./Intro.module.css";
 
 export const Intro = () => {
   return (
-    <section className="">
+    <section>
       <Nav />
-      <div className="flex items-center justify-center h-24">
+      <div className="flex items-center justify-center relative z-10 h-16">
         <Link href="/">
-          <a className="h-10 sm:h-14">
+          <a className="h-10">
             <img
               alt="Blind Ditch logo in black"
               className="h-full w-auto"
