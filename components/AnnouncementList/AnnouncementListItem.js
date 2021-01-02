@@ -25,7 +25,7 @@ export const AnnouncementListItem = ({
           </span>
 
           <Link as={as} href={href}>
-            <a className="block hover:underline text-lg md:text-lg bg-offwhite bg-opacity-25 font-normal text-black my-sm mb-g pr-5">
+            <a className="block hover:underline text-lg md:text-xl bg-offwhite bg-opacity-25 rounded-lg font-normal text-black my-sm mb-lg pr-5">
               {title}
             </a>
           </Link>
@@ -42,7 +42,7 @@ export const AnnouncementListItem = ({
         </div>
       </div>
 
-      <div className="absolute top-0 bottom-0 left-1/3 sm:left-1/2 right-4 z-10">
+      <div className="absolute top-0 bottom-0 left-2/5 sm:left-1/2 right-4 z-10">
         <div className="relative w-full h-full image-shadow px-5">
           {image ? (
             <Image

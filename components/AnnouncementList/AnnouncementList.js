@@ -1,4 +1,5 @@
 import { AnnouncementListItem } from "./AnnouncementListItem";
+import { SectionTitle } from "../SectionTitle";
 import React, { useEffect, useState } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import styles from "./AnnouncementList.module.css";
@@ -19,7 +20,8 @@ export const AnnouncementList = ({ announcements }) => {
 
   return (
     <div className="relative">
-      <div className="pl-4 pr-2 max-w-4xl mx-auto h-80 sm:h-64">
+      <SectionTitle>Announcements</SectionTitle>
+      <div className="max-w-4xl px-lg sm:px-xl mx-auto h-96 sm:h-96">
         <div className="relative h-full">
           {announcements.map((announcement, idx) => {
             const details = announcement.announcementFields;
@@ -37,7 +39,6 @@ export const AnnouncementList = ({ announcements }) => {
                 appear={idx === 0}
               >
                 {(state) => {
-                  console.log(idx, position, state);
                   return (
                     <div key={idx} className={styles.announcement}>
                       <AnnouncementListItem
@@ -69,12 +70,8 @@ export const AnnouncementList = ({ announcements }) => {
               )
             }
           >
-            <svg
-              fill="none"
-              viewBox="0 0 50 18"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M12.112.2c-1.488 3.072-2.88 5.376-4.176 6.912h41.976v3.024H7.936c1.296 1.536 2.688 3.84 4.176 6.912h-2.52C6.568 13.544 3.4 10.952.088 9.272V7.976C3.4 6.344 6.568 3.752 9.592.2h2.52z" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 26">
+              <path d="M18.625 0c-2.305 4.74-4.461 8.296-6.469 10.667H40v4.666H12.156c2.008 2.37 4.164 5.926 6.469 10.667H14.72C10.037 20.593 5.131 16.593 0 14v-2C5.13 9.481 10.037 5.481 14.721 0h3.904z" />
             </svg>
           </button>
 
@@ -90,12 +87,8 @@ export const AnnouncementList = ({ announcements }) => {
               )
             }
           >
-            <svg
-              fill="none"
-              viewBox="0 0 50 18"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M37.888 17.8c1.488-3.072 2.88-5.376 4.176-6.912H.088V7.864h41.976c-1.296-1.536-2.688-3.84-4.176-6.912h2.52c3.024 3.504 6.192 6.096 9.504 7.776v1.296c-3.312 1.632-6.48 4.224-9.504 7.776h-2.52z" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 28">
+              <path d="M21.463 27.049c2.305-4.759 4.461-8.328 6.469-10.707H.088v-4.684h27.844C25.924 9.28 23.768 5.71 21.464.952h3.903c4.684 5.428 9.59 9.442 14.721 12.045v2.007c-5.13 2.528-10.037 6.543-14.721 12.045h-3.904z" />
             </svg>
           </button>
         </div>
