@@ -20,7 +20,6 @@ export const AnnouncementList = ({ announcements }) => {
 
   return (
     <div className="relative">
-      <SectionTitle>Announcements</SectionTitle>
       <div className="max-w-4xl px-lg sm:px-xl mx-auto h-96 sm:h-96">
         <div className="relative h-full">
           {announcements.map((announcement, idx) => {

@@ -65,6 +65,9 @@ module.exports = {
         64: "16rem",
         80: "20rem",
       },
+      lineHeight: {
+        12: "3rem",
+      },
     },
   },
 };

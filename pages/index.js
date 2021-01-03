@@ -9,8 +9,8 @@ import { ProjectList } from "../components/ProjectList";
 import { SectionTitle } from "../components/SectionTitle";
 import { PullQuote } from "../components/PullQuote";
 import { Text } from "../components/Text";
-import Container from "../components/container";
 import { getHomepage } from "../lib/api";
+import Marquee from "react-double-marquee";
 
 export default function Index({ hpProperties, preview }) {
   const announcements = hpProperties.page.homepageFields.connectedAnnouncements;
@@ -18,8 +18,7 @@ export default function Index({ hpProperties, preview }) {
   const article = hpProperties.page.homepageFields.connectedArticle;
   const testimonials = hpProperties.page.homepageFields.testimonials;
 
-  projects;
-
+  console.log(testimonials);
   return (
     <>
       <Layout preview={preview}>
@@ -27,7 +26,7 @@ export default function Index({ hpProperties, preview }) {
           <title>Blind Ditch</title>
         </Head>
         <Intro />
-        <div className="mx-auto px-5 max-w-md mt-md">
+        <div className="mx-auto px-5 max-w-md sm:max-w-lg mt-md">
           {/* <div
             className="font-main text-md md:text-lg leading-7 text-center"
             dangerouslySetInnerHTML={{ __html: hpProperties.page.content }}
@@ -38,6 +37,18 @@ export default function Index({ hpProperties, preview }) {
             content={hpProperties.page.content}
           />
         </div>
+
+        <div className="w-full h-12 mt-lg mb-xl">
+          <div className="h-full leading-12 whitespace-nowrap font-accent bg-mint relative px-lg border-t-2 border-b-2 border-black">
+            <Marquee>
+              Sad to leave Exeter (have discovered that all the best artists are
+              hiding there secretly constructing a creative utopia in which art
+              and ‘real-life’ switch roles intermittently).
+            </Marquee>
+          </div>
+        </div>
+
+        {/* 
         <div className="max-w-2xl mx-auto px-5 pb-lg  pt-md lg:pb-0">
           <div className="lg:absolute lg:w-64 xl:w-80 right-10 top-10 h-auto">
             <PullQuote
@@ -46,13 +57,13 @@ export default function Index({ hpProperties, preview }) {
               }
             />
           </div>
-        </div>
-        <hr className="page-break mb-md sm:mb-xl mt-sm" />
-        {/* <PageBreak topSpacing="0" spacing="xl" /> */}
+        </div> */}
+        {/* <hr className="page-break mb-md sm:mb-xl mt-sm" /> */}
+        {/* <SectionTitle>Announcements</SectionTitle> */}
+
         <AnnouncementList announcements={announcements} />
         <hr className="page-break my-lg sm:my-xl" />
 
-        {/* <h1>20 Years</h1> */}
         <HomepageArticle page={article} />
         <PageBreak spacing="xl" />
 
@@ -73,12 +84,6 @@ export default function Index({ hpProperties, preview }) {
         <div className="container mx-auto mb-xl p-5">
           <ProjectList projects={projects} />
         </div>
-        {/* <div
-          className="container mx-auto"
-          style={{ width: "300px", height: "150px" }}
-        >
-          <HighlightBox html={"<h1>Hello, World!</h1>"} />
-        </div> */}
       </Layout>
     </>
   );
