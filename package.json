@@ -12,11 +12,9 @@
     "html-react-parser": "^1.1.1",
     "next": "latest",
     "postcss-preset-env": "^6.7.0",
-    "pure-react-carousel": "^1.27.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-double-marquee": "^1.0.6",
-    "react-slick": "^0.27.13",
     "react-transition-group": "^4.4.1"
   },
   "devDependencies": {
