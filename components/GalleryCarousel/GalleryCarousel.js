@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./GalleryCarousel.module.css";
 import Image from "next/image";
-import Slider from "react-slick";
+// import Slider from "react-slick";
 
 export const GalleryCarousel = ({ images, height }) => {
   const [dimensions, setDimensions] = useState({
