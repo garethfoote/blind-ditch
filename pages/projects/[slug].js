@@ -7,6 +7,7 @@ import Layout from "../../components/layout";
 import { Intro } from "../../components/Intro";
 import { extract } from "oembed-parser";
 import { ProjectPageTitle } from "../../components/ProjectPageTitle";
+import classnames from "classnames";
 
 export default function Project({ project }) {
   const router = useRouter();
@@ -54,7 +55,19 @@ export default function Project({ project }) {
           </div> */}
           {/* <Text isLarge={true} content={project.content} /> */}
           {/* <div dangerouslySetInnerHTML={{ __html: project.content }} /> */}
-          <Widgets widgets={project.projectFields.flexibleContent} />
+          <div
+            className={classnames({
+              "relative -top-20": project.featuredImage != null,
+            })}
+          >
+            <div className="px-6 sm:12">
+              <div
+                dangerouslySetInnerHTML={{ __html: project.content }}
+                className="bg-offwhite border-0 border-black border-solid p-4 mx-auto text-center max-w-sm sm:max-w-md text-sm sm:text-md"
+              />
+            </div>
+            <Widgets widgets={project.projectFields.flexibleContent} />
+          </div>
           {/* <div className={styles.imageConstrained}></div> */}
         </article>
       )}

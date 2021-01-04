@@ -40,10 +40,22 @@ export default function Index({ hpProperties, preview }) {
 
         <div className="w-full h-12 mt-lg mb-lg sm:mb-xl">
           <div className="h-full leading-12 whitespace-nowrap font-accent bg-mint relative px-lg border-t-2 border-b-2 border-black">
-            <Marquee>
-              Sad to leave Exeter (have discovered that all the best artists are
-              hiding there secretly constructing a creative utopia in which art
-              and ‘real-life’ switch roles intermittently).
+            <Marquee direction="left">
+              <span className="h-12">
+                {/* <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 40 30"
+                >
+                  <path
+                    fill="#1F1F1F"
+                    d="M0 30V6h5.714V0h11.429v6h-5.714v12h5.714v12H0zm22.857 0V6h5.714V0H40v6h-5.714v12H40v12H22.857z"
+                  />
+                </svg> */}
+                Sad to leave Exeter (have discovered that all the best artists
+                are hiding there secretly constructing a creative utopia in
+                which art and ‘real-life’ switch roles intermittently).
+              </span>
             </Marquee>
           </div>
         </div>
@@ -62,7 +74,7 @@ export default function Index({ hpProperties, preview }) {
         {/* <SectionTitle>Announcements</SectionTitle> */}
 
         <AnnouncementList announcements={announcements} />
-        <hr className="page-break my-lg sm:my-xl" />
+        <hr className="invisible sm:visible page-break my-lg sm:my-xl" />
 
         <HomepageArticle page={article} />
         <PageBreak spacing="xl" />

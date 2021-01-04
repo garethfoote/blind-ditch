@@ -15,8 +15,9 @@ export const ProjectPageTitle = ({
   return (
     <div
       className={classnames(
-        { "h-1/2-screen": heroImage !== null },
-        "mx-auto px-5 mt-md mb-xl max-w-2xl"
+        { "h-1/2-screen": heroImage != null },
+        { "mb-xl": heroImage == null },
+        "mx-auto px-5 mt-md max-w-2xl"
       )}
     >
       {heroImage && (
@@ -49,7 +50,7 @@ export const ProjectPageTitle = ({
         <h4 className={classnames("mx-auto mt-md mb-xl max-w-xs", styles.type)}>
           <ProjectTypes types={types} />
         </h4>
-        <div
+        {/* <div
           dangerouslySetInnerHTML={{ __html: description }}
           className={classnames(
             "mx-auto my-lg text-center",
@@ -57,7 +58,7 @@ export const ProjectPageTitle = ({
             "text-md sm:text-lg",
             styles.description
           )}
-        />
+        /> */}
       </div>
     </div>
   );

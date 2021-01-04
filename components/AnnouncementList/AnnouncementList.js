@@ -20,7 +20,7 @@ export const AnnouncementList = ({ announcements }) => {
 
   return (
     <div className="relative">
-      <div className="max-w-4xl px-lg sm:px-xl mx-auto h-96 sm:h-96">
+      <div className="container px-lg sm:px-xl mx-auto h-96 sm:h-96">
         <div className="relative h-full">
           {announcements.map((announcement, idx) => {
             const details = announcement.announcementFields;
@@ -65,7 +65,7 @@ export const AnnouncementList = ({ announcements }) => {
             className={classnames(
               styles.arrow,
               styles.arrowLeft,
-              "w-8 md:w-12 absolute top-0 left-1 sm:left-2 lg:left-8 xl:left-12 opacity-60 hover:opacity-100"
+              "w-8 md:w-12 absolute top-0 left-1 sm:left-2 lg:left-8 xl:left-4"
             )}
             onClick={() =>
               setPosition(
@@ -82,7 +82,7 @@ export const AnnouncementList = ({ announcements }) => {
             className={classnames(
               styles.arrow,
               styles.arrowRight,
-              "w-8 md:w-12 absolute top-0 right-1 sm:right-2 lg:right-8 xl:right-12 opacity-60 hover:opacity-100"
+              "w-8 md:w-12 absolute top-0 right-1 sm:right-2 lg:right-8 xl:right-4"
             )}
             onClick={() =>
               setPosition(

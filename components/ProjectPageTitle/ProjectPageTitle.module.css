@@ -5,7 +5,7 @@
 .image:before {
   content: "";
   @apply block w-full h-full;
-  @apply bg-white;
+  @apply bg-offwhite;
   @apply absolute top-0 left-0;
 }
 
