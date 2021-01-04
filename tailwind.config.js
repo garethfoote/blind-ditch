@@ -68,6 +68,14 @@ module.exports = {
       lineHeight: {
         12: "3rem",
       },
+      transitionDelay: {
+        400: "400ms",
+        600: "600ms",
+      },
+      transitionDuration: {
+        400: "400ms",
+        600: "600ms",
+      },
     },
   },
 };

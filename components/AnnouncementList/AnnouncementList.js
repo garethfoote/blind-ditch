@@ -27,8 +27,12 @@ export const AnnouncementList = ({ announcements }) => {
             return (
               <CSSTransition
                 classNames={{
+                  appearActive: styles["announcement-appear-active"],
+                  appearDone: styles["announcement-appear-done"],
+
                   enterActive: styles["announcement-enter-active"],
                   enterDone: styles["announcement-enter-done"],
+
                   exitActive: styles["announcement-exit-active"],
                   exitDone: styles["announcement-exit-done"],
                 }}

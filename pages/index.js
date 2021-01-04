@@ -38,7 +38,7 @@ export default function Index({ hpProperties, preview }) {
           />
         </div>
 
-        <div className="w-full h-12 mt-lg mb-xl">
+        <div className="w-full h-12 mt-lg mb-lg sm:mb-xl">
           <div className="h-full leading-12 whitespace-nowrap font-accent bg-mint relative px-lg border-t-2 border-b-2 border-black">
             <Marquee>
               Sad to leave Exeter (have discovered that all the best artists are

@@ -51,6 +51,7 @@ export const AnnouncementListItem = ({
               layout="fill"
               objectFit="cover"
               priority={isPriority}
+              loading={isPriority ? "eager" : "lazy"}
             />
           ) : (
             <div className="z-10 image-loading"></div>
