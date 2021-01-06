@@ -43,13 +43,15 @@ export const HomepageArticle = ({ page }) => {
       </div>
       <div className="max-w-xs sm:max-w-none sm:w-100 bg-offwhite relative -top-4 left-4 sm:left-1/10 p-4 pt-0">
         <Text content={details.summary} />
-        <Link as={`/page/${page.slug}`} href="/page/[slug]">
-          <a className="button my-sm relative top-4">
-            <span className="title-accent p-2 bg-mint border border-black border-solid">
-              Read More
-            </span>
-          </a>
-        </Link>
+        <div className="mt-lg">
+          <Link as={`/page/${page.slug}`} href="/page/[slug]">
+            <a className="button">
+              <span className="title-accent p-2 bg-mint border border-black border-solid">
+                Read More
+              </span>
+            </a>
+          </Link>
+        </div>
       </div>
     </div>
   );

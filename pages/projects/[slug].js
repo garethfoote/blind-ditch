@@ -8,6 +8,7 @@ import { Intro } from "../../components/Intro";
 import { extract } from "oembed-parser";
 import { ProjectPageTitle } from "../../components/ProjectPageTitle";
 import classnames from "classnames";
+import Nav from "../../components/Nav/Nav";
 
 export default function Project({ project }) {
   const router = useRouter();
@@ -33,43 +34,37 @@ export default function Project({ project }) {
       {router.isFallback ? (
         <h1>Loading…</h1>
       ) : (
-        <article>
-          {" "}
+        <div>
           <Head>
             <title>{project.title}</title>
           </Head>
-          <Intro />
-          <ProjectPageTitle
-            title={project.title}
-            date={date}
-            types={details.projectTypes}
-            description={project.content}
-            heroImage={project.featuredImage?.node}
-          />
-          {/* <div>
-            <time dateTime={details.yearStart}>{details.yearStart}</time>
-            {details.yearEnd && " - "}
-            {details.yearEnd && (
-              <time dateTime={details.yearEnd}>{details.yearEnd}</time>
-            )}
-          </div> */}
-          {/* <Text isLarge={true} content={project.content} /> */}
-          {/* <div dangerouslySetInnerHTML={{ __html: project.content }} /> */}
-          <div
-            className={classnames({
-              "relative -top-20": project.featuredImage != null,
-            })}
-          >
-            <div className="px-6 sm:12">
-              <div
-                dangerouslySetInnerHTML={{ __html: project.content }}
-                className="bg-offwhite border-0 border-black border-solid p-4 mx-auto text-center max-w-sm sm:max-w-md text-sm sm:text-md"
+          <Nav />
+          <div className="relative">
+            <Intro />
+            <article>
+              <ProjectPageTitle
+                title={project.title}
+                date={date}
+                types={details.projectTypes}
+                description={project.content}
+                heroImage={project.featuredImage?.node}
               />
-            </div>
-            <Widgets widgets={project.projectFields.flexibleContent} />
+              <div
+                className={classnames({
+                  "relative -top-20": project.featuredImage != null,
+                })}
+              >
+                <div className="px-6 sm:12">
+                  <div
+                    dangerouslySetInnerHTML={{ __html: project.content }}
+                    className="bg-offwhite border-0 border-black border-solid p-4 mx-auto text-center max-w-sm sm:max-w-md text-sm sm:text-md"
+                  />
+                </div>
+                <Widgets widgets={project.projectFields.flexibleContent} />
+              </div>
+            </article>
           </div>
-          {/* <div className={styles.imageConstrained}></div> */}
-        </article>
+        </div>
       )}
     </Layout>
   );

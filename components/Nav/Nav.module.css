@@ -9,3 +9,49 @@
   position: relative;
   left: 5px;
 }
+
+.nav {
+  transition-property: height;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  @apply duration-300;
+  height: 0px;
+  overflow: hidden;
+}
+
+.nav-appear-active {
+}
+
+.nav-appear-done {
+}
+
+.nav-enter-active {
+  @apply static block;
+  height: 113px;
+}
+
+.nav-enter-done {
+  @apply static block;
+  height: 113px;
+}
+
+.nav-exit-active {
+  @apply static block;
+  height: 0px;
+}
+
+.nav-exit-done {
+  @apply static block;
+}
+
+@screen sm {
+  .nav,
+  .nav-enter-active,
+  .nav-enter-done,
+  .nav-exit-active,
+  .nav-exit-done {
+    transition-property: none;
+    transition-duration: 0ms;
+    @apply absolute block;
+    height: 113px;
+  }
+}

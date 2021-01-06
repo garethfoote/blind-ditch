@@ -50,15 +50,6 @@ export const ProjectPageTitle = ({
         <h4 className={classnames("mx-auto mt-md mb-xl max-w-xs", styles.type)}>
           <ProjectTypes types={types} />
         </h4>
-        {/* <div
-          dangerouslySetInnerHTML={{ __html: description }}
-          className={classnames(
-            "mx-auto my-lg text-center",
-            "max-w-sm sm:max-w-md",
-            "text-md sm:text-lg",
-            styles.description
-          )}
-        /> */}
       </div>
     </div>
   );

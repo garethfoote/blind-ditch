@@ -7,7 +7,6 @@ import classnames from "classnames";
 
 export const AnnouncementList = ({ announcements }) => {
   const [position, setPosition] = useState(0);
-  const [inProp, setInProp] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {

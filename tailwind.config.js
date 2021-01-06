@@ -1,6 +1,12 @@
 module.exports = {
   purge: ["./components/**/*.js", "./pages/**/*.js"],
   theme: {
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+    },
     boxShadow: {
       DEFAULT: "0 5px 5px rgba(0, 0, 0, 0.15)",
     },

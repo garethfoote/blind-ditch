@@ -1,12 +1,10 @@
 import Link from "next/link";
-import Nav from "../Nav/Nav";
 
 import styles from "./Intro.module.css";
 
 export const Intro = () => {
   return (
     <section>
-      <Nav />
       <div className="flex items-center justify-center relative z-10 h-16">
         <Link href="/">
           <a className="h-10">
