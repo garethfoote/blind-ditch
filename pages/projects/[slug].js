@@ -38,8 +38,10 @@ export default function Project({ project }) {
           <Head>
             <title>{project.title}</title>
           </Head>
-          <Nav />
           <div className="relative">
+            <div className="relative z-40">
+              <Nav />
+            </div>
             <Intro />
             <article>
               <ProjectPageTitle
@@ -57,7 +59,7 @@ export default function Project({ project }) {
                 <div className="px-6 sm:12">
                   <div
                     dangerouslySetInnerHTML={{ __html: project.content }}
-                    className="bg-offwhite border-0 border-black border-solid p-4 mx-auto text-center max-w-sm sm:max-w-md text-sm sm:text-md"
+                    className="strong-block bg-offwhite border-0 border-black border-solid p-4 mx-auto text-center max-w-sm sm:max-w-md text-sm sm:text-md"
                   />
                 </div>
                 <Widgets widgets={project.projectFields.flexibleContent} />

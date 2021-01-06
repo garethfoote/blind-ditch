@@ -19,7 +19,7 @@ export const AnnouncementListItem = ({
     <article className="relative h-full">
       <div className="z-20 relative w-2/3 sm:w-1/2 h-full lg:pl-xl">
         <div className="absolute top-1/2 transform -translate-y-1/2">
-          <span className="title-accent text-xs md:text-base bg-yellow">
+          <span className="py-1 px-2 title-accent text-xs md:text-base bg-yellow">
             {type} {date && " | "}
             {date && <time dateTime={date}>{date}</time>}
           </span>
@@ -42,7 +42,7 @@ export const AnnouncementListItem = ({
         </div>
       </div>
 
-      <div className="absolute -inset-6 sm:top-0 sm:bottom-0 sm:left-1/3 md:left-1/2 sm:right-4 lg:pr-xl z-10">
+      <div className="absolute -inset-6 sm:top-0 sm:bottom-0 sm:left-2/5 md:left-1/2 sm:right-4 lg:pr-xl z-10">
         <div className="relative w-full h-full image-shadow-sm px-5">
           {image ? (
             <Image

@@ -105,8 +105,20 @@
     @apply z-0;
   }
 
+  .button:hover {
+    transition-property: transform;
+    transition-duration: 400ms;
+    transform: translate(5px, 5px);
+  }
+
   .title-accent {
     @apply font-accent uppercase tracking-wide;
+  }
+
+  .strong-block strong {
+    @apply text-offwhite;
+    @apply bg-black;
+    padding: 5px 2px 3px;
   }
 
   @screen sm {

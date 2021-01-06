@@ -14,7 +14,9 @@ module.exports = {
       colors: {
         offwhite: {
           dark: "#D7D3C1",
+          // DEFAULT: "#F7F6F1",
           DEFAULT: "#F4F3EE",
+          // DEFAULT: "#FFF",
         },
         yellow: "#FFFF6E",
         mint: "#B1FBE6",
