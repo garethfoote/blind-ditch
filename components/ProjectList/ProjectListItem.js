@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import classnames from "classnames";
+import styles from "./ProjectList.module.css";
 
 import { ProjectTypes } from "../ProjectTypes";
 import { proportionalScale } from "../../lib/utils";
@@ -9,10 +10,12 @@ const handleMouseMove = (ev) => {
   let boundsX = ev.currentTarget.getBoundingClientRect().x;
   // console.log(ev.clientX - boundsX);
 };
+
 export const ProjectListItem = ({
   title,
   slug,
   yearStart,
+  showYear,
   yearEnd = "",
   projectTypes,
   location,
@@ -41,9 +44,19 @@ export const ProjectListItem = ({
         {yearEnd && <time dateTime={yearEnd}>{yearEnd}</time>}
       </div> */}
       <div className="self-end">
+        <time
+          className={classnames(
+            styles.year,
+            { invisible: showYear === false },
+            "self-end font-accent text-sm sm:text-md text-blue absolute tracking-wide pointer-events-none"
+          )}
+          dateTime={yearStart}
+        >
+          {yearStart}
+        </time>
         <Link as={`/projects/${slug}`} href="/projects/[slug]">
           <a
-            className="hover:underline text-sm sm:text-md md:text-lg uppercase leading-6 tracking-wide self-end"
+            className="hover:underline text-sm sm:text-md md:text-lg uppercase leading-6 tracking-wide self-end pl-md sm:pl-0"
             dangerouslySetInnerHTML={{ __html: title }}
           />
         </Link>
