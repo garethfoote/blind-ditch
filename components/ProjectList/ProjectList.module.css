@@ -1,6 +1,6 @@
 .year {
   @apply relative;
-  left: -15px;
+  /* left: -35px; */
 }
 
 .year:after {
@@ -23,7 +23,7 @@
   .year:after {
     width: 19px;
     height: 17px;
-    top: 15px;
-    right: -25px;
+    top: 12px;
+    right: -20px;
   }
 }

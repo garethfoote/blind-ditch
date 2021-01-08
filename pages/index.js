@@ -57,7 +57,7 @@ export default function Index({ hpProperties, preview }) {
             </Link>
           </div>
         </div>
-        <div className="container mx-auto mb-xl p-5">
+        <div className="container mx-auto py-5 pr-5 pl-2">
           <ProjectList projects={projects} />
         </div>
       </Layout>

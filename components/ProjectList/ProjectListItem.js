@@ -56,7 +56,7 @@ export const ProjectListItem = ({
         </time>
         <Link as={`/projects/${slug}`} href="/projects/[slug]">
           <a
-            className="hover:underline text-sm sm:text-md md:text-lg uppercase leading-6 tracking-wide self-end pl-md sm:pl-0"
+            className="hover:underline text-sm sm:text-md md:text-lg uppercase leading-6 tracking-wide pl-lg sm:pl-xl whitespace-nowrap"
             dangerouslySetInnerHTML={{ __html: title }}
           />
         </Link>
@@ -81,9 +81,9 @@ export const ProjectListItem = ({
         )}
       </div>
       <div className="flex-grow self-end">
-        <hr className="relative -top-2 mx-4 border border-black border-dashed border-solid" />
+        <hr className="relative -top-2 mx-1 border border-black border-dashed border-solid" />
       </div>
-      <div className="text-xs sm:text-sm md:text-base uppercase self-end">
+      <div className="text-right text-xs sm:text-sm md:text-base self-end whitespace-nowrap">
         {location}
       </div>
     </article>
