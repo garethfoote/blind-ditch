@@ -19,7 +19,7 @@ export const AnnouncementList = ({ announcements }) => {
 
   return (
     <div className="relative">
-      <div className="container px-lg sm:px-xl mx-auto h-96 sm:h-96">
+      <div className="container px-lg sm:px-xl mx-auto h-96 sm:h-112">
         <div className="relative h-full">
           {announcements.map((announcement, idx) => {
             const details = announcement.announcementFields;
