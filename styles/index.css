@@ -36,6 +36,22 @@
   }
 
   @font-face {
+    font-family: "UniversNextPro";
+    src: url("/font/univers-next-pro-regular.woff") format("woff"),
+      url("/font/univers-next-pro-regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "UniversNextPro";
+    src: url("/font/univers-next-pro-bold.woff") format("woff"),
+      url("/font/univers-next-pro-bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  @font-face {
     font-family: "UniversLTStd";
     src: url("/font/UniversLTStd.eot");
     src: url("/font/UniversLTStd.eot?#iefix") format("embedded-opentype"),
@@ -60,6 +76,7 @@
     font-weight: bold;
     font-style: normal;
   }
+
   ::selection {
     @apply bg-blue text-white;
   }
@@ -203,6 +220,7 @@
     background-position: bottom;
     background-size: 16px 2px;
     background-repeat: repeat-x;
+    border: none;
   }
 
   .visually-hidden {

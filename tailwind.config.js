@@ -38,7 +38,7 @@ module.exports = {
         widest: "0.5rem" /* 8px */,
       },
       fontFamily: {
-        main: ["UniversLTStd", "Helvetica", "Arial", "sans-serif"],
+        main: ["UniversNextPro", "Helvetica", "Arial", "sans-serif"],
         accent: ["TerminalGrotesque", "Courier New"],
       },
       fontSize: {
