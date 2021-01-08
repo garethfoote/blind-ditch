@@ -96,8 +96,9 @@
 @layer utilities {
   .text-back-blue strong {
     @apply text-offwhite;
-    @apply font-normal;
+    @apply font-bold;
     @apply bg-blue;
+    /* border-bottom: 2px dashed theme("colors.blue"); */
     padding: 3px 2px 2px;
   }
 

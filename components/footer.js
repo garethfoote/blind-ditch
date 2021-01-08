@@ -5,9 +5,9 @@ export default function Footer() {
   return (
     <footer className="bg-black h-56 w-full">
       <div className="flex h-full justify-center items-center container mx-auto">
-        <div className="flex-grow w-1/3">
+        <div className="flex-grow w-1/2">
           1
-          <div className="h-12">
+          <div className="h-auto px-md">
             <img
               alt="Blind Ditch logo in black"
               className="h-full w-auto"
@@ -15,8 +15,8 @@ export default function Footer() {
             />
           </div>
         </div>
-        <div className="flex-grow w-1/3">2</div>
-        <div className="flex-grow w-1/3">3</div>
+        <div className="flex-grow w-1/2">2</div>
+        {/* <div className="flex-grow w-1/3">3</div> */}
       </div>
     </footer>
   );
