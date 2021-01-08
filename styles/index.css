@@ -210,8 +210,19 @@
     }
   }
 
+  .inner-quote:after {
+    content: "";
+    @apply absolute right-2 bottom-2;
+    @apply z-0;
+    @apply block;
+    opacity: 0.2;
+    width: 64px;
+    height: 47px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='47' fill='none'%3E%3Cpath fill='%231F1F1F' d='M64 .206V37.64h-9.084V47H36.75v-9.359h9.084V18.924h-9.084V.206H64zm-36.334 0V37.64h-9.084V47H.415v-9.359h9.083V18.924H.415V.206h27.25z'/%3E%3C/svg%3E%0A");
+  }
+
   .page-break {
-    height: 3px;
+    height: 2px;
     background-image: linear-gradient(
       to right,
       black 57%,

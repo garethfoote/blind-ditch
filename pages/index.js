@@ -6,10 +6,10 @@ import { AnnouncementList } from "../components/AnnouncementList";
 import { HomepageArticle } from "../components/HomepageArticle";
 import { ProjectList } from "../components/ProjectList";
 import { SectionTitle } from "../components/SectionTitle";
+import { HomeHeader } from "../components/HomeHeader";
 import Nav from "../components/Nav/Nav";
 import { Text } from "../components/Text";
 import { getHomepage } from "../lib/api";
-import Marquee from "react-double-marquee";
 
 export default function Index({ hpProperties, preview }) {
   const announcements = hpProperties.page.homepageFields.connectedAnnouncements;
@@ -24,61 +24,26 @@ export default function Index({ hpProperties, preview }) {
         <Head>
           <title>Blind Ditch</title>
         </Head>
-        <Intro />
-        <div className="mx-auto px-5 max-w-md sm:max-w-lg mt-md">
-          {/* <div
-            className="font-main text-md md:text-lg leading-7 text-center"
-            dangerouslySetInnerHTML={{ __html: hpProperties.page.content }}
-          /> */}
-          <Text
-            isCentred={true}
-            makeLarge={true}
-            content={hpProperties.page.content}
-          />
+        <div className="mb-md sm:mb-2xl lg:mb-md">
+          <Intro />
         </div>
 
-        <div className="w-full h-12 mt-lg mb-lg sm:mb-xl">
-          <div className="h-full leading-12 whitespace-nowrap font-accent bg-mint relative px-lg border-t-2 border-b-2 border-black">
-            <Marquee direction="left">
-              <span className="h-12">
-                {/* <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 40 30"
-                >
-                  <path
-                    fill="#1F1F1F"
-                    d="M0 30V6h5.714V0h11.429v6h-5.714v12h5.714v12H0zm22.857 0V6h5.714V0H40v6h-5.714v12H40v12H22.857z"
-                  />
-                </svg> */}
-                Sad to leave Exeter (have discovered that all the best artists
-                are hiding there secretly constructing a creative utopia in
-                which art and ‘real-life’ switch roles intermittently).
-              </span>
-            </Marquee>
-          </div>
+        <div className="mx-auto px-5 max-w-2xl md:max-w-3xl mb-lg">
+          <HomeHeader intro={hpProperties.page.content} />
         </div>
 
-        {/* 
-        <div className="max-w-2xl mx-auto px-5 pb-lg  pt-md lg:pb-0">
-          <div className="lg:absolute lg:w-64 xl:w-80 right-10 top-10 h-auto">
-            <PullQuote
-              quote={
-                "<p>Sad to leave Exeter (have discovered that all the best artists are hiding there secretly constructing a creative utopia in which art and ‘real-life’ switch roles intermittently).</p>"
-              }
-            />
-          </div>
-        </div> */}
-        {/* <hr className="page-break mb-md sm:mb-xl mt-sm" /> */}
-        {/* <SectionTitle>Announcements</SectionTitle> */}
+        <hr className="page-break my-lg sm:mb-xl" />
 
         <AnnouncementList announcements={announcements} />
-        <hr className="invisible sm:visible page-break my-lg sm:my-xl" />
+
+        <hr className="page-break my-lg sm:my-xl" />
 
         <HomepageArticle page={article} />
+
         <hr className="page-break my-lg sm:my-xl" />
 
         <SectionTitle>Work</SectionTitle>
+
         <div className="text-center px-5 max-w-xl mx-auto">
           <Text
             isCentred={true}
