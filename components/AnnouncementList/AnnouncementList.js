@@ -4,22 +4,29 @@ import React, { useEffect, useState } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import styles from "./AnnouncementList.module.css";
 import classnames from "classnames";
+import { useSwipeable } from "react-swipeable";
 
 export const AnnouncementList = ({ announcements }) => {
   const [position, setPosition] = useState(0);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setDimensions({
-        height: window.innerHeight,
-        width: window.innerWidth,
-      });
-    };
+  const handlers = useSwipeable({
+    onSwipedLeft: (eventData) => {
+      // console.log("User Swiped!", eventData);
+      setPosition(position === 0 ? announcements.length - 1 : position - 1);
+    },
+    onSwipedRight: (eventData) => {
+      // console.log("User Swiped!", eventData);
+      setPosition(position === announcements.length - 1 ? 0 : position + 1);
+    },
   });
+  useEffect(() => {});
 
   return (
     <div className="relative">
-      <div className="container px-lg sm:px-xl mx-auto h-96 sm:h-112">
+      <div
+        {...handlers}
+        className="container px-lg sm:px-xl mx-auto h-96 sm:h-112"
+      >
         <div className="relative h-full">
           {announcements.map((announcement, idx) => {
             const details = announcement.announcementFields;
