@@ -48,7 +48,7 @@ export const ProjectListItem = ({
           className={classnames(
             styles.year,
             { invisible: showYear === false },
-            "self-end font-accent text-sm sm:text-md text-blue absolute tracking-wide pointer-events-none"
+            "font-accent text-sm sm:text-md text-blue absolute tracking-wide pointer-events-none"
           )}
           dateTime={yearStart}
         >

@@ -94,6 +94,13 @@
 
 /* Your own custom utilities */
 @layer utilities {
+  .text-back-blue strong {
+    @apply text-offwhite;
+    @apply font-normal;
+    @apply bg-blue;
+    padding: 3px 2px 2px;
+  }
+
   .image-loading {
     @apply bg-blue;
   }

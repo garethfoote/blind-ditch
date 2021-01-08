@@ -1,8 +1,18 @@
+.headerCols > div:nth-child(1) > div {
+  border-top: 1px theme("colors.black") solid;
+  @apply pt-md;
+}
+
 @screen sm {
   .headerCols {
     display: flex;
     flex-direction: row;
     width: 100%;
+  }
+
+  .headerCols > div:nth-child(1) > div {
+    border-top: none;
+    @apply pt-0;
   }
 
   .headerCols > div:nth-child(1) {

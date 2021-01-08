@@ -18,7 +18,6 @@
 @screen sm {
   .year {
     top: -5px;
-    left: -50px;
   }
 
   .year:after {

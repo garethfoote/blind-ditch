@@ -30,6 +30,7 @@ module.exports = {
         lg: "24px",
         xl: "48px",
         "2xl": "64px",
+        "3xl": "80px",
       },
       letterSpacing: {
         tighter: "-.04em",
@@ -67,6 +68,7 @@ module.exports = {
         "3/4": "75%",
       },
       height: {
+        112: "28rem",
         "1/2-screen": "50vh",
       },
       minHeight: {
