@@ -80,7 +80,10 @@ export default function Nav() {
         }}
       </CSSTransition>
       <button
-        className={classnames("sm:hidden z-40 w-3 left-0 ml-2 mt-2 absolute")}
+        className={classnames(
+          styles.arrowHitArea,
+          "md:hidden z-40 w-3 left-0 ml-2 mt-2 absolute"
+        )}
         onClick={() => setOpen(!isOpen)}
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 39 34">

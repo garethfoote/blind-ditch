@@ -46,7 +46,7 @@
   @apply static block;
 }
 
-@screen sm {
+@screen md {
   .nav,
   .nav-enter-active,
   .nav-enter-done,
@@ -57,4 +57,12 @@
     height: 113px;
     @apply absolute block;
   }
+}
+
+.arrowHitArea:after {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: block;
+  transform: translate(-5px, -15px);
 }

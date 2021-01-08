@@ -11,8 +11,8 @@
   }
 
   .headerCols > div:nth-child(1) > div {
-    border-top: none;
-    @apply pt-0;
+    /* border-top: none; */
+    /* @apply pt-0; */
   }
 
   .headerCols > div:nth-child(1) {
