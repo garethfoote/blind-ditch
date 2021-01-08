@@ -1,0 +1,25 @@
+@screen sm {
+  .headerCols {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .headerCols div:nth-child(1) {
+    flex: 7;
+  }
+
+  .headerCols div:nth-child(2) {
+    flex: 4;
+  }
+}
+
+@screen sm {
+  .headerCols div:nth-child(1) {
+    flex: 2;
+  }
+
+  .headerCols div:nth-child(2) {
+    flex: 1;
+  }
+}
