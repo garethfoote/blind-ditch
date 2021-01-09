@@ -108,6 +108,11 @@
     padding: 3px 2px 2px;
   }
 
+  .dash-underline {
+    border-bottom: 2px dashed theme("colors.mint.dark");
+    padding: 3px 2px 2px;
+  }
+
   .image-loading {
     @apply bg-blue;
   }
