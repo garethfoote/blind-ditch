@@ -26,6 +26,12 @@
     @apply text-xl;
   }
 
+  strong {
+    @apply text-offwhite;
+    @apply bg-blue;
+    padding: 5px 2px 3px;
+  }
+
   @font-face {
     font-family: "TerminalGrotesque";
     src: url("/font/terminal-grotesque.eot");
@@ -140,11 +146,11 @@
     @apply font-accent uppercase tracking-wide;
   }
 
-  .strong-block strong {
+  /* .strong-block strong {
     @apply text-offwhite;
-    @apply bg-black;
+    @apply bg-blue;
     padding: 5px 2px 3px;
-  }
+  } */
 
   @screen sm {
     .image-shadow-sm img {

@@ -14,10 +14,19 @@
   @apply text-sm leading-7;
 }
 
+.text p {
+  @apply mb-md;
+}
+
 .text strong {
-  @apply text-offwhite;
-  @apply font-normal;
-  @apply bg-blue;
+  @apply text-black;
+  @apply font-bold;
+  @apply bg-transparent;
+  padding: 3px 2px 2px;
+}
+
+.text a {
+  border-bottom: 2px dashed theme("colors.mint.dark");
   padding: 3px 2px 2px;
 }
 
