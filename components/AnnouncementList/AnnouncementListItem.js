@@ -18,7 +18,7 @@ export const AnnouncementListItem = ({
   return (
     <article className="relative h-full">
       <div className="z-20 relative w-2/3 sm:w-1/2 h-full lg:pl-xl">
-        <div className="absolute top-1/2 transform -translate-y-1/2">
+        <div className="absolute top-1/2 left-6 transform -translate-y-1/2">
           <span className="py-1 px-2 title-accent text-xs md:text-base bg-yellow">
             {type} {date && " | "}
             {date && <time dateTime={date}>{date}</time>}

@@ -32,7 +32,7 @@
 }
 
 .arrow svg {
-  fill: theme("colors.mint");
+  fill: theme("colors.mint.DEFAULT");
 }
 
 .arrow:after {
