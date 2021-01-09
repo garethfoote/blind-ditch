@@ -41,7 +41,7 @@ export const ProjectPageTitle = ({
         </h2>
         <h3
           className={classnames(
-            "text-md sm:text-lg -mt-2 sm:-mt-4",
+            "text-lg sm:text-xl -mt-2 sm:-mt-4",
             styles.date
           )}
         >
