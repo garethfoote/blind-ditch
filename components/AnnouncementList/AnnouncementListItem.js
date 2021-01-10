@@ -39,7 +39,7 @@ export const AnnouncementListItem = ({
       </div>
 
       <div className="absolute -inset-6 sm:top-0 sm:bottom-0 sm:left-2/5 md:left-1/2 sm:right-4 lg:pr-xl z-10">
-        <div className="relative w-full h-full image-shadow overflow-hidden sm:overflow-visible px-5">
+        <div className="relative w-full h-full image-shadow image-shadow-bl overflow-hidden sm:overflow-visible px-5">
           {image ? (
             <Image
               className="z-10 image-loading"

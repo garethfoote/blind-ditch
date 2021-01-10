@@ -22,16 +22,14 @@ export const HomepageArticle = ({ page }) => {
 
   return (
     <div className="mx-auto px-5 my-md max-w-lg md:max-w-xl">
-      <div className="h-96">
-        <div className="relative w-full h-full image-shadow image-shadow-bl px-5">
-          <Image
-            className="image-loading"
-            alt={image.altText || page.title || image.title}
-            src={image.sourceUrl}
-            layout="fill"
-            objectFit="cover"
-          />
-        </div>
+      <div className="w-full h-112 image-shadow image-shadow-bl">
+        <Image
+          className="image-loading"
+          alt={image.altText || page.title || image.title}
+          src={image.sourceUrl}
+          layout="fill"
+          objectFit="cover"
+        />
       </div>
       <div className="max-w-xs sm:max-w-none sm:w-100 bg-offwhite relative z-30 -top-4 left-4 sm:left-1/10">
         <Link as={`/page/${page.slug}`} href="/page/[slug]">

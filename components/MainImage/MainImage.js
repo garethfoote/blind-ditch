@@ -16,22 +16,20 @@ export const MainImage = ({
   return (
     <Container max={isFirst ? "4xl" : maxWidth} spacing="xl">
       <div
-        className={classnames(
-          "image-shadow",
-          { "image-shadow-bl": contextPos === "br" },
-          styles.mainimage
-        )}
+        className={classnames("image-shadow", {
+          "image-shadow-bl": contextPos === "br",
+          "image-shadow-tl": contextPos === "tr",
+          "image-shadow-tr": contextPos === "tl",
+        })}
       >
-        <span>
-          <Image
-            className="image-loading"
-            src={image.sourceUrl}
-            width={image.mediaDetails.width}
-            height={image.mediaDetails.height}
-            layout="responsive"
-            alt={image.altText || image.title}
-          />
-        </span>
+        <Image
+          className="image-loading"
+          src={image.sourceUrl}
+          width={image.mediaDetails.width}
+          height={image.mediaDetails.height}
+          layout="responsive"
+          alt={image.altText || image.title}
+        />
         {context && (
           <div
             className={classnames(

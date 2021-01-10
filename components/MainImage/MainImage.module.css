@@ -1,21 +1,3 @@
-.mainimage {
-  @apply relative;
-}
-
-/* .mainimage:after {
-  content: "";
-  @apply absolute top-4 left-4;
-  @apply w-full h-full;
-  @apply bg-offwhite-dark;
-  @apply z-0;
-} */
-
-/* .mainimage img {
-  @apply z-10;
-  @apply bg-blue;
-  @apply border-2 border-black border-solid !important;
-} */
-
 .context {
   @apply absolute;
   @apply z-10;

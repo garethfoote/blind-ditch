@@ -153,6 +153,10 @@
     @apply font-accent uppercase tracking-wide;
   }
 
+  .image-shadow {
+    @apply relative;
+  }
+
   .image-shadow img {
     @apply z-10;
     @apply bg-blue;
