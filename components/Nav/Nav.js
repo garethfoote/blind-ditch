@@ -82,7 +82,7 @@ export default function Nav() {
       <button
         className={classnames(
           styles.arrowHitArea,
-          "md:hidden z-40 w-3 left-0 ml-2 mt-2 absolute"
+          "md:hidden z-40 w-3 left-0 ml-2 mt-2 absolute outline-none"
         )}
         onClick={() => setOpen(!isOpen)}
       >

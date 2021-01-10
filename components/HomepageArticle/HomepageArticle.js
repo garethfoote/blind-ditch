@@ -31,10 +31,10 @@ export const HomepageArticle = ({ page }) => {
           objectFit="cover"
         />
       </div>
-      <div className="max-w-xs sm:max-w-none sm:w-100 bg-offwhite relative z-30 -top-4 left-4 sm:left-1/10">
+      <div className="bg-offwhite p-4 max-w-xs sm:max-w-none sm:w-100 bg-offwhite relative z-30 -top-4 left-4 sm:left-1/10">
         <Link as={`/page/${page.slug}`} href="/page/[slug]">
           <a>
-            <h2 className="text-xl sm:text-2xl leading-tight tracking-wider uppercase underline bg-offwhite p-4 box-content ">
+            <h2 className="title-underline inline text-xl sm:text-2xl leading-normal tracking-wider uppercase ">
               {page.title}
             </h2>
           </a>

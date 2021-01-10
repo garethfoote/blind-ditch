@@ -24,11 +24,13 @@ export const AnnouncementListItem = ({
             {date && <time dateTime={date}>{date}</time>}
           </span>
 
-          <Link as={as} href={href}>
-            <a className="max-w-md block hover:underline text-lg sm:text-xl bg-offwhite bg-opacity-25 rounded-lg font-normal text-black my-sm mb-xl pr-5 max-w-sm">
-              {title}
-            </a>
-          </Link>
+          <div className="max-w-md block w-full my-sm mb-xl pr-5">
+            <Link as={as} href={href}>
+              <a className="inline p-1 hover:underline text-lg sm:text-xl bg-offwhite bg-opacity-40 font-normal text-black">
+                {title}
+              </a>
+            </Link>
+          </div>
 
           <Button as={as} href={href}>
             {type.toLowerCase() === "call for participation"
@@ -39,7 +41,7 @@ export const AnnouncementListItem = ({
       </div>
 
       <div className="absolute -inset-6 sm:top-0 sm:bottom-0 sm:left-2/5 md:left-1/2 sm:right-4 lg:pr-xl z-10">
-        <div className="sm:max-w-md relative w-full h-full image-shadow image-shadow-bl overflow-hidden sm:overflow-visible px-5">
+        <div className="sm:max-w-md relative w-full h-full image-shadow-sm image-shadow-sm-br overflow-hidden sm:overflow-visible px-5">
           {image ? (
             <Image
               className="z-10 image-loading"
