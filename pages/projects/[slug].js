@@ -28,7 +28,7 @@ export default function Project({ project }) {
       )}
     </>
   );
-
+  console.log(project.content);
   return (
     <Layout>
       {router.isFallback ? (
@@ -51,17 +51,20 @@ export default function Project({ project }) {
                 description={project.content}
                 heroImage={project.featuredImage?.node}
               />
+
               <div
                 className={classnames({
                   "relative -top-20": project.featuredImage != null,
                 })}
               >
-                <div className="px-6 sm:12">
-                  <div
-                    dangerouslySetInnerHTML={{ __html: project.content }}
-                    className="strong-block bg-offwhite border-0 border-black border-solid p-4 mx-auto text-center max-w-sm sm:max-w-md text-sm sm:text-md"
-                  />
-                </div>
+                {project.content && (
+                  <div className="px-6 sm:12">
+                    <div
+                      dangerouslySetInnerHTML={{ __html: project.content }}
+                      className="strong-block bg-offwhite border-0 border-black border-solid p-4 mx-auto text-center max-w-sm sm:max-w-md text-sm sm:text-md"
+                    />
+                  </div>
+                )}
                 <Widgets widgets={project.projectFields.flexibleContent} />
               </div>
             </article>
