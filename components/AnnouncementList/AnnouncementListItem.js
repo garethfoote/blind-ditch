@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Button } from "../Button";
 
-// { details, slug, title }
 export const AnnouncementListItem = ({
   slug,
   title,
@@ -30,15 +30,11 @@ export const AnnouncementListItem = ({
             </a>
           </Link>
 
-          <Link as={as} href={href}>
-            <a className="button my-sm">
-              <span className="title-accent p-2 bg-mint border border-black border-solid">
-                {type.toLowerCase() === "call for participation"
-                  ? "Take Part"
-                  : "Read More"}
-              </span>
-            </a>
-          </Link>
+          <Button as={as} href={href}>
+            {type.toLowerCase() === "call for participation"
+              ? "Take Part"
+              : "Read More"}
+          </Button>
         </div>
       </div>
 

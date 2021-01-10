@@ -8,7 +8,7 @@ export const HomeHeader = ({ intro }) => {
   return (
     <div className={classnames(styles.headerCols)}>
       <div className="sm:mx-0 pb-lg sm:pb-0 sm:pr-lg">
-        <div className="text-base leading-7 sm:text-md sm:leading-8 text-back-blue">
+        <div className="text-base leading-7 sm:text-md sm:leading-8 text-bg-blue">
           <div className="mb-sm" dangerouslySetInnerHTML={{ __html: intro }} />
           <Link href="/page/about">
             <a className="dash-underline">Read More</a>

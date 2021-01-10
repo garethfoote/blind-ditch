@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "../container";
 import { Text } from "../Text";
+import { Button } from "../Button";
 import { proportionalScale } from "../../lib/utils";
 
 import styles from "./HomepageArticle.module.css";
@@ -44,13 +45,9 @@ export const HomepageArticle = ({ page }) => {
       <div className="max-w-xs sm:max-w-none sm:w-100 bg-offwhite relative -top-4 left-4 sm:left-1/10 p-4 pt-0">
         <Text content={details.summary} />
         <div className="mt-lg">
-          <Link as={`/page/${page.slug}`} href="/page/[slug]">
-            <a className="button">
-              <span className="title-accent p-2 bg-mint border border-black border-solid">
-                Read More
-              </span>
-            </a>
-          </Link>
+          <Button as={`/page/${page.slug}`} href="/page/[slug]">
+            Read More
+          </Button>
         </div>
       </div>
     </div>

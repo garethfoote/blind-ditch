@@ -5,6 +5,8 @@ import { Intro } from "../components/Intro";
 import { AnnouncementList } from "../components/AnnouncementList";
 import { HomepageArticle } from "../components/HomepageArticle";
 import { ProjectList } from "../components/ProjectList";
+import { Button } from "../components/Button";
+
 import { SectionTitle } from "../components/SectionTitle";
 import { HomeHeader } from "../components/HomeHeader";
 import Nav from "../components/Nav/Nav";
@@ -50,11 +52,11 @@ export default function Index({ hpProperties, preview }) {
             content="Short description or reminder of the type of work you ususally embark on with a reminder that there is a lot more if people visit the archive or explore by media type."
           />
           <div className="text-center mb-xl">
-            <Link href="/projects">
-              <a className="button my-md relative top-4">
-                <span className="title-accent px-8">View Full Archive</span>
-              </a>
-            </Link>
+            <div className="mb-md mt-lg">
+              <Button href="/projects">
+                <span className="px-8">View Full Archive</span>
+              </Button>
+            </div>
           </div>
         </div>
         <div className="container mx-auto py-5 pr-5 pl-2">

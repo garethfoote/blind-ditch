@@ -93,14 +93,20 @@
 /* Stop purging. */
 
 /* Write you own custom component styles here */
+@layer components {
+  .highlight-box-blue {
+    @apply font-accent;
+    @apply bg-mint;
+    @apply border-2 border-black;
+  }
 
-/* Start purging... */
-@tailwind utilities;
-/* Stop purging. */
+  .highlight-box-mint {
+    @apply font-accent;
+    @apply bg-mint;
+    @apply border-2 border-black;
+  }
 
-/* Your own custom utilities */
-@layer utilities {
-  .text-back-blue strong {
+  .text-bg-blue strong {
     @apply text-offwhite;
     @apply font-bold;
     @apply bg-blue;
@@ -108,6 +114,28 @@
     padding: 3px 2px 2px;
   }
 
+  .button-shadow {
+    @apply relative;
+  }
+
+  .button-shadow:after {
+    content: "";
+    top: 0;
+    left: 8px;
+    height: calc(100% + theme("spacing.2") * 2);
+    @apply absolute;
+    @apply w-full;
+    @apply bg-black;
+    @apply z-0;
+  }
+}
+
+/* Start purging... */
+@tailwind utilities;
+/* Stop purging. */
+
+/* Your own custom utilities */
+@layer utilities {
   .dash-underline {
     border-bottom: 2px dashed theme("colors.mint.dark");
     padding: 3px 2px 2px;
@@ -121,41 +149,9 @@
     @apply border-2 border-black border-solid !important;
   }
 
-  .button {
-    @apply relative;
-  }
-
-  .button span {
-    @apply relative z-10;
-    @apply title-accent  bg-mint border border-black border-solid py-2 px-6;
-  }
-
-  .button:after {
-    content: "";
-    top: 0;
-    left: 8px;
-    height: calc(100% + theme("spacing.2") * 2);
-    @apply absolute;
-    @apply w-full;
-    @apply bg-black;
-    @apply z-0;
-  }
-
-  .button:hover {
-    transition-property: transform;
-    transition-duration: 400ms;
-    transform: translate(5px, 5px);
-  }
-
   .title-accent {
     @apply font-accent uppercase tracking-wide;
   }
-
-  /* .strong-block strong {
-    @apply text-offwhite;
-    @apply bg-blue;
-    padding: 5px 2px 3px;
-  } */
 
   @screen sm {
     .image-shadow-sm img {
