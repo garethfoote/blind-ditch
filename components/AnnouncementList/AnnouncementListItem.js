@@ -17,7 +17,7 @@ export const AnnouncementListItem = ({
   const href = connected ? `/projects/[slug]` : `/announcements/[slug]`;
   return (
     <article className="relative h-full">
-      <div className="z-20 relative w-2/3 sm:w-1/2 h-full lg:pl-xl">
+      <div className="z-20 relative w-11/12 sm:w-1/2 h-full lg:pl-xl">
         <div className="absolute top-1/2 left-6 sm:-left-4 md:left-auto md:right-6 transform -translate-y-1/2">
           <span className="py-1 px-2 title-accent text-xs md:text-base bg-yellow">
             {type} {date && " | "}
@@ -25,7 +25,7 @@ export const AnnouncementListItem = ({
           </span>
 
           <Link as={as} href={href}>
-            <a className="max-w-md block hover:underline text-xl bg-offwhite bg-opacity-25 rounded-lg font-normal text-black my-sm mb-xl pr-5 max-w-sm">
+            <a className="max-w-md block hover:underline text-lg sm:text-xl bg-offwhite bg-opacity-25 rounded-lg font-normal text-black my-sm mb-xl pr-5 max-w-sm">
               {title}
             </a>
           </Link>
