@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import styles from "./Intro.module.css";
 
-export const Intro = () => {
+export const Logo = () => {
   return (
     <section>
       <div className="flex items-center justify-center relative z-10 h-16">

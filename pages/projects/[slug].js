@@ -4,7 +4,7 @@ import { getProject, getAllProjects } from "../../lib/api";
 import Head from "next/head";
 import { Widgets } from "../../components/Widgets";
 import Layout from "../../components/layout";
-import { Intro } from "../../components/Intro";
+import { Logo } from "../../components/Logo";
 import { extract } from "oembed-parser";
 import { ProjectPageTitle } from "../../components/ProjectPageTitle";
 import classnames from "classnames";
@@ -42,7 +42,7 @@ export default function Project({ project }) {
             <div className="relative z-40">
               <Nav />
             </div>
-            <Intro />
+            <Logo />
             <article>
               <ProjectPageTitle
                 title={project.title}

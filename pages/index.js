@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import Layout from "../components/layout";
-import { Intro } from "../components/Intro";
+import { Logo } from "../components/Logo";
 import { AnnouncementList } from "../components/AnnouncementList";
 import { HomepageArticle } from "../components/HomepageArticle";
 import { ProjectList } from "../components/ProjectList";
@@ -27,7 +27,7 @@ export default function Index({ hpProperties, preview }) {
           <title>Blind Ditch</title>
         </Head>
         <div className="mb-md md:mb-2xl lg:mb-lg">
-          <Intro />
+          <Logo />
         </div>
 
         <div className="mx-auto px-5 mb-lg max-w-2xl md:max-w-3xl lg:max-w-4xl ">

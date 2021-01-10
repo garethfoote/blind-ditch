@@ -4,7 +4,7 @@ import Container from "../../components/container";
 import Layout from "../../components/layout";
 import { getAnnouncement, getAnnouncements } from "../../lib/api";
 import Head from "next/head";
-import { Intro } from "../../components/Intro";
+import { Logo } from "../../components/Logo";
 
 export default function Project({ announcement }) {
   const router = useRouter();
@@ -26,7 +26,7 @@ export default function Project({ announcement }) {
             <Head>
               <title>{announcement.title}</title>
             </Head>
-            <Intro />
+            <Logo />
             <h2>{details.type}</h2>
             {details.date && (
               <time dateTime={details.date}>{details.date}</time>

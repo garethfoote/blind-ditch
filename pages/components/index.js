@@ -2,10 +2,8 @@ import Head from "next/head";
 import Image from "next/image";
 import Layout from "../../components/layout";
 import Container from "../../components/container";
-import { Intro } from "../../components/Intro";
+import { Logo } from "../../components/Logo";
 import { ProjectList } from "../../components/ProjectList";
-// import { HomepageArticle } from "../../components/HomepageArticle";
-// import { AnnouncementLink } from "../../components/Announcements";
 
 import { SectionTitle } from "../../components/SectionTitle";
 import { ProjectPageTitle } from "../../components/ProjectPageTitle";
@@ -27,7 +25,7 @@ export default function Components() {
           <title>Blind Ditch</title>
         </Head>
 
-        <Intro />
+        <Logo />
 
         <ProjectPageTitle
           title="This City's Centre"
