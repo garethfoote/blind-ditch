@@ -141,6 +141,12 @@
     padding: 3px 2px 2px;
   }
 
+  @sm screen {
+    .title-underline-hover:hover {
+      border-bottom: 2px solid theme("colors.black");
+    }
+  }
+
   .title-underline {
     border-bottom: 2px solid theme("colors.black");
   }
@@ -151,10 +157,6 @@
 
   .image-border img {
     @apply border-2 border-black border-solid !important;
-  }
-
-  .image-shadow-no-sm-border img {
-    @apply border-0 !important;
   }
 
   .title-accent {

@@ -49,10 +49,10 @@ export default function Nav() {
                 </li>
                 <li
                   className={classnames(styles.linkItem, {
-                    [styles.active]: router.pathname == "/about",
+                    [styles.active]: router.pathname == "/page/about",
                   })}
                 >
-                  <Link href="/">
+                  <Link href="/page/about">
                     <a>About</a>
                   </Link>
                 </li>

@@ -28,13 +28,12 @@ export default function Project({ project }) {
       )}
     </>
   );
-  console.log(project.content);
   return (
     <Layout>
       {router.isFallback ? (
         <h1>Loading…</h1>
       ) : (
-        <div>
+        <>
           <Head>
             <title>{project.title}</title>
           </Head>
@@ -69,7 +68,7 @@ export default function Project({ project }) {
               </div>
             </article>
           </div>
-        </div>
+        </>
       )}
     </Layout>
   );

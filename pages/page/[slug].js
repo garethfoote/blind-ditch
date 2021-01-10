@@ -1,7 +1,10 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-import Container from "../../components/container";
 import Layout from "../../components/layout";
+import Nav from "../../components/Nav/Nav";
+import { SectionTitle } from "../../components/SectionTitle";
+import { Text } from "../../components/Text";
+import { Logo } from "../../components/Logo";
 import { getPage, getPages } from "../../lib/api";
 import Head from "next/head";
 
@@ -14,20 +17,25 @@ export default function Page({ page }) {
 
   return (
     <Layout>
-      <Container>
-        {router.isFallback ? (
-          <h1>Loading…</h1>
-        ) : (
-          <article>
-            {" "}
-            <Head>
-              <title>{page.title}</title>
-            </Head>
-            <h1>{page.title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: page.content }} />
-          </article>
-        )}
-      </Container>
+      {router.isFallback ? (
+        <h1>Loading…</h1>
+      ) : (
+        <>
+          <Head>
+            <title>{page.title}</title>
+          </Head>
+          <div className="relative">
+            <div className="relative z-40">
+              <Nav />
+            </div>
+            <Logo />
+            <article class="mx-auto px-5 my-xl max-w-2xl">
+              <SectionTitle>{page.title}</SectionTitle>
+              <Text content={page.content} />
+            </article>
+          </div>
+        </>
+      )}
     </Layout>
   );
 }
