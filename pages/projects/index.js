@@ -12,15 +12,13 @@ export default function Index({ allProjects: { nodes } }) {
   return (
     <>
       <Layout>
-        <Nav />
         <Head>
           <title>Blind Ditch</title>
         </Head>
-        <div className="mb-md md:mb-2xl lg:mb-lg">
-          <Logo />
-        </div>
+        <Nav />
+        <Logo />
 
-        <div className="container mx-auto mb-xl p-5">
+        <div className="container mx-auto mb-xl">
           <SectionTitle>Work</SectionTitle>
           <div className="text-center px-5 max-w-xl mx-auto">
             <Text

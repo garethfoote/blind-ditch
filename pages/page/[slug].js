@@ -24,16 +24,12 @@ export default function Page({ page }) {
           <Head>
             <title>{page.title}</title>
           </Head>
-          <div className="relative">
-            <div className="relative z-40">
-              <Nav />
-            </div>
-            <Logo />
-            <article className="mx-auto px-5 my-xl max-w-2xl">
-              <SectionTitle>{page.title}</SectionTitle>
-              <Text content={page.content} />
-            </article>
-          </div>
+          <Nav />
+          <Logo />
+          <article className="mx-auto px-5 max-w-2xl">
+            <SectionTitle>{page.title}</SectionTitle>
+            <Text content={page.content} />
+          </article>
         </>
       )}
     </Layout>

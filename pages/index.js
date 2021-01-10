@@ -21,10 +21,10 @@ export default function Index({ hpProperties, preview }) {
   return (
     <>
       <Layout preview={preview}>
-        <Nav />
         <Head>
           <title>Blind Ditch</title>
         </Head>
+        <Nav />
         <div className="mb-md md:mb-2xl lg:mb-lg">
           <Logo />
         </div>

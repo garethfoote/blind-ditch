@@ -18,6 +18,7 @@ export const HomeHeader = ({ intro }) => {
       </div>
       <div className="sm:mx-0">
         <HighlightBox
+          hasShadow={true}
           isQuote={true}
           html={
             "<p>Sad to leave Exeter (have discovered that all the best artists are hiding there secretly constructing a creative utopia in which art and ‘real-life’ switch roles intermittently).</p>"
