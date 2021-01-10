@@ -141,7 +141,7 @@
     padding: 3px 2px 2px;
   }
 
-  @sm screen {
+  @screen sm {
     .title-underline-hover:hover {
       border-bottom: 2px solid theme("colors.black");
     }

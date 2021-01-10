@@ -65,13 +65,14 @@ export const AnnouncementList = ({ announcements }) => {
           })}
         </div>
       </div>
-      <div className="absolute z-20 top-1/2 w-full h-8">
-        <div className="relative w-full">
+      <div className="absolute top-1/2 w-full h-8">
+        <div className="justify-center items-center relative w-full">
           <button
             className={classnames(
               styles.arrow,
               styles.arrowLeft,
-              "w-8 md:w-12 absolute top-0 left-1 sm:left-2 lg:left-8 xl:left-4"
+              // "w-8 md:w-12 relative"
+              "z-20 w-8 md:w-12 absolute top-0 left-1 sm:left-2 lg:left-2 xl:left-4"
             )}
             onClick={() =>
               setPosition(
@@ -83,12 +84,13 @@ export const AnnouncementList = ({ announcements }) => {
               <path d="M18.625 0c-2.305 4.74-4.461 8.296-6.469 10.667H40v4.666H12.156c2.008 2.37 4.164 5.926 6.469 10.667H14.72C10.037 20.593 5.131 16.593 0 14v-2C5.13 9.481 10.037 5.481 14.721 0h3.904z" />
             </svg>
           </button>
-
+          {/* <div className="container px-lg sm:px-xl mx-auto"></div> */}
           <button
             className={classnames(
               styles.arrow,
               styles.arrowRight,
-              "w-8 md:w-12 absolute top-0 right-1 sm:right-2 lg:right-8 xl:right-4"
+              // "w-8 md:w-12 relative"
+              "z-20 w-8 md:w-12 absolute top-0 right-1 sm:right-2 lg:right-8 xl:right-4"
             )}
             onClick={() =>
               setPosition(

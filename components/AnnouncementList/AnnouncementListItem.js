@@ -17,7 +17,7 @@ export const AnnouncementListItem = ({
   const href = connected ? `/projects/[slug]` : `/announcements/[slug]`;
   return (
     <article className="relative h-full">
-      <div className="z-20 relative w-11/12 sm:w-1/2 h-full lg:pl-xl">
+      <div className="z-20 relative w-11/12 sm:w-3/5 md:w-1/2 h-full md:ml-md">
         <div className="absolute top-1/2 left-6 sm:-left-4 md:left-auto md:right-6 transform -translate-y-1/2">
           <span className="py-1 px-2 title-accent text-xs md:text-base bg-yellow">
             {type} {date && " | "}

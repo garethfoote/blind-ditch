@@ -29,7 +29,7 @@ export default function Page({ page }) {
               <Nav />
             </div>
             <Logo />
-            <article class="mx-auto px-5 my-xl max-w-2xl">
+            <article className="mx-auto px-5 my-xl max-w-2xl">
               <SectionTitle>{page.title}</SectionTitle>
               <Text content={page.content} />
             </article>
