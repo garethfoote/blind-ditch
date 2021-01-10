@@ -153,34 +153,6 @@
     @apply font-accent uppercase tracking-wide;
   }
 
-  @screen sm {
-    .image-shadow-sm img {
-      @apply z-10;
-      @apply bg-blue;
-      @apply border-2 border-black border-solid !important;
-    }
-
-    .image-shadow-sm:after {
-      content: "";
-      @apply absolute top-4 left-4;
-      @apply w-full h-full;
-      @apply bg-offwhite-dark;
-      @apply z-0;
-    }
-
-    .image-shadow-sm-bl:after {
-      @apply top-4 -left-4;
-    }
-
-    .image-shadow-sm-tl:after {
-      @apply -top-4 -left-4;
-    }
-
-    .image-shadow-sm-tr:after {
-      @apply -top-4 left-4;
-    }
-  }
-
   .image-shadow img {
     @apply z-10;
     @apply bg-blue;
