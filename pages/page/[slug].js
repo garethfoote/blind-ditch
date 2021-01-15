@@ -5,6 +5,7 @@ import Nav from "../../components/Nav/Nav";
 import { SectionTitle } from "../../components/SectionTitle";
 import { Text } from "../../components/Text";
 import { Logo } from "../../components/Logo";
+import { MainImage } from "../../components/MainImage";
 import { getPage, getPages } from "../../lib/api";
 import Head from "next/head";
 
@@ -25,12 +26,21 @@ export default function Page({ page }) {
             <title>{page.title}</title>
           </Head>
           <Nav />
-          <div className="flex items-center justify-center h-20 mb-sm md:h-28 md:mb-md lg:h-24 lg:mb-sm">
+          <div className="flex items-center justify-center h-20 mb-sm md:h-20 md:mb-md">
             <Logo />
           </div>
           <article className="mx-auto px-5 max-w-2xl">
             <SectionTitle>{page.title}</SectionTitle>
-            <Text content={page.content} />
+            {page.featuredImage && (
+              <MainImage
+                contextPos="bl"
+                maxWidth="4xl"
+                image={page.featuredImage.node}
+              />
+            )}
+            <div class="mx-auto px-5 my-xl max-w-2xl">
+              <Text content={page.content} />
+            </div>
           </article>
         </>
       )}
