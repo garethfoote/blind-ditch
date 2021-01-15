@@ -6,7 +6,7 @@
   height: 10px;
   width: 10px;
   left: 5px;
-  @apply inline-block relative;
+  @apply inline-block relative outline-none;
 }
 
 .linkItem {
