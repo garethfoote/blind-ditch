@@ -9,6 +9,20 @@
     @apply text-black;
   }
 
+  height,
+  body {
+    @apply h-full;
+  }
+
+  main {
+    min-height: calc(100vh - theme("height.56"));
+    @apply mb-xl;
+  }
+
+  footer {
+    @apply h-56;
+  }
+
   h1,
   h2,
   h3,

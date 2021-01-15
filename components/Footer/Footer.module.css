@@ -1,6 +1,0 @@
-.footer {
-  @apply h-56;
-  /* @apply h-56;
-  position: sticky;
-  top: calc(100vh - theme("height.56")); */
-}
