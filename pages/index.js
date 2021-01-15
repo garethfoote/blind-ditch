@@ -29,7 +29,7 @@ export default function Index({ hpProperties, preview }) {
           <Logo />
         </div>
 
-        <div className="mx-auto px-5 mb-lg max-w-2xl md:max-w-3xl lg:max-w-4xl ">
+        <div className="mx-auto px-5 mb-xl max-w-2xl md:max-w-3xl lg:max-w-4xl ">
           <HomeHeader intro={hpProperties.page.content} />
         </div>
 
@@ -37,7 +37,7 @@ export default function Index({ hpProperties, preview }) {
 
         <AnnouncementList announcements={announcements} />
 
-        <hr className="page-break my-lg sm:my-xl" />
+        <hr className="page-break mt-lg mb-xl sm:my-xl" />
 
         <HomepageArticle page={article} />
 
