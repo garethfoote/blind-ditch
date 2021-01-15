@@ -282,6 +282,32 @@
     white-space: nowrap;
   }
 }
+
+#nprogress .bar {
+  background: theme("colors.mint.DEFAULT");
+  height: 2px;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px theme("colors.mint.DEFAULT"),
+    0 0 5px theme("colors.mint.DEFAULT");
+  opacity: 1;
+}
+
+#nprogress .spinner {
+  /* display: none; */
+  top: 10px;
+  right: 15px;
+}
+
+#nprogress .spinner-icon {
+  width: 12px;
+  height: 12px;
+
+  border-top-color: theme("colors.mint.DEFAULT");
+  border-left-color: theme("colors.mint.DEFAULT");
+}
+
 /* 
 .has-text-align-left {
   @apply text-left;
