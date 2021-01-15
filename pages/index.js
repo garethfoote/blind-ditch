@@ -25,7 +25,8 @@ export default function Index({ hpProperties, preview }) {
           <title>Blind Ditch</title>
         </Head>
         <Nav />
-        <div className="mb-md md:mb-2xl lg:mb-lg">
+        <div className="flex items-center justify-center h-20 mb-sm md:h-32 lg:h-24 lg:mb-sm">
+          {/* <div className="mb-md md:mb-2xl lg:mb-lg"> */}
           <Logo />
         </div>
 
