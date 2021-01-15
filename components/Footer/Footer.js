@@ -1,9 +1,9 @@
-import Container from "./container";
-import { EXAMPLE_PATH } from "../lib/constants";
+import classnames from "classnames";
+import styles from "./Footer.module.css";
 
-export default function Footer() {
+export const Footer = () => {
   return (
-    <footer className="bg-black h-56 w-full">
+    <footer className={classnames(styles.footer, "bg-black w-full")}>
       <div className="flex h-full justify-center items-center container mx-auto">
         <div className="flex-grow w-1/2">
           1
@@ -20,4 +20,4 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+};
