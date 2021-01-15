@@ -15,9 +15,9 @@ export const ProjectPageTitle = ({
   return (
     <div
       className={classnames(
-        { "h-1/2-screen": heroImage != null },
+        { "h-1/2-screen min-h-100": heroImage != null },
         { "mb-xl": heroImage == null },
-        "mx-auto px-5 mt-md max-w-2xl"
+        "mx-auto px-5 max-w-2xl"
       )}
     >
       {heroImage && (

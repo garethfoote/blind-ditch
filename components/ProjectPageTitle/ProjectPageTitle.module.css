@@ -1,16 +1,18 @@
 .image {
-  height: calc(50vh + 4rem);
+  height: calc(50vh);
+  min-height: 29rem;
 }
 
 .image:before {
   content: "";
   @apply block w-full h-full;
-  @apply bg-offwhite;
+  @apply bg-offwhite-dark;
+  /* @apply theme("color.offwhite.dark"); */
   @apply absolute top-0 left-0;
 }
 
 .imageTint {
-  @apply opacity-75;
+  @apply opacity-60;
 }
 
 .title {

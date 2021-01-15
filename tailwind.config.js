@@ -73,12 +73,16 @@ module.exports = {
         "3/4": "75%",
       },
       height: {
+        100: "25rem",
         112: "28rem",
+        116: "29rem",
         "1/2-screen": "50vh",
       },
       minHeight: {
         64: "16rem",
         80: "20rem",
+        100: "25rem",
+        116: "29rem",
       },
       lineHeight: {
         12: "3rem",
