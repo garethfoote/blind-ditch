@@ -11,15 +11,12 @@ export const AnnouncementList = ({ announcements }) => {
 
   const handlers = useSwipeable({
     onSwipedLeft: (eventData) => {
-      // console.log("User Swiped!", eventData);
       setPosition(position === 0 ? announcements.length - 1 : position - 1);
     },
     onSwipedRight: (eventData) => {
-      // console.log("User Swiped!", eventData);
       setPosition(position === announcements.length - 1 ? 0 : position + 1);
     },
   });
-  useEffect(() => {});
 
   return (
     <div className="relative">

@@ -52,6 +52,7 @@ module.exports = {
         base: "1.125rem" /* 18 */,
         md: "1.375rem" /* 22 */,
         lg: "1.5rem" /* 24 */,
+        "lg-xl": "1.75rem" /* 28 */,
         xl: "2rem" /* 32 */,
         "2xl": "3rem" /* 48 */,
         "3xl": "4.5rem" /* 72 */,

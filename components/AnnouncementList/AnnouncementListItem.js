@@ -26,7 +26,7 @@ export const AnnouncementListItem = ({
 
           <div className="max-w-md block w-full my-sm mb-xl pr-5">
             <Link as={as} href={href}>
-              <a className="title-underline-hover inline p-1 text-lg sm:text-xl bg-offwhite bg-opacity-40 font-normal text-black">
+              <a className="title-underline-hover inline p-1 text-lg-xl sm:text-xl bg-offwhite bg-opacity-60 font-normal text-black">
                 {title}
               </a>
             </Link>
