@@ -60,7 +60,7 @@ export default function Project({ project }) {
                   <div className="px-6 sm:12">
                     <div
                       dangerouslySetInnerHTML={{ __html: project.content }}
-                      className="strong-block bg-offwhite border-0 border-black border-solid p-4 mx-auto text-center max-w-sm sm:max-w-md text-sm sm:text-md"
+                      className="strong-block shadow bg-white border-2 border-blue border-solid p-4 mx-auto text-center max-w-sm sm:max-w-md text-sm sm:text-md"
                     />
                   </div>
                 )}
