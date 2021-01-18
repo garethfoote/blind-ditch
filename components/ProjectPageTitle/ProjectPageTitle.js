@@ -24,7 +24,7 @@ export const ProjectPageTitle = ({
         <div
           className={classnames(
             styles.image,
-            "absolute opa city-75 z-0 top-0 left-0 h-full w-screen"
+            "absolute z-0 top-0 left-0 h-full w-screen"
           )}
         >
           <Image
