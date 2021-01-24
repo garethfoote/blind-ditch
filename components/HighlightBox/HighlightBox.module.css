@@ -3,7 +3,7 @@
   @apply bg-mint;
   @apply border-2 border-black;
   @apply w-full h-auto;
-  @apply text-sm;
+  @apply text-base;
   @apply p-4;
   @apply relative;
   @apply z-10;
@@ -11,6 +11,6 @@
 
 @screen sm {
   .container {
-    @apply text-sm;
+    @apply text-base;
   }
 }
