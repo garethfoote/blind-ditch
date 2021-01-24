@@ -27,8 +27,13 @@ export default function Nav() {
       >
         {(state) => {
           return (
-            <div className={classnames(styles.nav, "pl-2 z-20")}>
-              <ul className="font-main font-normal uppercase text-xs leading-2 pt-2">
+            <div
+              className={classnames(
+                styles.nav,
+                "h-0 pl-2 z-20 overflow-hidden outline-none"
+              )}
+            >
+              <ul className="mt-4 font-main font-normal uppercase text-sm leading-2">
                 <li
                   className={classnames(styles.linkItem, {
                     [styles.active]: router.pathname == "/",

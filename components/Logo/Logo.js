@@ -4,10 +4,10 @@ import styles from "./Logo.module.css";
 
 export const Logo = () => {
   return (
-    <section>
-      <div className="flex items-center justify-center relative z-10 h-16">
+    <>
+      <div className="flex justify-center relative h-10 z-10">
         <Link href="/">
-          <a className="h-10">
+          <a className="inline-block h-10 mx-auto mt-4">
             <img
               alt="Blind Ditch logo in black"
               className="h-full w-auto"
@@ -17,6 +17,6 @@ export const Logo = () => {
           </a>
         </Link>
       </div>
-    </section>
+    </>
   );
 };

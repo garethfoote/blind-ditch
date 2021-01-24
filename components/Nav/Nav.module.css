@@ -10,15 +10,17 @@
 }
 
 .linkItem {
-  @apply pr-4;
+  @apply pr-4 h-5;
+}
+
+.linkItemLrg {
+  @apply pr-4 h-5;
 }
 
 .nav {
   transition-property: height;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   @apply duration-300;
-  @apply overflow-hidden;
-  @apply h-0;
 }
 
 .nav-appear-active {
