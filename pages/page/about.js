@@ -8,8 +8,10 @@ import { Logo } from "../../components/Logo";
 import { MainImage } from "../../components/MainImage";
 import { getPage, getPages } from "../../lib/api";
 import Head from "next/head";
+import Image from "next/image";
+import { MemberProfiles } from "../../components/MemberProfile";
 
-export default function Page({ page }) {
+export default function About({ page }) {
   const router = useRouter();
 
   if (!router.isFallback && !page?.slug) {
@@ -29,7 +31,7 @@ export default function Page({ page }) {
           <div className="flex items-center justify-center h-20 mb-sm md:h-20 md:mb-md">
             <Logo />
           </div>
-          <article className="mx-auto px-5 max-w-2xl">
+          <section className="mx-auto px-5 max-w-2xl">
             <SectionTitle>{page.title}</SectionTitle>
             {page.featuredImage && (
               <MainImage
@@ -38,10 +40,27 @@ export default function Page({ page }) {
                 image={page.featuredImage.node}
               />
             )}
-            <div className="mx-auto px-5 my-xl max-w-2xl">
+            <div className="mx-auto my-xl max-w-2xl">
               <Text content={page.content} />
             </div>
-          </article>
+          </section>
+          <div className="mx-auto container px-4">
+            <SectionTitle>People</SectionTitle>
+            <div className="mx-auto max-w-2xl mb-xl">
+              <Text
+                content="We are a small group of artists who collaborate in different
+              constellations to make live art & performance, street
+              interventions & traveling art objects, often using digital media
+              as a mode of making and participation. We have been producing this
+              life-art mix of rural & experimental events with associate artists
+              & local residents, visitors and remote participants from our Devon
+              base since 2001. Find out more about our group ethos and how we
+              arrived here..."
+              />
+            </div>
+
+            <MemberProfiles members={page.speakerFields.members} />
+          </div>
         </>
       )}
     </Layout>
@@ -49,7 +68,7 @@ export default function Page({ page }) {
 }
 
 export async function getStaticProps({ params }) {
-  const data = await getPage(params.slug);
+  const data = await getPage("about");
   return {
     props: {
       page: data.page,
@@ -62,7 +81,7 @@ export async function getStaticPaths() {
   return {
     paths:
       allPages.edges.map(({ node }) => {
-        return `/page/${node.slug}`;
+        return `/page/about`;
       }) || [],
     fallback: false,
   };

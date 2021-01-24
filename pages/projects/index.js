@@ -16,10 +16,9 @@ export default function Index({ allProjects: { nodes } }) {
           <title>Blind Ditch</title>
         </Head>
         <Nav />
-        <div className="flex items-center justify-center h-20 mb-sm md:h-28 md:mb-md lg:h-24 lg:mb-sm">
+        <div className="h-12 mb-sm md:mb-md lg:mb-sm">
           <Logo />
         </div>
-
         <div className="container mx-auto mb-xl">
           <SectionTitle>Work</SectionTitle>
           <div className="text-center px-5 max-w-xl mx-auto">

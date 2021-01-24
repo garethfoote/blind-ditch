@@ -14,15 +14,12 @@ module.exports = {
       colors: {
         offwhite: {
           dark: "#D7D3C1",
-          // DEFAULT: "#F7F6F1",
           DEFAULT: "#F4F3EE",
         },
         yellow: "#FFFF6E",
         mint: {
-          dark: "#16F3B4",
-          // DEFAULT: "#F7F6F1",
+          dark: "#0CE9AA",
           DEFAULT: "#B1FBE6",
-          // DEFAULT: "#FFF",
         },
         blue: "#0044F3",
         yellow: "#FFFF6E",
