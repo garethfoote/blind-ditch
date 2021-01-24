@@ -28,7 +28,7 @@ export default function About({ page }) {
             <title>{page.title}</title>
           </Head>
           <Nav />
-          <div className="flex items-center justify-center h-20 mb-sm md:h-20 md:mb-md">
+          <div className="h-12 mb-sm md:mb-md lg:mb-sm">
             <Logo />
           </div>
           <section className="mx-auto px-5 max-w-2xl">

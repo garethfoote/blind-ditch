@@ -3,7 +3,6 @@ import classnames from "classnames";
 import styles from "./MemberProfile.module.css";
 
 export const MemberProfile = ({ date, image, name, profile }) => {
-  console.log(profile);
   return (
     <div>
       <div className="relative w-full h-80">

@@ -12,9 +12,9 @@
 }
 
 .imageTint {
-  @apply opacity-75;
+  @apply opacity-60;
   /* filter: brightness(0.7) saturate(150%); */
-  filter: sepia(100%) saturate(300%) brightness(120%) hue-rotate(0deg);
+  /* filter: sepia(100%) saturate(300%) brightness(120%) hue-rotate(0deg); */
 }
 
 .title {
