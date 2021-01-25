@@ -11,7 +11,7 @@ export const MemberProfiles = ({ members }, idx) => {
       )}
     >
       {members.map((member, idx) => (
-        <div className="">
+        <div key={idx} className="">
           <MemberProfile {...member} />
         </div>
       ))}
