@@ -75,14 +75,3 @@ export async function getStaticProps({ params }) {
     },
   };
 }
-
-export async function getStaticPaths() {
-  const allPages = await getPages();
-  return {
-    paths:
-      allPages.edges.map(({ node }) => {
-        return `/page/about`;
-      }) || [],
-    fallback: false,
-  };
-}

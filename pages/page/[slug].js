@@ -61,9 +61,13 @@ export async function getStaticPaths() {
   const allPages = await getPages();
   return {
     paths:
-      allPages.edges.map(({ node }) => {
-        return `/page/${node.slug}`;
-      }) || [],
+      allPages.edges
+        .filter((page) => {
+          return page.node.slug !== "about";
+        })
+        .map(({ node }) => {
+          return `/page/${node.slug}`;
+        }) || [],
     fallback: false,
   };
 }
