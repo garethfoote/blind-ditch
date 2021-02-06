@@ -293,6 +293,30 @@
   }
 }
 
+.slick-list,
+.slick-track {
+  @apply h-104;
+}
+
+.slick-slider {
+  @apply relative;
+}
+
+.slick-arrow {
+  @apply absolute top-1/2;
+}
+
+.slick-prev {
+  @apply z-50;
+}
+.slick-next {
+  @apply right-0;
+}
+
+button:focus {
+  outline: none !important;
+}
+
 #nprogress .bar {
   background: theme("colors.mint.DEFAULT");
   height: 2px;

@@ -15,9 +15,10 @@
     "postcss-preset-env": "^6.7.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-double-marquee": "^1.0.6",
+    "react-slick": "^0.28.0",
     "react-swipeable": "^6.0.1",
-    "react-transition-group": "^4.4.1"
+    "react-transition-group": "^4.4.1",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "autoprefixer": "10.0.2",

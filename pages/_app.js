@@ -2,6 +2,7 @@ import Head from "next/head";
 import Router from "next/router";
 import NProgress from "nprogress";
 
+import "slick-carousel/slick/slick.css";
 import "nprogress/nprogress.css";
 import "../styles/index.css";
 

@@ -3,6 +3,7 @@ import { PullQuoteWidget } from "../PullQuote/PullQuoteWidget";
 import { TextWidget } from "../Text/TextWidget";
 import { textDataMapper } from "../Text";
 import { MainImage, mainImageDataMapper } from "../MainImage";
+import { GalleryCarousel, galleryCarouselDataMapper } from "../GalleryCarousel";
 import { GallerySingle, gallerySingleDataMapper } from "../GallerySingle";
 import { GalleryTwo, galleryTwoDataMapper } from "../GalleryTwo";
 import { SectionTitle, sectionTitleDataMapper } from "../SectionTitle";
@@ -40,6 +41,10 @@ const widgetMapper = {
   project_Projectfields_FlexibleContent_GalleryTwoBlock: {
     dataMapper: galleryTwoDataMapper,
     Component: GalleryTwo,
+  },
+  project_Projectfields_FlexibleContent_Gallery: {
+    dataMapper: galleryCarouselDataMapper,
+    Component: GalleryCarousel,
   },
 };
 
