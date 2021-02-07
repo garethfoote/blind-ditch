@@ -1,0 +1,30 @@
+@screen sm {
+  .cols {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .cols > div:nth-child(1) {
+    flex: 3;
+  }
+
+  .cols > div:nth-child(2) {
+    flex: 2;
+  }
+}
+
+@screen md {
+  .cols {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  .cols > div:nth-child(1) {
+    flex: 4;
+  }
+
+  .cols > div:nth-child(2) {
+    flex: 3;
+  }
+}

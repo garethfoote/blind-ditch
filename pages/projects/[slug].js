@@ -8,7 +8,7 @@ import Layout from "../../components/layout";
 import { Logo } from "../../components/Logo";
 import { extract } from "oembed-parser";
 import { ProjectPageTitle } from "../../components/ProjectPageTitle";
-// import ProjectDetails from "../../components/ProjectDetails";
+import ProjectDetails from "../../components/ProjectDetails";
 import Nav from "../../components/Nav/Nav";
 
 export default function Project({ project }) {
@@ -47,7 +47,7 @@ export default function Project({ project }) {
             <article>
               <ProjectPageTitle title={project.title} date={date} />
 
-              <div className="">
+              <div>
                 {featuredImage && (
                   <div className="mx-auto px-5 my-lg max-w-4xl">
                     <Image
@@ -63,7 +63,7 @@ export default function Project({ project }) {
                   </div>
                 )}
                 {project.content && (
-                  <div class="mx-auto px-5 my-xl max-w-2xl">
+                  <div className="mx-auto px-5 my-xl max-w-2xl">
                     <div className="border-t border-black pt-md">
                       <div
                         className="text-base leading-7 sm:text-lg sm:leading-9"
@@ -72,7 +72,12 @@ export default function Project({ project }) {
                     </div>
                   </div>
                 )}
-                <ProjectDetails />
+                <p>Details</p>
+                <ProjectDetails
+                  projectTypes={details.projectTypes}
+                  location={details.location}
+                  date={date}
+                />
                 <Widgets widgets={project.projectFields.flexibleContent} />
               </div>
             </article>
