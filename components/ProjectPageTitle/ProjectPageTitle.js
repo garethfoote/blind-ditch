@@ -5,7 +5,7 @@ import Container from "../container";
 import { ProjectTypes } from "../ProjectTypes";
 import styles from "./ProjectPageTitle.module.css";
 
-export const ProjectPageTitle = ({ title, date, types, description }) => {
+export const ProjectPageTitle = ({ title, date }) => {
   return (
     <div className={classnames("mx-auto px-5 max-w-2xl")}>
       <div className="text-center relative z-10 pt-8">

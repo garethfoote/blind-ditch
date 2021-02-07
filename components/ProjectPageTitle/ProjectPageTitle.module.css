@@ -20,13 +20,9 @@
   @apply inline;
 }
 
-.type {
-  @apply uppercase;
-  @apply font-accent;
-  @apply text-base;
-  @apply leading-normal;
-  letter-spacing: 1px;
-}
+/* .type {
+  @apply uppercase font-accent text-base leading-normal tracking-wide;
+} */
 
 .type span {
   @apply bg-yellow;
