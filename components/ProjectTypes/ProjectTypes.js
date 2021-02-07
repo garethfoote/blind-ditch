@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export const ProjectTypes = ({ types }, idx) => {
   return (
     <>

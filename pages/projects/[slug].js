@@ -24,8 +24,8 @@ export default function Project({ project }) {
   const date = (
     <>
       <time dateTime={details.yearStart}>{details.yearStart}</time>
-      {details.yearEnd && " - "}
-      {details.yearEnd && (
+      {details.yearEnd && details.yearEnd != details.yearStart && " - "}
+      {details.yearEnd && details.yearEnd != details.yearStart && (
         <time dateTime={details.yearEnd}>{details.yearEnd}</time>
       )}
     </>
@@ -49,35 +49,44 @@ export default function Project({ project }) {
 
               <div>
                 {featuredImage && (
-                  <div className="mx-auto px-5 my-lg max-w-4xl">
-                    <Image
-                      className="image-loading"
-                      src={featuredImage.sourceUrl}
-                      width={featuredImage.mediaDetails.width}
-                      height={featuredImage.mediaDetails.height}
-                      layout="responsive"
-                      alt={featuredImage.altText || featuredImage.title}
-                      priority={true}
-                      loading={"eager"}
-                    />
-                  </div>
-                )}
-                {project.content && (
-                  <div className="mx-auto px-5 my-xl max-w-2xl">
-                    <div className="border-t border-black pt-md">
-                      <div
-                        className="text-base leading-7 sm:text-lg sm:leading-9"
-                        dangerouslySetInnerHTML={{ __html: project.content }}
+                  <div className="mx-auto px-5 my-lg container">
+                    <div
+                      style={{
+                        maxHeight: "90vh",
+                        overflow: "hidden",
+                      }}
+                    >
+                      <Image
+                        className="image-loading"
+                        src={featuredImage.sourceUrl}
+                        width={featuredImage.mediaDetails.width}
+                        height={featuredImage.mediaDetails.height}
+                        layout="responsive"
+                        style={{ objectFit: "cover" }}
+                        alt={featuredImage.altText || featuredImage.title}
+                        priority={true}
+                        loading={"eager"}
                       />
                     </div>
                   </div>
                 )}
-                <p>Details</p>
-                <ProjectDetails
-                  projectTypes={details.projectTypes}
-                  location={details.location}
-                  date={date}
-                />
+
+                <div className="mx-auto px-5 mt-xl mb-md max-w-2xl relative">
+                  <div className="border-t border-black pt-md">
+                    <div
+                      className="text-base leading-7 sm:text-lg sm:leading-9"
+                      dangerouslySetInnerHTML={{ __html: project.content }}
+                    />
+                  </div>
+                  <div className="mt-md lg:mt-0 lg:w-44 lg:absolute lg:top-0 lg:-right-48">
+                    <ProjectDetails
+                      projectTypes={details.projectTypes}
+                      location={details.location}
+                      date={date}
+                    />
+                  </div>
+                </div>
+
                 <Widgets widgets={project.projectFields.flexibleContent} />
               </div>
             </article>

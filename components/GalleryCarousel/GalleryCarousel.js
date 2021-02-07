@@ -42,7 +42,7 @@ export const GalleryCarousel = ({ images, height = 416 }) => {
         // );
         const randomAlpha = Math.random();
         return (
-          <div className="outline-none">
+          <div key={idx} className="outline-none">
             <div
               className="border-r-2 border-black border-dashed"
               style={{ height: "416px", padding: `${0}px` }}
