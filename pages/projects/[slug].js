@@ -2,12 +2,13 @@ import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import { getProject, getAllProjects } from "../../lib/api";
 import Head from "next/head";
+import Image from "next/image";
 import { Widgets } from "../../components/Widgets";
 import Layout from "../../components/layout";
 import { Logo } from "../../components/Logo";
 import { extract } from "oembed-parser";
 import { ProjectPageTitle } from "../../components/ProjectPageTitle";
-import classnames from "classnames";
+// import ProjectDetails from "../../components/ProjectDetails";
 import Nav from "../../components/Nav/Nav";
 
 export default function Project({ project }) {
@@ -18,6 +19,7 @@ export default function Project({ project }) {
   }
 
   const details = project.projectFields.details;
+  const featuredImage = project.featuredImage?.node;
 
   const date = (
     <>
@@ -43,27 +45,34 @@ export default function Project({ project }) {
             </div>
             <Logo />
             <article>
-              <ProjectPageTitle
-                title={project.title}
-                date={date}
-                types={details.projectTypes}
-                description={project.content}
-                heroImage={project.featuredImage?.node}
-              />
+              <ProjectPageTitle title={project.title} date={date} />
 
-              <div
-                className={classnames({
-                  "relative -top-20": project.featuredImage != null,
-                })}
-              >
-                {project.content && (
-                  <div className="px-6 sm:12">
-                    <div
-                      dangerouslySetInnerHTML={{ __html: project.content }}
-                      className="strong-block shadow bg-white border-2 border-blue border-solid p-4 mx-auto text-center max-w-sm sm:max-w-md text-sm sm:text-md"
+              <div className="">
+                {featuredImage && (
+                  <div className="mx-auto px-5 my-lg max-w-4xl">
+                    <Image
+                      className="image-loading"
+                      src={featuredImage.sourceUrl}
+                      width={featuredImage.mediaDetails.width}
+                      height={featuredImage.mediaDetails.height}
+                      layout="responsive"
+                      alt={featuredImage.altText || featuredImage.title}
+                      priority={true}
+                      loading={"eager"}
                     />
                   </div>
                 )}
+                {project.content && (
+                  <div class="mx-auto px-5 my-xl max-w-2xl">
+                    <div className="border-t border-black pt-md">
+                      <div
+                        className="text-base leading-7 sm:text-lg sm:leading-9"
+                        dangerouslySetInnerHTML={{ __html: project.content }}
+                      />
+                    </div>
+                  </div>
+                )}
+                <ProjectDetails />
                 <Widgets widgets={project.projectFields.flexibleContent} />
               </div>
             </article>

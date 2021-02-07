@@ -11,10 +11,10 @@ export const MainImage = ({
   context,
   contextPos = "br",
   maxWidth = "2xl",
-  isFirst,
+  isWide,
 }) => {
   return (
-    <Container max={isFirst ? "4xl" : maxWidth} spacing="xl">
+    <Container max={isWide ? "4xl" : maxWidth} spacing="xl">
       <div
         className={classnames("image-shadow", {
           "image-shadow-bl": contextPos === "br",
