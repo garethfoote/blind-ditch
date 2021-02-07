@@ -21,6 +21,8 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/plugin-proposal-export-default-from": "^7.12.13",
     "autoprefixer": "10.0.2",
     "oembed-parser": "^1.4.3",
     "postcss": "^8.1.7",
