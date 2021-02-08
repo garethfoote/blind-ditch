@@ -129,10 +129,7 @@
   }
 
   .text-bg-black strong {
-    @apply text-offwhite;
     @apply font-bold;
-    @apply bg-black;
-    padding: 1px 2px 1px;
   }
 
   .text-strong-yellow span {
