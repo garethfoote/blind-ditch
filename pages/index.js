@@ -33,11 +33,11 @@ export default function Index({ hpProperties, preview }) {
           <HomeHeader intro={hpProperties.page.content} />
         </div>
 
-        <hr className="page-break" />
+        <hr className="page-break my-lg sm:mb-xl" />
 
         <AnnouncementList announcements={announcements} />
 
-        <hr className="page-break" />
+        <hr className="page-break mt-lg mb-xl sm:my-xl" />
 
         <HomepageArticle page={article} />
 
