@@ -10,10 +10,10 @@ export const HomeHeader = ({ intro }) => {
       <div className="sm:mx-0 pb-lg sm:pb-0 sm:pr-xl">
         <div className="text-base leading-7 sm:text-lg sm:leading-9 text-bg-black">
           <div className="mb-sm" dangerouslySetInnerHTML={{ __html: intro }} />
-          <Link href="/page/about">
+          {/* <Link href="/page/about">
             <a className="dash-underline">Read More</a>
           </Link>{" "}
-          →
+          → */}
         </div>
       </div>
       <div className="sm:mx-0">
