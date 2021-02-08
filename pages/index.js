@@ -29,15 +29,15 @@ export default function Index({ hpProperties, preview }) {
           <Logo />
         </div>
 
-        <div className="mx-auto px-5 mb-xl max-w-2xl md:max-w-3xl lg:max-w-4xl ">
+        <div className="mx-auto px-5 mb-xl max-w-2xl md:max-w-3xl">
           <HomeHeader intro={hpProperties.page.content} />
         </div>
 
-        <hr className="page-break my-lg sm:mb-xl" />
+        <hr className="page-break" />
 
         <AnnouncementList announcements={announcements} />
 
-        <hr className="page-break mt-lg mb-xl sm:my-xl" />
+        <hr className="page-break" />
 
         <HomepageArticle page={article} />
 
