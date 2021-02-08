@@ -31,7 +31,7 @@
     width: 100%;
   }
   .headerCols > div:nth-child(1) {
-    flex: 4;
+    flex: 5;
   }
 
   .headerCols > div:nth-child(2) {

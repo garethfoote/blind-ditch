@@ -1,7 +1,7 @@
 import classnames from "classnames";
 import Image from "next/image";
 
-import { HighlightBox } from "../../components/HighlightBox";
+import { HighlightBoxGreen } from "../../components/HighlightBox";
 import Container from "../../components/container";
 
 import styles from "./MainImage.module.css";
@@ -37,7 +37,7 @@ export const MainImage = ({
               styles[`position-${contextPos}`]
             )}
           >
-            <HighlightBox html={context} />
+            <HighlightBoxGreen html={context} />
           </div>
         )}
       </div>

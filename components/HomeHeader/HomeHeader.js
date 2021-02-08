@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { HighlightBox } from "../../components/HighlightBox";
+import { HighlightBoxBlue } from "../../components/HighlightBox";
 import styles from "./HomeHeader.module.css";
 import classnames from "classnames";
 
@@ -17,7 +17,7 @@ export const HomeHeader = ({ intro }) => {
         </div>
       </div>
       <div className="sm:mx-0">
-        <HighlightBox
+        <HighlightBoxBlue
           hasShadow={true}
           isQuote={true}
           html={

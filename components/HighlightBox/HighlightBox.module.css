@@ -1,4 +1,10 @@
-.container {
+@screen sm {
+  .container {
+    @apply text-base;
+  }
+}
+
+.containerGreen {
   @apply font-accent;
   @apply bg-mint;
   @apply border-2 border-black;
@@ -9,8 +15,17 @@
   @apply z-10;
 }
 
-@screen sm {
-  .container {
-    @apply text-base;
-  }
+.containerBlue {
+  @apply text-sm text-blue font-accent uppercase;
+  @apply border-2 border-blue;
+  @apply w-full h-auto p-4;
+  @apply relative;
+}
+
+.containerBlue > div * {
+  @apply text-sm text-blue;
+}
+
+.context {
+  @apply relative top-2 text-right;
 }
