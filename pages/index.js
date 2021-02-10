@@ -29,7 +29,7 @@ export default function Index({ hpProperties, preview }) {
           <Logo />
         </div>
 
-        <div className="mx-auto px-5 mb-xl max-w-2xl md:max-w-3xl">
+        <div className="mx-auto px-5 mb-xl max-w-2xl md:max-w-3xl xl:max-w-4xl ">
           <HomeHeader intro={hpProperties.page.content} />
         </div>
 
