@@ -12,18 +12,6 @@
   /* filter: sepia(100%) saturate(300%) brightness(120%) hue-rotate(0deg); */
 }
 
-.title {
-  @apply tracking-widest;
-  @apply leading-tight;
-  @apply text-center;
-  @apply uppercase;
-  @apply inline;
-}
-
-/* .type {
-  @apply uppercase font-accent text-base leading-normal tracking-wide;
-} */
-
 .type span {
   @apply bg-yellow;
 }

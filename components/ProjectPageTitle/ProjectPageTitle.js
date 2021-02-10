@@ -9,7 +9,14 @@ export const ProjectPageTitle = ({ title, date }) => {
   return (
     <div className={classnames("mx-auto px-5 max-w-2xl")}>
       <div className="text-center relative z-10 pt-8">
-        <h2 className={classnames("text-2xl", styles.title)}>{title}</h2>
+        <h2
+          className={classnames(
+            "uppercase inline tracking-widest text-xl sm:text-2xl leading-10 sm:leading-tight",
+            styles.title
+          )}
+        >
+          {title}
+        </h2>
         <h3 className={classnames("font-accent text-lg")}>({date})</h3>
         {/* <h4 className={classnames("mx-auto mt-md mb-xl max-w-xs", styles.type)}>
           <ProjectTypes types={types} />
