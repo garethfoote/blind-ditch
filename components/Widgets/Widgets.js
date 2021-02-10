@@ -42,10 +42,10 @@ const widgetMapper = {
     dataMapper: galleryTwoDataMapper,
     Component: GalleryTwo,
   },
-  // project_Projectfields_FlexibleContent_Gallery: {
-  //   dataMapper: galleryCarouselDataMapper,
-  //   Component: GalleryCarousel,
-  // },
+  project_Projectfields_FlexibleContent_Gallery: {
+    dataMapper: galleryCarouselDataMapper,
+    Component: GalleryCarousel,
+  },
 };
 
 export const Widgets = ({ widgets }) => (
