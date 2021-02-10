@@ -16,14 +16,14 @@
 }
 
 .containerBlue {
-  @apply text-sm text-blue font-accent uppercase;
+  @apply text-blue font-accent uppercase;
   @apply border-2 border-blue;
-  @apply w-full h-auto p-4;
-  @apply relative;
+  @apply w-full h-auto;
 }
 
 .containerBlue > div * {
-  @apply text-sm text-blue;
+  font-size: inherit;
+  color: inherit;
 }
 
 .context {

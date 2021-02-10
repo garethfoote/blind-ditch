@@ -7,7 +7,7 @@ export const HomeHeader = ({ intro }) => {
   const readMore = '<a class="dash-underline" href="/about">Read more</a>  →';
   return (
     <div className={classnames(styles.headerCols)}>
-      <div className="sm:mx-0 pb-md sm:pb-0 sm:pr-xl">
+      <div className="sm:mx-0 pb-md sm:pb-0 sm:pr-lg md:pr-xl">
         <div
           className="text-base leading-7 sm:text-lg sm:leading-9 text-bg-black"
           dangerouslySetInnerHTML={{ __html: intro }}
