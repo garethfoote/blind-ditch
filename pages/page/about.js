@@ -32,32 +32,27 @@ export default function About({ page }) {
             <Logo />
           </div>
           <section className="mx-auto px-5 max-w-2xl">
-            <SectionTitle>{page.title}</SectionTitle>
+            <div className="mx-auto px-5 max-w-2xl text-center pt-8">
+              <h2 className="uppercase inline tracking-widest text-xl sm:text-2xl leading-10 sm:leading-tight">
+                {page.title}
+              </h2>
+            </div>
             {page.featuredImage && (
               <MainImage
-                contextPos="bl"
+                contextPos="br"
                 maxWidth="4xl"
                 image={page.featuredImage.node}
               />
             )}
-            <div className="mx-auto my-xl max-w-2xl">
-              <Text content={page.content} />
+
+            <div className="mx-auto px-5 mt-xl mb-md max-w-2xl relative">
+              <div className="border-t border-black pt-md">
+                <Text content={page.content} />
+              </div>
             </div>
           </section>
           <div className="mx-auto container px-4">
             <SectionTitle>People</SectionTitle>
-            <div className="mx-auto max-w-2xl mb-xl">
-              <Text
-                content="We are a small group of artists who collaborate in different
-              constellations to make live art & performance, street
-              interventions & traveling art objects, often using digital media
-              as a mode of making and participation. We have been producing this
-              life-art mix of rural & experimental events with associate artists
-              & local residents, visitors and remote participants from our Devon
-              base since 2001. Find out more about our group ethos and how we
-              arrived here..."
-              />
-            </div>
 
             <MemberProfiles members={page.speakerFields.members} />
           </div>
