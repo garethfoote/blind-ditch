@@ -49,7 +49,7 @@ export default function Project({ project }) {
 
               <div>
                 {featuredImage && (
-                  <div className="mx-auto px-5 my-lg container">
+                  <div className="mx-auto px-5 my-lg md:container">
                     <div
                       style={{
                         maxHeight: "90vh",
