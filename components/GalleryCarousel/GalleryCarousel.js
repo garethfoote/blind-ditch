@@ -78,7 +78,6 @@ export const GalleryCarousel = ({ images, height = 416 }) => {
                     maxWidth: "90vw",
                     height: `${height}px`,
                     width: `${w}px`,
-                    backgroundColor: `rgba(255,0,0,${randomAlpha})`,
                   }}
                 >
                   <Image

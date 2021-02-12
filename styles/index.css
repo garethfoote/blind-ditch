@@ -180,7 +180,10 @@
   }
 
   .image-loading {
-    @apply bg-blue;
+    @apply bg-offwhite bg-topography;
+    background-size: 50%;
+
+    /* background-color: theme("colors.offwhite.DEFAULT"); */
   }
 
   .image-border img {
@@ -197,7 +200,7 @@
 
   .image-shadow img {
     @apply z-10;
-    @apply bg-blue;
+    @apply bg-offwhite;
     @apply border-2 border-black border-solid !important;
   }
 

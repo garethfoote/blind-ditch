@@ -94,6 +94,17 @@ module.exports = {
         400: "400ms",
         600: "600ms",
       },
+      backgroundImage: (theme) => ({
+        topography: "url('/topography.svg')",
+        diagonals: "url('/diagonal-lines.svg')",
+        tictactoe: "url('/tic-tac-toe.svg')",
+      }),
+      backgroundSize: {
+        10: "10%",
+        25: "25%",
+        50: "50%",
+        100: "100%",
+      },
     },
   },
 };

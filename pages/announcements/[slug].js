@@ -43,7 +43,7 @@ export default function Project({ announcement }) {
                 image={announcement.featuredImage.node}
               />
             )}
-            <div class="mx-auto px-5 my-xl max-w-2xl">
+            <div className="mx-auto px-5 my-xl max-w-2xl">
               <Text content={announcement.content} />
             </div>
           </article>

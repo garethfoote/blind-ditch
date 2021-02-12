@@ -34,7 +34,7 @@ export const AnnouncementList = ({ announcements }) => {
           ←
         </button>
         <button
-          disabled={slide >= announcements.length}
+          disabled={slide >= announcements.length + 1}
           className="absolute -bottom-2 sm:bottom-0 right-2 z-50 text-2xl sm:text-lg disabled:opacity-30"
           onClick={() => {
             sliderRef.current.slickNext();
@@ -69,6 +69,21 @@ export const AnnouncementList = ({ announcements }) => {
               </div>
             );
           })}
+          <div className="ml-4">
+            <article className="flex">
+              <div className="relative w-36 sm:w-40 h-60 sm:h-48 bg-offwhite bg-tictactoe bg-10"></div>
+              <div className="w-44 sm:w-64 h-60 sm:h-48 p-4 bg-offwhite">
+                <div className="font-accent flex border-b border-black pb-2">
+                  <h2 className="flex-grow text-xs uppercase leading-4 sm:leading-6">
+                    END
+                  </h2>
+                </div>
+                <p className="text-sm sm:text-base mt-4">
+                  See all announcements
+                </p>
+              </div>
+            </article>
+          </div>
         </Slider>
       </div>
     </div>
