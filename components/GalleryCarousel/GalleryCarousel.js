@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import styles from "./GalleryCarousel.module.css";
 import Image from "next/image";
 import Slider from "react-slick";
 
@@ -7,7 +6,7 @@ let sliderRef = React.createRef();
 
 const settings = {
   className:
-    "slider variable-width h-104 box-content border-t-2 border-b-2 border-black border-dashed",
+    "slider gallery-slider variable-width h-104 box-content border-t-2 border-b-2 border-black border-dashed",
   dots: true,
   infinite: false,
   centerMode: false,
@@ -16,10 +15,6 @@ const settings = {
   variableWidth: true,
   beforeChange: (o, n) => {
     console.log("beforeChange", o, n);
-    // if (index == 5) {
-    //   console.log("block");
-    //   return;
-    // }
   },
 };
 
@@ -44,7 +39,7 @@ export const GalleryCarousel = ({ images, height = 416 }) => {
 
   return (
     <div>
-      <button
+      {/* <button
         onClick={() => {
           const last = slide > 1 ? slide - 1 : slide;
           setSlide(last);
@@ -61,16 +56,12 @@ export const GalleryCarousel = ({ images, height = 416 }) => {
         }}
       >
         Next
-      </button>
+      </button> */}
 
       <Slider ref={sliderRef} {...settings}>
         {images.map((image, idx) => {
           const w =
             height * (image.mediaDetails.width / image.mediaDetails.height);
-          // console.log(
-          //   height,
-          //   height * (image.mediaDetails.width / image.mediaDetails.height)
-          // );
           const randomAlpha = Math.random();
           return (
             <div key={idx} className="outline-none">

@@ -5,7 +5,7 @@ import { AnnouncementList } from "../components/AnnouncementList";
 import { HomepageArticle } from "../components/HomepageArticle";
 import { ProjectList } from "../components/ProjectList";
 import { Button } from "../components/Button";
-
+import SVGFilters from "../components/SVGFilters";
 import { SectionTitle } from "../components/SectionTitle";
 import { HomeHeader } from "../components/HomeHeader";
 import Nav from "../components/Nav/Nav";
@@ -20,6 +20,7 @@ export default function Index({ hpProperties, preview }) {
 
   return (
     <>
+      <SVGFilters />
       <Layout preview={preview}>
         <Head>
           <title>Blind Ditch</title>
@@ -33,11 +34,11 @@ export default function Index({ hpProperties, preview }) {
           <HomeHeader intro={hpProperties.page.content} />
         </div>
 
-        <hr className="page-break my-lg sm:mb-xl" />
+        <hr className="page-break mt-lg" />
 
         <AnnouncementList announcements={announcements} />
 
-        <hr className="page-break mt-lg mb-xl sm:my-xl" />
+        <hr className="page-break mb-lg" />
 
         <HomepageArticle page={article} />
 
