@@ -2,12 +2,12 @@ import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import Layout from "../../components/layout";
 import Nav from "../../components/Nav/Nav";
-import { SectionTitle } from "../../components/SectionTitle";
 import { Text } from "../../components/Text";
 import { Logo } from "../../components/Logo";
 import { MainImage } from "../../components/MainImage";
 import { getPage, getPages } from "../../lib/api";
 import Head from "next/head";
+import classnames from "classnames";
 
 export default function Page({ page }) {
   const router = useRouter();
@@ -42,7 +42,11 @@ export default function Page({ page }) {
                 image={page.featuredImage.node}
               />
             )}
-            <div className="mx-auto px-5 my-xl max-w-2xl">
+            <div
+              className={classnames({
+                "border-t border-black pt-md": page.featuredImage == null,
+              })}
+            >
               <Text content={page.content} />
             </div>
           </article>

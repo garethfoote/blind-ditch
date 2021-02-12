@@ -8,8 +8,8 @@ import { Logo } from "../../components/Logo";
 import { MainImage } from "../../components/MainImage";
 import { getPage, getPages } from "../../lib/api";
 import Head from "next/head";
-import Image from "next/image";
 import { MemberProfiles } from "../../components/MemberProfile";
+import classnames from "classnames";
 
 export default function About({ page }) {
   const router = useRouter();
@@ -46,7 +46,11 @@ export default function About({ page }) {
             )}
 
             <div className="mx-auto px-5 mt-xl mb-md max-w-2xl relative">
-              <div className="border-t border-black pt-md">
+              <div
+                className={classnames({
+                  "border-t border-black pt-md": page.featuredImage == null,
+                })}
+              >
                 <Text content={page.content} />
               </div>
             </div>

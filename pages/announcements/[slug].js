@@ -28,14 +28,15 @@ export default function Project({ announcement }) {
             <title>{announcement.title}</title>
           </Head>
           <Nav />
-          <div className="flex items-center justify-center h-20 mb-sm md:h-20 md:mb-md">
+          <div className="h-12 mb-sm md:mb-md lg:mb-sm">
             <Logo />
           </div>
-          <article className="mx-auto px-5 max-w-2xl text-center">
-            {/* <span className="mx-auto py-1 px-2 title-accent text-xs md:text-base bg-yellow">
-              Announcements
-            </span> */}
-            <SectionTitle>{announcement.title}</SectionTitle>
+          <article className="mx-auto px-5 max-w-2xl">
+            <div className="mx-auto px-5 max-w-2xl text-center pt-8">
+              <h2 className="text-md sm:text-xl inline uppercase leading-8 sm:leading-12 tracking-wider">
+                {announcement.title}
+              </h2>
+            </div>
             {announcement.featuredImage && (
               <MainImage
                 contextPos="bl"

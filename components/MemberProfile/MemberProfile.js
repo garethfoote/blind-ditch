@@ -1,7 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import classnames from "classnames";
-import styles from "./MemberProfile.module.css";
 
 export const MemberProfile = ({
   date,
@@ -11,7 +9,6 @@ export const MemberProfile = ({
   role,
   projects,
 }) => {
-  console.log(role, projects);
   return (
     <div>
       <div className="relative w-full h-80 mb-4">
