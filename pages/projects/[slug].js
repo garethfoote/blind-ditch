@@ -44,7 +44,7 @@ export default function Project({ project }) {
               <Nav />
             </div>
             <Logo />
-            <article>
+            <article className="px-2 sm:px-5">
               <ProjectPageTitle title={project.title} date={date} />
 
               <div>

@@ -31,8 +31,8 @@ export default function About({ page }) {
           <div className="h-12 mb-sm md:mb-md lg:mb-sm">
             <Logo />
           </div>
-          <section className="mx-auto px-5 max-w-2xl">
-            <div className="mx-auto px-5 max-w-2xl text-center pt-8">
+          <section className="pt-8 mx-auto px-5 max-w-2xl">
+            <div className="text-center">
               <h2 className="uppercase inline tracking-widest text-xl sm:text-2xl leading-10 sm:leading-tight">
                 {page.title}
               </h2>
@@ -55,11 +55,11 @@ export default function About({ page }) {
               </div>
             </div>
           </section>
-          <div className="mx-auto container px-4">
+          <section className="mx-auto container px-10">
             <SectionTitle>People</SectionTitle>
 
             <MemberProfiles members={page.speakerFields.members} />
-          </div>
+          </section>
         </>
       )}
     </Layout>

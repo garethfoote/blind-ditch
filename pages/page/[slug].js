@@ -43,7 +43,7 @@ export default function Page({ page }) {
               />
             )}
             <div
-              className={classnames({
+              className={classnames("px-5", {
                 "border-t border-black pt-md": page.featuredImage == null,
               })}
             >

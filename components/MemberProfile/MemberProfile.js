@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Text } from "../../components/Text";
 
 export const MemberProfile = ({
   date,
@@ -21,7 +22,7 @@ export const MemberProfile = ({
       </div>
       <p className="text-lg mb-4">{name}</p>
       <div className="mb-4 flex uppercase font-accent text-xs leading-6 tracking-wide">
-        <dl class="flex-grow">
+        <dl className="flex-grow">
           <dt className="text-blue">Dates</dt>
           <dd>{date}</dd>
         </dl>
@@ -33,7 +34,7 @@ export const MemberProfile = ({
         )}
       </div>
       {projects && (
-        <div className="mb-4 uppercase font-accent text-xs leading-6 tracking-wide">
+        <div className="mb-4 uppercase font-accent text-xs leading-8 tracking-wide">
           <dl>
             <dt className="text-blue">Projects</dt>
             {projects.map((project, idx) => (
@@ -53,7 +54,7 @@ export const MemberProfile = ({
         </div>
       )}
       <div className="border-t border-black pt-md">
-        <div dangerouslySetInnerHTML={{ __html: profile }} />
+        <Text content={profile} />
       </div>
     </div>
   );
