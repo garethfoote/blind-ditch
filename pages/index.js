@@ -38,7 +38,7 @@ export default function Index({ hpProperties, preview }) {
 
         <AnnouncementList announcements={announcements} />
 
-        <hr className="page-break mb-lg" />
+        <hr className="page-break mb-xl md:mb-2xl" />
 
         <HomepageArticle page={article} />
 

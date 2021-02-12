@@ -22,7 +22,7 @@ export const HomepageArticle = ({ page }) => {
 
   return (
     <div className="mx-auto px-5 my-md max-w-lg md:max-w-xl">
-      <div className="w-full h-112 image-shadow image-shadow-bl">
+      <div className="w-full h-80 sm:h-100 md:h-112 image-shadow image-shadow-bl">
         <Image
           className="image-loading"
           alt={image.altText || page.title || image.title}
@@ -31,10 +31,10 @@ export const HomepageArticle = ({ page }) => {
           objectFit="cover"
         />
       </div>
-      <div className="bg-offwhite p-4 max-w-xs sm:max-w-none sm:w-100 bg-offwhite relative z-30 -top-4 left-4 sm:left-1/10">
+      <div className="bg-offwhite p-4 w-5/6 sm:max-w-none sm:w-100 bg-offwhite relative z-30 -top-4 left-4 sm:left-1/10">
         <Link as={`/page/${page.slug}`} href="/page/[slug]">
           <a>
-            <h2 className="title-underline inline text-xl sm:text-2xl leading-normal tracking-wider uppercase ">
+            <h2 className="title-underline inline text-lg sm:text-xl md:text-2xl leading-normal tracking-wider uppercase ">
               {page.title}
             </h2>
           </a>
