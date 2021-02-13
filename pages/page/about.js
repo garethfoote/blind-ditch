@@ -31,12 +31,9 @@ export default function About({ page }) {
           <div className="h-12 mb-sm md:mb-md lg:mb-sm">
             <Logo />
           </div>
-          <section className="pt-8 mx-auto px-5 max-w-2xl">
-            <div className="text-center">
-              <h2 className="uppercase inline tracking-widest text-xl sm:text-2xl leading-10 sm:leading-tight">
-                {page.title}
-              </h2>
-            </div>
+          <section className="mx-auto px-5 max-w-2xl">
+            <SectionTitle>{page.title}</SectionTitle>
+
             {page.featuredImage && (
               <MainImage
                 contextPos="br"

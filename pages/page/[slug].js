@@ -5,6 +5,7 @@ import Nav from "../../components/Nav/Nav";
 import { Text } from "../../components/Text";
 import { Logo } from "../../components/Logo";
 import { MainImage } from "../../components/MainImage";
+import { SectionTitle } from "../../components/SectionTitle";
 import { getPage, getPages } from "../../lib/api";
 import Head from "next/head";
 import classnames from "classnames";
@@ -30,11 +31,7 @@ export default function Page({ page }) {
             <Logo />
           </div>
           <article className="mx-auto px-5 max-w-2xl">
-            <div className="mx-auto px-5 max-w-2xl text-center pt-8">
-              <h2 className="uppercase inline tracking-widest text-xl sm:text-2xl leading-10 sm:leading-tight">
-                {page.title}
-              </h2>
-            </div>
+            <SectionTitle>{page.title}</SectionTitle>
             {page.featuredImage && (
               <MainImage
                 contextPos="bl"
