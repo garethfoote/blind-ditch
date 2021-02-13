@@ -44,8 +44,8 @@ export const AnnouncementList = ({ announcements }) => {
         </button>
 
         <Slider ref={sliderRef} {...settings}>
-          <div key={0} className="ml-4 pr-24">
-            <h2 className="inline text-md uppercase title-underline">
+          <div key={0} className="ml-4 pr-24 relative">
+            <h2 className="absolute transform -rotate-90 origin-top-right	-translate-x-full inline text-md sm:text-base uppercase title-underline">
               Announcements
             </h2>
           </div>
@@ -55,8 +55,12 @@ export const AnnouncementList = ({ announcements }) => {
               <div
                 key={idx}
                 className={classnames(
-                  "ml-4 sm:pr-12 md:pr-24",
-                  styles.announcement
+                  "ml-4 sm:pr-12 md:pr-24 transition-opacity",
+                  styles.announcement,
+                  {
+                    ["opacity-100"]: idx + 1 == slide,
+                    ["opacity-60"]: idx + 1 != slide,
+                  }
                 )}
               >
                 <AnnouncementListItem
