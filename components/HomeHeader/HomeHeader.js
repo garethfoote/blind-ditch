@@ -3,8 +3,9 @@ import { HighlightBoxBlue } from "../../components/HighlightBox";
 import styles from "./HomeHeader.module.css";
 import classnames from "classnames";
 
-export const HomeHeader = ({ intro }) => {
+export const HomeHeader = ({ intro, testimonials }) => {
   const readMore = '<a class="dash-underline" href="/about">Read more</a>  →';
+  const randTestimonial = Math.floor(Math.random() * testimonials.length);
   return (
     <div className={classnames(styles.headerCols)}>
       <div className="sm:mx-0 pb-md sm:pb-0 sm:pr-lg md:pr-xl">
@@ -17,9 +18,8 @@ export const HomeHeader = ({ intro }) => {
         <HighlightBoxBlue
           hasShadow={true}
           isQuote={true}
-          html={
-            "<p>Sad to leave Exeter (have discovered that all the best artists are hiding there secretly constructing a creative utopia in which art and ‘real-life’ switch roles intermittently).</p>"
-          }
+          html={testimonials[randTestimonial].testimonial}
+          context={testimonials[randTestimonial].context}
         />
       </div>
     </div>

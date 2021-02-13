@@ -18,6 +18,7 @@ export default function Index({ hpProperties, preview }) {
   const article = hpProperties.page.homepageFields.connectedArticle;
   const testimonials = hpProperties.page.homepageFields.testimonials;
 
+  console.log(testimonials);
   return (
     <>
       <SVGFilters />
@@ -31,7 +32,10 @@ export default function Index({ hpProperties, preview }) {
         </div>
 
         <div className="mx-auto px-8 sm:px-5 mb-xl max-w-2xl md:max-w-3xl xl:max-w-4xl ">
-          <HomeHeader intro={hpProperties.page.content} />
+          <HomeHeader
+            intro={hpProperties.page.content}
+            testimonials={testimonials}
+          />
         </div>
 
         <hr className="page-break mt-lg" />
