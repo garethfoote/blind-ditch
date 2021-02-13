@@ -30,10 +30,10 @@ export default function Nav() {
             <div
               className={classnames(
                 styles.nav,
-                "h-0 pl-2 z-20 overflow-hidden outline-none"
+                "h-0 pl-4 z-20 overflow-hidden outline-none"
               )}
             >
-              <ul className="mt-4 font-main font-normal uppercase text-sm leading-2">
+              <ul className="mt-4 font-main font-normal uppercase text-base sm:text-sm">
                 <li
                   className={classnames(styles.linkItem, {
                     [styles.active]: router.pathname == "/",
@@ -86,8 +86,8 @@ export default function Nav() {
       </CSSTransition>
       <button
         className={classnames(
-          styles.arrowHitArea,
-          "md:hidden z-40 w-3 left-0 ml-2 mt-2 absolute outline-none"
+          styles.arrow,
+          "md:hidden z-40 w-3 h-3 left-0 m-2 ml-4 mt-4 absolute outline-none"
         )}
         onClick={() => setOpen(!isOpen)}
       >
