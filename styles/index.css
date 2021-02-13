@@ -146,10 +146,19 @@
     @apply relative;
   }
 
+  .button-shadow:active {
+    margin-left: 4px;
+    margin-top: 4px;
+  }
+
+  .button-shadow:active:after {
+    height: 0;
+  }
+
   .button-shadow:after {
     content: "";
-    top: 0;
-    left: 8px;
+    top: -2px;
+    left: 6px;
     height: calc(100% + theme("spacing.2") * 2);
     @apply absolute;
     @apply w-full;

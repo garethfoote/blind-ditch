@@ -77,3 +77,12 @@
   display: block;
   transform: translate(-5px, -15px);
 }
+
+.arrow svg {
+  @apply transform;
+}
+
+.nav-enter-done + .arrow svg,
+.nav-enter-active + .arrow svg {
+  @apply rotate-180;
+}
