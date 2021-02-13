@@ -1,10 +1,9 @@
-import Link from "next/link";
 import { HighlightBoxBlue } from "../../components/HighlightBox";
 import styles from "./HomeHeader.module.css";
 import classnames from "classnames";
 
 export const HomeHeader = ({ intro, testimonials }) => {
-  const readMore = '<a class="dash-underline" href="/about">Read more</a>  →';
+  // const readMore = '<a class="dash-underline" href="/about">Read more</a>  →';
   const randTestimonial = Math.floor(Math.random() * testimonials.length);
   return (
     <div className={classnames(styles.headerCols)}>

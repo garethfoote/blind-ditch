@@ -18,7 +18,6 @@ export default function Index({ hpProperties, preview }) {
   const article = hpProperties.page.homepageFields.connectedArticle;
   const testimonials = hpProperties.page.homepageFields.testimonials;
 
-  console.log(testimonials);
   return (
     <>
       <SVGFilters />
