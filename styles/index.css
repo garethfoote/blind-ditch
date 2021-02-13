@@ -182,8 +182,6 @@
   .image-loading {
     @apply bg-offwhite bg-topography;
     background-size: 50%;
-
-    /* background-color: theme("colors.offwhite.DEFAULT"); */
   }
 
   .image-border img {
@@ -206,22 +204,22 @@
 
   .image-shadow:after {
     content: "";
-    @apply absolute top-2 left-2;
+    @apply absolute top-3 left-3;
     @apply w-full h-full;
     @apply bg-offwhite-dark;
     @apply z-0;
   }
 
   .image-shadow-bl:after {
-    @apply top-2 -left-2;
+    @apply top-3 -left-3;
   }
 
   .image-shadow-tl:after {
-    @apply -top-2 -left-2;
+    @apply -top-3 -left-3;
   }
 
   .image-shadow-tr:after {
-    @apply -top-2 left-2;
+    @apply -top-3 left-3;
   }
 
   @screen sm {

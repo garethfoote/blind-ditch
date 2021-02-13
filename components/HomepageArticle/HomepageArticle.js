@@ -21,7 +21,7 @@ export const HomepageArticle = ({ page }) => {
   const details = page.pageFields;
 
   return (
-    <div className="mx-auto px-5 my-md max-w-lg md:max-w-xl">
+    <div className="mx-auto px-8 my-md max-w-lg md:max-w-xl">
       <div className="w-full h-80 sm:h-100 md:h-112 image-shadow image-shadow-bl">
         <Image
           className="image-loading"
