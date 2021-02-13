@@ -38,12 +38,12 @@
 
 .nav-enter-active {
   @apply static block;
-  height: 113px;
+  height: calc(theme("margin.4") + theme("height.6") * 5);
 }
 
 .nav-enter-done {
   @apply static block;
-  /* height: 113pxcalc( ); */
+  /* height: 113px */
   height: calc(theme("margin.4") + theme("height.6") * 5);
 }
 
@@ -64,7 +64,7 @@
   .nav-exit-done {
     transition-property: none;
     transition-duration: 0ms;
-    height: 113px;
+    height: calc(theme("margin.4") + theme("height.6") * 5);
     @apply absolute block;
   }
 }
