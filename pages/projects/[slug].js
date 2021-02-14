@@ -1,4 +1,5 @@
-import { extract } from "oembed-parser";
+import { getOEmbeds } from "../../lib/utils";
+
 import { useRouter } from "next/router";
 import Head from "next/head";
 import Image from "next/image";
@@ -99,26 +100,14 @@ export default function Project({ project }) {
   );
 }
 
-const oembedOptions = {
-  "soundcloud.com": { maxheight: 81 },
-  "youtube.com": {},
-};
-
-const getOembed = async (item) => {
-  const fieldName = "project_Projectfields_FlexibleContent_EmbedBlock";
-
-  if (item.fieldGroupName === fieldName) {
-    const options = oembedOptions[new URL(item.oembed).hostname];
-    item.oembedDetails = await extract(item.oembed, options);
-    return Promise.resolve(item);
-  } else {
-    return Promise.resolve(item);
-  }
-};
-
-const getOEmbeds = async (flexContent) => {
-  return Promise.all(flexContent.map((item) => getOembed(item)));
-};
+export async function getStaticPaths() {
+  const allProjects = await getAllProjects();
+  return {
+    paths:
+      allProjects.nodes.map((project) => `/projects/${project.slug}`) || [],
+    fallback: false,
+  };
+}
 
 export async function getStaticProps({ params }) {
   let data = await getProject(params.slug);
@@ -132,14 +121,5 @@ export async function getStaticProps({ params }) {
       project: data.project,
     },
     revalidate: 1, // In seconds
-  };
-}
-
-export async function getStaticPaths() {
-  const allProjects = await getAllProjects();
-  return {
-    paths:
-      allProjects.nodes.map((project) => `/projects/${project.slug}`) || [],
-    fallback: false,
   };
 }
