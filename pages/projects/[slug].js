@@ -1,15 +1,17 @@
+import { extract } from "oembed-parser";
 import { useRouter } from "next/router";
-import ErrorPage from "next/error";
-import { getProject, getAllProjects } from "../../lib/api";
 import Head from "next/head";
 import Image from "next/image";
-import { Widgets } from "../../components/Widgets";
+
+import ErrorPage from "next/error";
+import { getProject, getAllProjects } from "../../lib/api";
+
 import Layout from "../../components/layout";
 import { Logo } from "../../components/Logo";
-import { extract } from "oembed-parser";
+import Nav from "../../components/Nav/Nav";
 import { ProjectPageTitle } from "../../components/ProjectPageTitle";
 import ProjectDetails from "../../components/ProjectDetails";
-import Nav from "../../components/Nav/Nav";
+import { Widgets } from "../../components/Widgets";
 
 export default function Project({ project }) {
   const router = useRouter();
@@ -97,11 +99,17 @@ export default function Project({ project }) {
   );
 }
 
+const oembedOptions = {
+  "soundcloud.com": { maxheight: 81 },
+  "youtube.com": {},
+};
+
 const getOembed = async (item) => {
   const fieldName = "project_Projectfields_FlexibleContent_EmbedBlock";
 
   if (item.fieldGroupName === fieldName) {
-    item.oembedDetails = await extract(item.oembed);
+    const options = oembedOptions[new URL(item.oembed).hostname];
+    item.oembedDetails = await extract(item.oembed, options);
     return Promise.resolve(item);
   } else {
     return Promise.resolve(item);
