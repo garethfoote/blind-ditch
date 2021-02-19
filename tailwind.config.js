@@ -44,6 +44,7 @@ module.exports = {
         accent: ["TerminalGrotesque", "Courier New"],
       },
       fontSize: {
+        "2xs": "0.75rem" /* 12 */,
         xs: "0.875rem" /* 14 */,
         sm: "1rem" /* 16 */,
         base: "1.125rem" /* 18 */,
@@ -77,6 +78,7 @@ module.exports = {
         "1/2-screen": "50vh",
       },
       minHeight: {
+        36: "9rem",
         64: "16rem",
         80: "20rem",
         100: "25rem",

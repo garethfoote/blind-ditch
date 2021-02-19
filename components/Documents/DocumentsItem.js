@@ -36,8 +36,11 @@ export const DocumentsItem = ({
           </dd>
         </dl>
       </div>
-      <div className="absolute text-2xs uppercase -left-3 sm:-left-6 top-3 transform -translate-x-full">
-        Sound
+
+      <div className="absolute text-2xs uppercase -left-6 sm:-left-4 top-3 transform -translate-x-full">
+        <div className="absolute sm:relative transform -rotate-90 origin-top-right -translate-x-full inline">
+          Sound
+        </div>
       </div>
     </article>
   );
