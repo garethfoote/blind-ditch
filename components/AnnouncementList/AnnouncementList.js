@@ -26,7 +26,7 @@ export const AnnouncementList = ({ announcements }) => {
       <div className="h-80 sm:h-64 pt-6 relative">
         <button
           disabled={slide == 0}
-          className="absolute -bottom-2 sm:bottom-0 left-2 z-50 text-2xl sm:text-lg disabled:opacity-10"
+          className="absolute -bottom-2 sm:-bottom-1 left-2 z-50 text-2xl sm:text-xl disabled:opacity-10"
           onClick={() => {
             sliderRef.current.slickPrev();
           }}
@@ -35,7 +35,7 @@ export const AnnouncementList = ({ announcements }) => {
         </button>
         <button
           disabled={slide >= announcements.length + 1}
-          className="absolute -bottom-2 sm:bottom-0 right-2 z-50 text-2xl sm:text-lg disabled:opacity-10"
+          className="absolute -bottom-2 sm:-bottom-1 right-2 z-50 text-2xl sm:text-xl disabled:opacity-10"
           onClick={() => {
             sliderRef.current.slickNext();
           }}

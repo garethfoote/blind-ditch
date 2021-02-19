@@ -62,7 +62,7 @@ export const AnnouncementListItem = ({
                 </time>
               )}
             </div>
-            <p className="text-sm sm:text-base mt-4">{title} →</p>
+            <p className="text-sm sm:text-base mt-4">{title}</p>
           </div>
         </article>
       </a>
