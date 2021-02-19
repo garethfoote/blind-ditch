@@ -1,0 +1,16 @@
+.cols {
+  @apply flex flex-row;
+  @apply gap-x-8;
+}
+
+.cols > :nth-child(1) {
+  flex: 4;
+}
+
+.cols > :nth-child(2) {
+  flex: 1;
+}
+
+.cols > :nth-child(3) {
+  flex: 2;
+}
