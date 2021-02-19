@@ -80,7 +80,7 @@ export const ProjectListItem = ({
         )}
       </div>
       <div className="flex-grow self-end">
-        <hr className="relative -top-2 mx-1 border border-black border-dashed border-solid" />
+        <hr className="relative -top-2 mx-1 border border-black border-dashed" />
       </div>
       <div className="font-accent uppercase text-right text-xs sm:text-sm md:text-base self-end whitespace-nowrap">
         {location}
