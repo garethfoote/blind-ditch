@@ -1,4 +1,4 @@
-import { getOEmbeds } from "../../lib/utils";
+import { getOembed } from "../../lib/utils";
 
 import { useRouter } from "next/router";
 import Head from "next/head";
@@ -109,11 +109,24 @@ export async function getStaticPaths() {
   };
 }
 
+const getOembeds = async (flexContent, filter) => {
+  return Promise.all(
+    flexContent.map((item) => {
+      if (item.fieldGroupName === filter) {
+        return getOembed(item, item["oembed"]);
+      } else {
+        return item;
+      }
+    })
+  );
+};
+
 export async function getStaticProps({ params }) {
   let data = await getProject(params.slug);
 
-  data.project.projectFields.flexibleContent = await getOEmbeds(
-    data.project.projectFields.flexibleContent
+  data.project.projectFields.flexibleContent = await getOembeds(
+    data.project.projectFields.flexibleContent,
+    "project_Projectfields_FlexibleContent_EmbedBlock"
   );
 
   return {

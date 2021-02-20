@@ -14,8 +14,9 @@ export const MemberProfile = ({
     <div>
       <div className="relative w-full h-80 mb-4">
         <Image
+          className="image-loading"
           alt={image.altText || name}
-          src={image.sourceUrl}
+          src={image.sourceUrl + "-"}
           layout="fill"
           objectFit="cover"
         />
@@ -27,7 +28,7 @@ export const MemberProfile = ({
           <dd>{date}</dd>
         </dl>
         {role && (
-          <dl class="flex-grow">
+          <dl className="flex-grow">
             <dt className="text-blue">Role</dt>
             <dd>{role}</dd>
           </dl>

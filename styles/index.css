@@ -191,6 +191,10 @@
   .image-loading {
     @apply bg-offwhite bg-topography;
     background-size: 50%;
+    /* transition: background-position 20s ease-in;
+    transform: translateX(-187%);
+    background-position: 500%; */
+    /* https://stackoverflow.com/questions/59787642/nextjs-images-loaded-from-cache-dont-trigger-the-onload-event */
   }
 
   .image-border img {
