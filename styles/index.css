@@ -8,6 +8,9 @@
     @apply font-main;
     @apply text-black;
   }
+  body.document {
+    /* background-color: theme("colors.yellow.light"); */
+  }
 
   height,
   body {

@@ -1,15 +1,19 @@
 import { getAllDocuments } from "../../lib/api";
 import { getOembed } from "../../lib/utils";
+import { useEffect } from "react";
 
 import Head from "next/head";
 import Layout from "../../components/layout";
 import Nav from "../../components/Nav/Nav";
 import { Logo } from "../../components/Logo";
 import { SectionTitle } from "../../components/SectionTitle";
-import { Text } from "../../components/Text";
 import { Documents } from "../../components/Documents";
 
 export default function Index({ allDocs: { nodes } }) {
+  useEffect(() => {
+    // document.querySelector("body").classList.add("document");
+  });
+
   return (
     <>
       <Layout>
@@ -22,12 +26,6 @@ export default function Index({ allDocs: { nodes } }) {
         </div>
         <div className="container mx-auto mb-xl">
           <SectionTitle>Documents</SectionTitle>
-          <div className="text-center px-5 max-w-xl mx-auto">
-            <Text
-              isCentred={true}
-              content="Short description or reminder of the type of work you ususally embark on with a reminder that there is a lot more if people visit the archive or explore by media type."
-            />
-          </div>
 
           <Documents documents={nodes} />
         </div>

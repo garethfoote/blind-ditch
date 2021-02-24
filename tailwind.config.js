@@ -16,13 +16,15 @@ module.exports = {
           dark: "#D7D3C1",
           DEFAULT: "#F4F3EE",
         },
-        yellow: "#FFFF6E",
+        yellow: {
+          light: "#FFFF99",
+          DEFAULT: "#FFFF6E",
+        },
         mint: {
           dark: "#0CE9AA",
           DEFAULT: "#B1FBE6",
         },
         blue: "#0044F3",
-        yellow: "#FFFF6E",
         black: "#1F1F1F",
       },
       spacing: {
