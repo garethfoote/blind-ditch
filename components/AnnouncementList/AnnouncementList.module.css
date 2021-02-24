@@ -29,7 +29,7 @@
 }
 
 .yellowFilter:after {
-  background: theme("colors.yellow");
+  background: theme("colors.yellow.DEFAULT");
 }
 
 .yellowFilter img {
