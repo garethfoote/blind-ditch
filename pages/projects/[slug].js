@@ -101,7 +101,7 @@ export default function Project({ project }) {
 }
 
 export async function getStaticPaths() {
-  const allProjects = await getAllProjects();
+  const allProjects = await getProjects();
   return {
     paths:
       allProjects.nodes.map((project) => `/projects/${project.slug}`) || [],

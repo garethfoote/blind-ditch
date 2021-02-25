@@ -31,7 +31,7 @@ export default function Index({ allProjects: { nodes } }) {
 }
 
 export async function getStaticProps() {
-  const allProjects = await getAllProjects();
+  const allProjects = await getProjects();
   return {
     props: { allProjects },
     revalidate: 1, // In seconds
