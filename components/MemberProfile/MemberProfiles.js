@@ -11,7 +11,6 @@ export const MemberProfiles = ({ members }, idx) => {
       )}
     >
       {members.map((member, idx) => {
-        console.log(idx);
         return (
           <div key={idx} className="max-w-sm mx-auto mb-lg sm:mb-0">
             <MemberProfile {...member} />
