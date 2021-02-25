@@ -5,7 +5,7 @@ import Head from "next/head";
 import Image from "next/image";
 
 import ErrorPage from "next/error";
-import { getProject, getAllProjects } from "../../lib/api";
+import { getProject, getProjects } from "../../lib/api";
 
 import Layout from "../../components/layout";
 import { Logo } from "../../components/Logo";

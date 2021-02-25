@@ -4,7 +4,7 @@ import Nav from "../../components/Nav/Nav";
 import { ProjectList } from "../../components/ProjectList";
 import { Logo } from "../../components/Logo";
 
-import { getAllProjects } from "../../lib/api";
+import { getProjects } from "../../lib/api";
 import { SectionTitle } from "../../components/SectionTitle";
 import { Text } from "../../components/Text";
 

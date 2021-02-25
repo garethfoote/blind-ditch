@@ -1,4 +1,4 @@
-import { getAllDocuments } from "../../lib/api";
+import { getDocuments } from "../../lib/api";
 import { getOembed } from "../../lib/utils";
 import { useEffect } from "react";
 
