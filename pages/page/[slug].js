@@ -30,8 +30,9 @@ export default function Page({ page }) {
           <div className="h-12 mb-sm md:mb-md lg:mb-sm">
             <Logo />
           </div>
-          <article className="mx-auto px-5 max-w-2xl">
+          <section className="mx-auto px-5 max-w-2xl">
             <SectionTitle>{page.title}</SectionTitle>
+
             {page.featuredImage && (
               <MainImage
                 contextPos="bl"
@@ -39,14 +40,17 @@ export default function Page({ page }) {
                 image={page.featuredImage.node}
               />
             )}
-            <div
-              className={classnames("px-5", {
-                "border-t border-black pt-md": page.featuredImage == null,
-              })}
-            >
-              <Text content={page.content} />
+
+            <div className="mx-auto px-5 mt-xl mb-md max-w-2xl relative">
+              <div
+                className={classnames({
+                  "border-t border-black pt-md": page.featuredImage == null,
+                })}
+              >
+                <Text content={page.content} />
+              </div>
             </div>
-          </article>
+          </section>
         </>
       )}
     </Layout>
