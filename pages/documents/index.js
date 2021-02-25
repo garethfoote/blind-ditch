@@ -49,7 +49,7 @@ async function getOembeds(allDocs) {
 }
 
 export async function getStaticProps() {
-  const allDocs = await getAllDocuments();
+  const allDocs = await getDocuments();
 
   allDocs.nodes = await getOembeds(allDocs.nodes);
 
