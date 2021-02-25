@@ -10,11 +10,14 @@ export const MemberProfiles = ({ members }, idx) => {
         styles.grid
       )}
     >
-      {members.map((member, idx) => (
-        <div key={idx} className="max-w-sm mx-auto mb-lg sm:mb-0">
-          <MemberProfile {...member} />
-        </div>
-      ))}
+      {members.map((member, idx) => {
+        console.log(idx);
+        return (
+          <div key={idx} className="max-w-sm mx-auto mb-lg sm:mb-0">
+            <MemberProfile {...member} />
+          </div>
+        );
+      })}
     </div>
   );
 };

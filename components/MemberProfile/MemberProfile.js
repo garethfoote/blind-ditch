@@ -16,19 +16,19 @@ export const MemberProfile = ({
         <Image
           className="image-loading"
           alt={image.altText || name}
-          src={image.sourceUrl + "-"}
+          src={image.sourceUrl}
           layout="fill"
           objectFit="cover"
         />
       </div>
       <p className="text-lg mb-4">{name}</p>
       <div className="mb-4 flex uppercase font-accent text-xs leading-6 tracking-wide">
-        <dl className="flex-grow">
+        <dl key={1} className="flex-grow">
           <dt className="text-blue">Dates</dt>
           <dd>{date}</dd>
         </dl>
         {role && (
-          <dl className="flex-grow">
+          <dl key={2} className="flex-grow">
             <dt className="text-blue">Role</dt>
             <dd>{role}</dd>
           </dl>
