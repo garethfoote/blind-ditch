@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
+import { formatBytes } from "../../lib/utils";
+
 import styles from "./Documents.module.css";
 import oembedStyles from "../OEmbed/OEmbed.module.css";
 import classnames from "classnames";
@@ -19,9 +21,21 @@ export const DocumentsItem = ({
           "justify-end min-h-24 leading-7 border-top relative border-t border-black pt-3"
         )}
       >
-        <p onClick={handleClick} className="select-none text-base sm:text-md">
-          {title}
-        </p>
+        <a onClick={handleClick} className="cursor-pointer select-none pb-4">
+          <span className="text-xs align-top leading-6 w-6 h-6 text-center border border-black rounded-full inline-block">
+            <span
+              className={classnames("relative -top-px", { hidden: isVisible })}
+            >
+              ↓
+            </span>{" "}
+            <span
+              className={classnames("relative -top-px", { hidden: !isVisible })}
+            >
+              ↑
+            </span>{" "}
+          </span>
+          <p className="inline text-base sm:text-md"> {title}</p>
+        </a>
         <div className="flex justify-end">
           <dl className="uppercase font-accent text-xs leading-6 tracking-wide">
             <dt className="text-blue">Date</dt>
@@ -30,8 +44,8 @@ export const DocumentsItem = ({
         </div>
 
         <div className="flex justify-end">
-          <dl className="uppercase text-right font-accent text-xs leading-6 tracking-wide">
-            <dt className="text-blue">Visit Project</dt>
+          <dl className="uppercase text-right font-accent text-xs leading-6 tracking-wide pb-4">
+            <dt className="text-blue">Project</dt>
             <dd className="inline bg-yellow">
               <Link as={`/projects/${project.slug}`} href="/projects/[slug]">
                 <a>{project.title}</a>
@@ -40,7 +54,7 @@ export const DocumentsItem = ({
           </dl>
         </div>
 
-        <div className="absolute text-2xs uppercase -left-6 sm:-left-4 top-3 transform -translate-x-full">
+        <div className="absolute text-2xs uppercase -left-8 sm:-left-4 top-3 transform -translate-x-full">
           <div className="absolute sm:relative transform -rotate-90 origin-top-right -translate-x-full inline">
             {type}
           </div>
@@ -68,15 +82,10 @@ export const DocumentsItem = ({
                   className="flex"
                   href={fileDownload.mediaItemUrl}
                 >
-                  <div
-                    style={{ height: "72px", width: "52px" }}
-                    className="w-auto mr-4"
-                  >
+                  <div className="w-auto mr-4 h-12">
                     <svg
                       className="h-full"
                       xmlns="http://www.w3.org/2000/svg"
-                      width="70"
-                      height="96"
                       fill="none"
                       viewBox="0 0 70 96"
                     >
@@ -92,7 +101,8 @@ export const DocumentsItem = ({
                     </svg>
                   </div>
                   <div className={classnames("self-end")}>
-                    {fileDownload.title} ({fileDownload.fileSize})
+                    {fileDownload.mediaItemUrl.replace(/^.*[\\\/]/, "")} (
+                    {formatBytes(fileDownload.fileSize)})
                   </div>
                 </a>
               </div>

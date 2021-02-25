@@ -21,12 +21,6 @@ export default function Index({ allProjects: { nodes } }) {
         </div>
         <div className="container mx-auto mb-xl">
           <SectionTitle>Work</SectionTitle>
-          <div className="text-center px-5 max-w-xl mx-auto">
-            <Text
-              isCentred={true}
-              content="Short description or reminder of the type of work you ususally embark on with a reminder that there is a lot more if people visit the archive or explore by media type."
-            />
-          </div>
           <div className="max-w-5xl mx-auto py-5 pr-5 pl-2">
             <ProjectList projects={nodes} />
           </div>
