@@ -55,7 +55,7 @@ export const ProjectListItem = ({
           {yearStart}
         </time>
         <Link as={`/projects/${slug}`} href="/projects/[slug]">
-          <a className="hover:underline text-sm sm:text-md md:text-lg uppercase leading-6 tracking-wide pl-lg sm:pl-xl whitespace-nowrap">
+          <a className="title-underline-hover text-sm sm:text-md md:text-lg uppercase leading-6 tracking-wide ml-lg sm:ml-xl whitespace-nowrap">
             {title}
           </a>
         </Link>
