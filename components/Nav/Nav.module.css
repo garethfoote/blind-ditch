@@ -24,6 +24,10 @@
   }
 }
 
+.navSpacing {
+  height: calc(theme("margin.4") + theme("height.5") * 6);
+}
+
 .nav {
   transition-property: height;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -38,13 +42,13 @@
 
 .nav-enter-active {
   @apply static block;
-  height: calc(theme("margin.4") + theme("height.6") * 5);
+  height: calc(theme("margin.4") + theme("height.6") * 6);
 }
 
 .nav-enter-done {
   @apply static block;
   /* height: 113px */
-  height: calc(theme("margin.4") + theme("height.6") * 5);
+  height: calc(theme("margin.4") + theme("height.6") * 6);
 }
 
 .nav-exit-active {
@@ -64,7 +68,7 @@
   .nav-exit-done {
     transition-property: none;
     transition-duration: 0ms;
-    height: calc(theme("margin.4") + theme("height.6") * 5);
+    height: calc(theme("margin.4") + theme("height.6") * 6);
     @apply absolute block;
   }
 }

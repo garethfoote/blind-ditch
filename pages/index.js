@@ -1,16 +1,19 @@
+import { getHomepage } from "../lib/api";
+
 import Head from "next/head";
+import classnames from "classnames";
 import Layout from "../components/layout";
 import { Logo } from "../components/Logo";
 import { AnnouncementList } from "../components/AnnouncementList";
 import { HomepageArticle } from "../components/HomepageArticle";
 import { ProjectList } from "../components/ProjectList";
 import { Button } from "../components/Button";
-import SVGFilters from "../components/SVGFilters";
 import { SectionTitle } from "../components/SectionTitle";
+import SVGFilters from "../components/SVGFilters";
 import { HomeHeader } from "../components/HomeHeader";
 import Nav from "../components/Nav/Nav";
+import { default as navStyles } from "../components/Nav/Nav.module.css";
 import { Text } from "../components/Text";
-import { getHomepage } from "../lib/api";
 
 export default function Index({ hpProperties, preview }) {
   const announcements = hpProperties.page.homepageFields.connectedAnnouncements;
@@ -26,7 +29,12 @@ export default function Index({ hpProperties, preview }) {
           <title>Blind Ditch</title>
         </Head>
         <Nav />
-        <div className="h-20 mb-sm md:h-28 md:mb-lg lg:h-24 lg:mb-sm">
+        <div
+          className={classnames(
+            navStyles.navSpacing,
+            "mb-sm md:h-28 md:mb-lg lg:h-24 lg:mb-sm"
+          )}
+        >
           <Logo />
         </div>
 

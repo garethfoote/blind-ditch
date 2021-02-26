@@ -54,6 +54,15 @@ export default function Nav() {
                 </li>
                 <li
                   className={classnames(styles.linkItem, {
+                    [styles.active]: router.asPath == "/page/about#people",
+                  })}
+                >
+                  <Link href="/page/about#people">
+                    <a>People</a>
+                  </Link>
+                </li>
+                <li
+                  className={classnames(styles.linkItem, {
                     [styles.active]: router.pathname.includes("/projects"),
                   })}
                 >
