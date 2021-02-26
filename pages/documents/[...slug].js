@@ -1,5 +1,6 @@
-import { getDocuments } from "../../lib/api";
+import { getDocuments, getProjects } from "../../lib/api";
 import { getOembed } from "../../lib/utils";
+import { useRouter } from "next/router";
 
 import Head from "next/head";
 import Layout from "../../components/layout";
@@ -8,7 +9,14 @@ import { Logo } from "../../components/Logo";
 import { SectionTitle } from "../../components/SectionTitle";
 import { Documents } from "../../components/Documents";
 
-export default function Index({ allDocs: { nodes } }) {
+export default function Document({ allDocs: { nodes } }) {
+  const router = useRouter();
+  const { slug } = router.query;
+
+  nodes = nodes.filter((item) => {
+    return item.documentsFields.project.slug == slug[0];
+  });
+
   return (
     <>
       <Layout>
@@ -27,6 +35,15 @@ export default function Index({ allDocs: { nodes } }) {
       </Layout>
     </>
   );
+}
+
+export async function getStaticPaths() {
+  const allProjects = await getProjects();
+  return {
+    paths:
+      allProjects.nodes.map((project) => `/documents/${project.slug}`) || [],
+    fallback: false,
+  };
 }
 
 async function getOembeds(allDocs) {
