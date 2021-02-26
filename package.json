@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "create-manifest": "node  -e \"$(cat lib/createManifest.js)\" --input-type=\"module\"",
-    "dev": "NODE_OPTIONS='--inspect' yarn create-manifest && next dev --hostname 0.0.0.0",
+    "dev": "NODE_OPTIONS='--inspect' node  -e \"$(cat lib/createManifest.js)\" --input-type=\"module\" && next dev --hostname 0.0.0.0",
     "build": "yarn create-manifest && next build",
     "start": "yarn create-manifest && next start"
   },
