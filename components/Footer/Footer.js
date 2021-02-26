@@ -7,10 +7,9 @@ export const Footer = () => {
   return (
     <footer className={classnames(styles.footer, "bg-black w-full")}>
       <div className="h-full justify-center items-center container mx-auto">
-        
         <div className="text-center py-lg">
-          {globalData.footer.map(({ node }) => (
-            <Link as={`/page/${node.slug}`} href="/page/[slug]">
+          {globalData.footer.map(({ node }, idx) => (
+            <Link key={idx} as={`/page/${node.slug}`} href="/page/[slug]">
               <a className="text-offwhite">{node.title}</a>
             </Link>
           ))}
