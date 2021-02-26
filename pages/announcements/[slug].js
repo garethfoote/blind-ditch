@@ -31,7 +31,7 @@ export default function Project({ announcement }) {
           <div className="h-12 mb-sm md:mb-md lg:mb-sm">
             <Logo />
           </div>
-          <article className="mx-auto px-5 max-w-2xl">
+          <article className="mx-auto px-0 max-w-2xl">
             <div className="mx-auto px-5 max-w-2xl text-center pt-8">
               <h2 className="text-md sm:text-xl inline uppercase leading-8 sm:leading-12 tracking-wider">
                 {announcement.title}

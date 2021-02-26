@@ -31,7 +31,7 @@ export default function About({ page }) {
           <div className="h-12 mb-sm md:mb-md lg:mb-sm">
             <Logo />
           </div>
-          <section className="mx-auto px-5 max-w-2xl">
+          <section className="mx-auto px-0 max-w-2xl">
             <SectionTitle>{page.title}</SectionTitle>
 
             {page.featuredImage && (
@@ -52,7 +52,7 @@ export default function About({ page }) {
               </div>
             </div>
           </section>
-          <section className="mx-auto container px-10">
+          <section id="people" className="mx-auto container px-5">
             <SectionTitle>People</SectionTitle>
 
             <MemberProfiles members={page.speakerFields.members} />

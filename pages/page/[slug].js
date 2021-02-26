@@ -30,7 +30,7 @@ export default function Page({ page }) {
           <div className="h-12 mb-sm md:mb-md lg:mb-sm">
             <Logo />
           </div>
-          <section className="mx-auto px-5 max-w-2xl">
+          <section className="mx-auto px-0 max-w-2xl">
             <SectionTitle>{page.title}</SectionTitle>
 
             {page.featuredImage && (
