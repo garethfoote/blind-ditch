@@ -86,6 +86,7 @@ export default function Project({ project }) {
                       projectTypes={details.projectTypes}
                       location={details.location}
                       date={date}
+                      slug={project.slug}
                     />
                   </div>
                 </div>
