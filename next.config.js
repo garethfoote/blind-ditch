@@ -1,5 +1,5 @@
 module.exports = {
   images: {
-    domains: ["garfoo.dreamhosters.com"],
+    domains: ["dev.blindditch.org"],
   },
 };
