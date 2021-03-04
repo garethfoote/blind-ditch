@@ -10,7 +10,6 @@ export const MemberProfile = ({
   role,
   projects,
 }) => {
-  console.log(name);
   return (
     <div>
       <div className="relative w-full h-80 mb-4">

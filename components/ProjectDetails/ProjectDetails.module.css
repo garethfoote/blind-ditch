@@ -1,3 +1,7 @@
+.hoverTranslate:hover p {
+  @apply translate-x-1;
+}
+
 .cols {
   @apply flex flex-row;
   @apply gap-x-8;
@@ -13,6 +17,11 @@
 
 .cols > :nth-child(3) {
   flex: 1;
+}
+
+.cols > :nth-child(4) {
+  /* flex: 1 0 100%; */
+  /* width: 100%; */
 }
 
 @screen lg {

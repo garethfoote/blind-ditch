@@ -1,25 +1,39 @@
 import { ProjectTypes } from "../ProjectTypes";
+import Link from "next/link";
 import classnames from "classnames";
 import styles from "./ProjectDetails.module.css";
 
-export default function ProjectDetails({ date, location, projectTypes }) {
+export default function ProjectDetails({ date, location, projectTypes, slug }) {
   return (
-    <div
-      className={classnames(
-        styles.cols,
-        "uppercase font-accent text-xs leading-6 tracking-wide"
-      )}
-    >
-      <div className="text-strong-yellow">
-        <ProjectTypes types={projectTypes} />
+    <div className="uppercase font-accent text-xs leading-6 tracking-wide">
+      <div className={classnames(styles.cols, "pb-md")}>
+        <div className="text-strong-yellow">
+          <ProjectTypes types={projectTypes} />
+        </div>
+        <dl className="lg:mt-md">
+          <dt className="text-blue">Date</dt>
+          <dd>{date}</dd>
+        </dl>
+        <dl className="lg:mt-md">
+          <dt className="text-blue">Location</dt>
+          <dd>{location}</dd>
+        </dl>
       </div>
       <dl className="lg:mt-md">
-        <dt>Date</dt>
-        <dd className="text-blue">{date}</dd>
-      </dl>
-      <dl className="lg:mt-md">
-        <dt>Location</dt>
-        <dd className="text-blue">{location}</dd>
+        <dt className="text-blue">Documents</dt>
+        <dd>
+          <Link as={`/documents/${slug}`} href="/documents/[slug]">
+            <a
+              className={classnames(
+                styles.hoverTranslate,
+                "inline-block hover:underline"
+              )}
+            >
+              See blogs, videos and writing associated with project{" "}
+              <p className="transition-transform transform text-md">→</p>
+            </a>
+          </Link>
+        </dd>
       </dl>
     </div>
   );

@@ -13,8 +13,8 @@ export const HomepageArticle = ({ page }) => {
   const maxHeight = 424;
 
   let scaled = proportionalScale(
-    image.mediaDetails.width,
-    image.mediaDetails.height,
+    image?.mediaDetails.width,
+    image?.mediaDetails.height,
     maxWidth,
     maxHeight
   );
@@ -23,13 +23,15 @@ export const HomepageArticle = ({ page }) => {
   return (
     <div className="mx-auto px-8 my-md max-w-lg md:max-w-xl">
       <div className="w-full h-80 sm:h-100 md:h-112 image-shadow image-shadow-bl">
-        <Image
-          className="image-loading"
-          alt={image.altText || page.title || image.title}
-          src={image.sourceUrl}
-          layout="fill"
-          objectFit="cover"
-        />
+        {image && (
+          <Image
+            className="image-loading"
+            alt={image.altText || page.title || image.title}
+            src={image.sourceUrl}
+            layout="fill"
+            objectFit="cover"
+          />
+        )}
       </div>
       <div className="bg-offwhite p-4 w-5/6 sm:max-w-none sm:w-100 bg-offwhite relative z-30 -top-4 left-4 sm:left-1/10">
         <Link as={`/page/${page.slug}`} href="/page/[slug]">
