@@ -25,27 +25,31 @@ export const MemberProfile = ({
       </div>
       <p className="text-lg mb-4">{name}</p>
       <div className="mb-4 flex uppercase font-accent text-xs leading-6 tracking-wide">
-        <dl key={1} className="w-48">
-          <dt className="text-blue">Dates</dt>
-          <dd>{date}</dd>
-        </dl>
-        {projects && (
-          <dl key={2} className="flex-grow">
-            <dt className="text-blue">Projects</dt>
-            {projects.map((project, idx) => (
-              <>
-                <dd className="inline bg-yellow" key={idx}>
-                  <Link
-                    as={`/projects/${project.slug}`}
-                    href="/projects/[slug]"
-                  >
-                    <a>{project.title}</a>
-                  </Link>
-                </dd>
-                {idx != projects.length - 1 && ", "}
-              </>
-            ))}
+        <div className="w-48">
+          <dl>
+            <dt className="text-blue">Dates</dt>
+            <dd>{date}</dd>
           </dl>
+        </div>
+        {projects && (
+          <div className="flex-grow">
+            <dl>
+              <dt className="text-blue">Projects</dt>
+              {projects.map((project, idx) => (
+                <>
+                  <dd className="inline bg-yellow" key={idx}>
+                    <Link
+                      as={`/projects/${project.slug}`}
+                      href="/projects/[slug]"
+                    >
+                      <a>{project.title}</a>
+                    </Link>
+                  </dd>
+                  {idx != projects.length - 1 && ", "}
+                </>
+              ))}
+            </dl>
+          </div>
         )}
       </div>
       {role && (
