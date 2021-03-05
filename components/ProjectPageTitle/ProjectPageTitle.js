@@ -1,9 +1,4 @@
 import classnames from "classnames";
-import Image from "next/image";
-import parse from "html-react-parser";
-import Container from "../container";
-import { ProjectTypes } from "../ProjectTypes";
-import styles from "./ProjectPageTitle.module.css";
 
 export const ProjectPageTitle = ({ title, date }) => {
   return (
