@@ -2,7 +2,7 @@ export const ProjectTypes = ({ types }, idx) => {
   return (
     <>
       {types && (
-        <p>
+        <p className="inline">
           A{" "}
           {types
             .map(({ name }, idx) => <span key={idx}>{name}</span>)
