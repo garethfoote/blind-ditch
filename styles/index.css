@@ -117,18 +117,6 @@
 
 /* Write you own custom component styles here */
 @layer components {
-  .highlight-box-blue {
-    @apply font-accent;
-    @apply bg-mint;
-    @apply border-2 border-black;
-  }
-
-  .highlight-box-mint {
-    @apply font-accent;
-    @apply bg-mint;
-    @apply border-2 border-black;
-  }
-
   .text-bg-black strong {
     @apply font-bold;
   }
