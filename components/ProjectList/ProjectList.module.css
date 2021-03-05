@@ -11,7 +11,7 @@
   background-repeat: no-repeat;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 19 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.592 16.608c-.544-1.136-1.408-2.192-2.592-3.168v-.84c1.024.496 1.792.96 2.304 1.392V0h1.008v13.992c.512-.432 1.28-.896 2.304-1.392v.84c-1.168.976-2.032 2.032-2.592 3.168h-.432z' fill='%230044F3'/%3E%3Cpath stroke='%230044F3' d='M16 .5H0'/%3E%3C/svg%3E");
   position: absolute;
-  top: 5px;
+  top: 11px;
   right: -13px;
 }
 
@@ -23,7 +23,7 @@
   .year:after {
     width: 19px;
     height: 17px;
-    top: 12px;
+    top: 17px;
     right: -20px;
   }
 }

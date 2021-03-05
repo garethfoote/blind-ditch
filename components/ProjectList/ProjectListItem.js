@@ -38,7 +38,7 @@ export const ProjectListItem = ({
         {yearEnd && " - "}
         {yearEnd && <time dateTime={yearEnd}>{yearEnd}</time>}
       </div> */}
-      <div className="self-end">
+      <div className="self-end flex">
         <time
           className={classnames(
             styles.year,
@@ -84,7 +84,7 @@ export const ProjectListItem = ({
       <div
         onMouseEnter={() => setTypeVisibility(true)}
         onMouseLeave={() => setTypeVisibility(false)}
-        className="font-accent truncate uppercase text-right text-xs sm:text-sm md:text-base self-end"
+        className="font-accent truncate uppercase text-right text-xs sm:text-sm md:text-base self-end select-none"
       >
         <div
           className={classnames("", {
