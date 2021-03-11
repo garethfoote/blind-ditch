@@ -180,7 +180,7 @@
 
     .title-underline-hover:hover::after {
       content: "";
-      @apply block absolute w-full h-full -top-2;
+      @apply block absolute w-full h-full top-0;
       border-bottom: 2px solid theme("colors.black");
     }
   }
