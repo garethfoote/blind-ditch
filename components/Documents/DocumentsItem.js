@@ -63,17 +63,19 @@ export const DocumentsItem = ({
       <div className="w-full">
         {isVisible == true && (
           <div className="w-full pb-lg">
+            {!oembedDetails && <div>Sorry, this document is missing.</div>}
             {["video", "sound"].indexOf(type.toLowerCase()) >= 0 && (
               <div
                 className={classnames({
                   [oembedStyles.ytEmbedContainer]:
-                    oembedDetails.provider_name == "YouTube",
+                    oembedDetails?.provider_name == "YouTube",
                   [oembedStyles.soundcloud]:
-                    oembedDetails.provider_name == "SoundCloud",
+                    oembedDetails?.provider_name == "SoundCloud",
                 })}
-                dangerouslySetInnerHTML={{ __html: oembedDetails.html }}
+                dangerouslySetInnerHTML={{ __html: oembedDetails?.html }}
               />
             )}
+
             {["writing"].indexOf(type.toLowerCase()) >= 0 && (
               <div className="">
                 <a
