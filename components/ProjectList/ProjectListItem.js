@@ -38,7 +38,7 @@ export const ProjectListItem = ({
         {yearEnd && " - "}
         {yearEnd && <time dateTime={yearEnd}>{yearEnd}</time>}
       </div> */}
-      <div className="self-end flex">
+      <div className="self-end flex truncate">
         <time
           className={classnames(
             styles.year,
