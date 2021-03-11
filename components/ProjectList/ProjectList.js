@@ -23,10 +23,7 @@ export const ProjectList = ({ projects }, idx) => {
         const isFirstYear = previousYearStart !== details.yearStart;
         previousYearStart = details.yearStart;
         return (
-          <div
-            className={classnames({ "mt-lg": isFirstYear && idx > 0 })}
-            key={idx}
-          >
+          <div className={classnames({ "": isFirstYear && idx > 0 })} key={idx}>
             <ProjectListItem
               title={project.title}
               slug={project.slug}

@@ -171,6 +171,16 @@
 
   @screen sm {
     .title-underline-hover:hover {
+      /* border-bottom: 2px solid theme("colors.black"); */
+    }
+
+    .title-underline-hover {
+      @apply relative;
+    }
+
+    .title-underline-hover:hover::after {
+      content: "";
+      @apply block absolute w-full h-full -top-2;
       border-bottom: 2px solid theme("colors.black");
     }
   }

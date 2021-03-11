@@ -43,7 +43,7 @@ export const ProjectListItem = ({
           className={classnames(
             styles.year,
             { invisible: showYear === false },
-            "font-accent text-sm sm:text-md text-blue absolute tracking-wide pointer-events-none"
+            "font-accent text-sm w-9 sm:text-md sm:w-14 text-blue absolute tracking-wide pointer-events-none"
           )}
           dateTime={yearStart}
         >
@@ -53,7 +53,7 @@ export const ProjectListItem = ({
           <a
             onMouseEnter={() => setImgVisibility(true)}
             onMouseLeave={() => setImgVisibility(false)}
-            className="title-underline-hover text-sm sm:text-md md:text-lg uppercase leading-6 tracking-wide ml-lg sm:ml-xl whitespace-nowrap"
+            className="self-end leading-none title-underline-hover text-sm sm:text-md md:text-lg uppercase leading-6 tracking-wide ml-lg sm:ml-xl whitespace-nowrap"
           >
             {title}
           </a>
@@ -79,12 +79,12 @@ export const ProjectListItem = ({
         )}
       </div>
       <div className="flex-grow self-end">
-        <hr className="relative -top-2 mx-1 border border-black border-dashed" />
+        <hr className="relative -top-1 mx-1 border border-black border-dashed" />
       </div>
       <div
         onMouseEnter={() => setTypeVisibility(true)}
         onMouseLeave={() => setTypeVisibility(false)}
-        className="font-accent truncate uppercase text-right text-xs sm:text-sm md:text-base self-end select-none"
+        className="self-end leading-none font-accent truncate uppercase text-right text-xs sm:text-sm md:text-base select-none"
       >
         <div
           className={classnames("", {
