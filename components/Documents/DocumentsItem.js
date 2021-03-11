@@ -63,7 +63,8 @@ export const DocumentsItem = ({
       <div className="w-full">
         {isVisible == true && (
           <div className="w-full pb-lg">
-            {!oembedDetails && <div>Sorry, this document is missing.</div>}
+            {["video", "sound"].indexOf(type.toLowerCase()) >= 0 &&
+              !oembedDetails && <div>Sorry, this document is missing.</div>}
             {["video", "sound"].indexOf(type.toLowerCase()) >= 0 && (
               <div
                 className={classnames({
