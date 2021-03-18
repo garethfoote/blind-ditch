@@ -5,7 +5,7 @@ import styles from "./Logo.module.css";
 export const Logo = () => {
   return (
     <>
-      <div className="flex justify-center relative z-10">
+      <div className="flex justify-center relative z-10 h-full">
         <Link href="/">
           <a className="inline-block h-10 mx-auto mt-4">
             <img

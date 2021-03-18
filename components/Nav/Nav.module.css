@@ -13,25 +13,19 @@
   @apply pr-4 h-6;
 }
 
-@screen md {
+@screen lg {
   .linkItem:hover:after,
   .active:after {
-    height: 10px;
-    width: 10px;
+    /* height: 10px;
+    width: 10px; */
   }
   .linkItem {
-    @apply h-5;
+    /* @apply h-5; */
   }
 }
 
 .navSpacing {
   height: calc(theme("margin.4") + theme("height.5") * 3);
-}
-
-@screen md {
-  .navSpacing {
-    height: calc(theme("margin.4") + theme("height.5") * 6);
-  }
 }
 
 @screen lg {
@@ -72,7 +66,7 @@
   @apply static block;
 }
 
-@screen md {
+@screen lg {
   .nav,
   .nav-enter-active,
   .nav-enter-done,
@@ -95,7 +89,7 @@
 }
 
 .arrow svg {
-  @apply transform;
+  @apply transform transition-transform delay-200 duration-500;
 }
 
 .nav-enter-done + .arrow svg,

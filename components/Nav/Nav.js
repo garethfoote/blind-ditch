@@ -33,7 +33,7 @@ export default function Nav() {
                 "h-0 pl-4 z-20 overflow-hidden outline-none"
               )}
             >
-              <ul className="mt-4 font-main font-normal uppercase text-base sm:text-sm">
+              <ul className="mt-4 font-main font-normal uppercase text-base">
                 <li
                   className={classnames(styles.linkItem, {
                     [styles.active]: router.pathname == "/",
@@ -96,13 +96,16 @@ export default function Nav() {
       <button
         className={classnames(
           styles.arrow,
-          "md:hidden z-40 w-3 h-3 left-0 m-2 ml-4 mt-4 absolute outline-none"
+          "lg:hidden z-40 w-3 h-3 left-0 m-2 ml-4 mt-3 absolute outline-none"
         )}
         onClick={() => setOpen(!isOpen)}
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 39 34">
           <path fill="#1F1F1F" d="M19.5 0l19.486 33.75H.014L19.5 0z" />
-        </svg>
+        </svg>{" "}
+        <span className="title-underline-after absolute -top-1 left-4">
+          Menu
+        </span>
       </button>
     </div>
   );

@@ -189,6 +189,14 @@
     border-bottom: 2px solid theme("colors.black");
   }
 
+  .title-underline-after:after {
+    content: "";
+    @apply absolute -top-px left-0;
+    @apply w-full h-full;
+    @apply z-0;
+    border-bottom: 1px solid theme("colors.black");
+  }
+
   .image-loading {
     @apply bg-offwhite bg-topography;
     background-size: 50%;
