@@ -12,7 +12,6 @@ import { SectionTitle } from "../components/SectionTitle";
 import SVGFilters from "../components/SVGFilters";
 import { HomeHeader } from "../components/HomeHeader";
 import Nav from "../components/Nav/Nav";
-import { default as navStyles } from "../components/Nav/Nav.module.css";
 import { Text } from "../components/Text";
 
 export default function Index({ hpProperties, preview }) {
