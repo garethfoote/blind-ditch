@@ -1,5 +1,9 @@
-.intro {
+.logo {
+  height: calc(theme("margin.4") + theme("height.5") * 3);
 }
 
-.logo {
+@screen lg {
+  .logo {
+    height: calc(theme("margin.4") + theme("height.5") * 4);
+  }
 }

@@ -28,9 +28,7 @@ export default function About({ page }) {
             <title>{page.title}</title>
           </Head>
           <Nav />
-          <div className="h-12 mb-sm md:mb-md lg:mb-sm">
-            <Logo />
-          </div>
+          <Logo />
           <section className="mx-auto px-0 max-w-2xl">
             <SectionTitle>{page.title}</SectionTitle>
 

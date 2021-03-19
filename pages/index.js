@@ -29,9 +29,7 @@ export default function Index({ hpProperties, preview }) {
           <title>Blind Ditch</title>
         </Head>
         <Nav />
-        <div className={classnames(navStyles.navSpacing, "mb-md")}>
-          <Logo />
-        </div>
+        <Logo />
 
         <div className="mx-auto px-8 sm:px-5 mb-xl max-w-2xl md:max-w-3xl xl:max-w-4xl ">
           <HomeHeader

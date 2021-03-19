@@ -24,16 +24,6 @@
   }
 }
 
-.navSpacing {
-  height: calc(theme("margin.4") + theme("height.5") * 3);
-}
-
-@screen lg {
-  .navSpacing {
-    height: calc(theme("margin.4") + theme("height.5") * 4);
-  }
-}
-
 .nav {
   transition-property: height;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);

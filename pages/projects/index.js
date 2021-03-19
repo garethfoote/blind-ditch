@@ -17,9 +17,7 @@ export default function Index({ allProjects: { nodes } }) {
           <title>Blind Ditch</title>
         </Head>
         <Nav />
-        <div className="h-12 mb-sm md:mb-md lg:mb-sm">
-          <Logo />
-        </div>
+        <Logo />
         <div className="container mx-auto mb-xl">
           <SectionTitle>Work</SectionTitle>
           <div className="max-w-5xl mx-auto py-5 pr-5 pl-2">

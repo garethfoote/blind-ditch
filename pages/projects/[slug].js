@@ -42,59 +42,55 @@ export default function Project({ project }) {
           <Head>
             <title>{project.title}</title>
           </Head>
-          <div className="relative">
-            <div className="relative z-40">
-              <Nav />
-            </div>
-            <Logo />
-            <article className="px-2 sm:px-5">
-              <ProjectPageTitle title={project.title} date={date} />
+          <Nav />
+          <Logo />
+          <article className="px-2 sm:px-5">
+            <ProjectPageTitle title={project.title} date={date} />
 
-              <div>
-                {featuredImage && (
-                  <div className="mx-auto px-5 my-lg md:container">
-                    <div
-                      style={{
-                        maxHeight: "90vh",
-                        overflow: "hidden",
-                      }}
-                    >
-                      <Image
-                        className="image-loading"
-                        src={featuredImage.sourceUrl}
-                        width={featuredImage.mediaDetails.width}
-                        height={featuredImage.mediaDetails.height}
-                        layout="responsive"
-                        style={{ objectFit: "cover" }}
-                        alt={featuredImage.altText || featuredImage.title}
-                        priority={true}
-                        loading={"eager"}
-                      />
-                    </div>
-                  </div>
-                )}
-
-                <div className="mx-auto px-5 mt-xl mb-md max-w-2xl relative">
-                  <div className="border-t border-black pt-md">
-                    <div
-                      className="text-base leading-7 sm:text-lg sm:leading-9"
-                      dangerouslySetInnerHTML={{ __html: project.content }}
-                    />
-                  </div>
-                  <div className="mt-md lg:mt-0 lg:w-44 lg:absolute lg:top-0 lg:-right-48">
-                    <ProjectDetails
-                      projectTypes={details.projectTypes}
-                      location={details.location}
-                      date={date}
-                      slug={project.slug}
+            <div>
+              {featuredImage && (
+                <div className="mx-auto px-5 my-lg md:container">
+                  <div
+                    style={{
+                      maxHeight: "90vh",
+                      overflow: "hidden",
+                    }}
+                  >
+                    <Image
+                      className="image-loading"
+                      src={featuredImage.sourceUrl}
+                      width={featuredImage.mediaDetails.width}
+                      height={featuredImage.mediaDetails.height}
+                      layout="responsive"
+                      style={{ objectFit: "cover" }}
+                      alt={featuredImage.altText || featuredImage.title}
+                      priority={true}
+                      loading={"eager"}
                     />
                   </div>
                 </div>
+              )}
 
-                <Widgets widgets={project.projectFields.flexibleContent} />
+              <div className="mx-auto px-5 mt-xl mb-md max-w-2xl relative">
+                <div className="border-t border-black pt-md">
+                  <div
+                    className="text-base leading-7 sm:text-lg sm:leading-9"
+                    dangerouslySetInnerHTML={{ __html: project.content }}
+                  />
+                </div>
+                <div className="mt-md lg:mt-0 lg:w-44 lg:absolute lg:top-0 lg:-right-48">
+                  <ProjectDetails
+                    projectTypes={details.projectTypes}
+                    location={details.location}
+                    date={date}
+                    slug={project.slug}
+                  />
+                </div>
               </div>
-            </article>
-          </div>
+
+              <Widgets widgets={project.projectFields.flexibleContent} />
+            </div>
+          </article>
         </>
       )}
     </Layout>
