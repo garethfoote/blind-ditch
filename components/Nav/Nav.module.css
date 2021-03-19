@@ -9,6 +9,13 @@
   @apply inline-block relative outline-none;
 }
 
+.linkItemDoc:hover:after,
+.activeDoc:after {
+  height: 15px;
+  width: 11px;
+  background-image: url("data:image/svg+xml,%3Csvg width='70' height='96' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M69 95H1V1h48.571L69 21.4V95z' stroke='%231F1F1F' stroke-width='4'/%3E%3Cpath d='M49 22V1l20 21H49z' fill='%231F1F1F'/%3E%3C/svg%3E");
+}
+
 .linkItem {
   @apply pr-4 h-6;
 }

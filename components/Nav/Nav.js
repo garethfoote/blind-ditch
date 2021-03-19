@@ -71,8 +71,9 @@ export default function Nav() {
                   </Link>
                 </li>
                 <li
-                  className={classnames(styles.linkItem, {
+                  className={classnames(styles.linkItem, styles.linkItemDoc, {
                     [styles.active]: router.pathname.includes("/documents"),
+                    [styles.activeDoc]: router.pathname.includes("/documents"),
                   })}
                 >
                   <Link href="/documents">
