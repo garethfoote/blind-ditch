@@ -103,7 +103,7 @@ export default function Nav() {
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 39 34">
           <path fill="#1F1F1F" d="M19.5 0l19.486 33.75H.014L19.5 0z" />
         </svg>{" "}
-        <span className="title-underline-after absolute -top-1 left-4">
+        <span className="title-underline-after absolute -top-1 left-4 text-xs">
           Menu
         </span>
       </button>
