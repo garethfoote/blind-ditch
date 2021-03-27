@@ -15,13 +15,23 @@ export default function Index({ allDocs: { nodes } }) {
         <Head>
           <title>Blind Ditch</title>
         </Head>
-        <Nav />
-        <div className="h-12 mb-sm md:mb-md lg:mb-sm">
-          <Logo />
-        </div>
-        <div className="container mx-auto mb-xl">
-          <SectionTitle>Documents</SectionTitle>
-
+        <div className="px-xs md:px-lg mx-auto mb-xl">
+          <div className="">
+            <svg
+              width="70"
+              height="96"
+              viewBox="0 0 70 96"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M69 95H1V1H49.5714L69 21.4V95Z"
+                stroke="#1F1F1F"
+                stroke-width="2"
+              />
+              <path d="M49 22V1L69 22H49Z" fill="#1F1F1F" />
+            </svg>
+          </div>
           <Documents documents={nodes} />
         </div>
       </Layout>

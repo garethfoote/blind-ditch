@@ -4,13 +4,28 @@
 }
 
 .cols > :nth-child(1) {
-  flex: 4;
+  flex: 5;
 }
 
 .cols > :nth-child(2) {
-  flex: 1;
+  @apply hidden overflow-hidden w-0;
 }
 
 .cols > :nth-child(3) {
   flex: 2;
+}
+
+@screen md {
+  .cols > :nth-child(1) {
+    flex: 8;
+  }
+
+  .cols > :nth-child(2) {
+    flex: 2;
+    @apply block overflow-auto w-auto;
+  }
+
+  .cols > :nth-child(3) {
+    flex: 2;
+  }
 }
