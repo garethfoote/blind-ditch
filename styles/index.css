@@ -117,6 +117,10 @@
 
 /* Write you own custom component styles here */
 @layer components {
+  body.document {
+    @apply bg-yellow-lighter;
+  }
+
   .text-bg-black strong {
     @apply font-bold;
   }
@@ -317,6 +321,15 @@
     clip-path: inset(100%);
     clip: rect(1px, 1px, 1px, 1px);
     white-space: nowrap;
+  }
+
+  .scrollbars-hidden::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbars-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
 
