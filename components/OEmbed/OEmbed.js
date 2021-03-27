@@ -8,7 +8,7 @@ export const OEmbed = ({ oembedDetails }) => {
     <Container max="4xl" spacing="xl">
       <div
         className={classnames({
-          [styles.ytEmbedContainer]: oembedDetails.provider_name == "YouTube",
+          [styles.ytEmbedContainer]: oembedDetails?.provider_name == "YouTube",
         })}
         dangerouslySetInnerHTML={{ __html: oembedDetails?.html }}
       />

@@ -27,7 +27,7 @@ export default function Index({ allDocs: { nodes } }) {
               <path
                 d="M69 95H1V1H49.5714L69 21.4V95Z"
                 stroke="#1F1F1F"
-                stroke-width="2"
+                strokeWidth="2"
               />
               <path d="M49 22V1L69 22H49Z" fill="#1F1F1F" />
             </svg>
