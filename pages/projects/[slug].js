@@ -121,10 +121,14 @@ const getOembeds = async (flexContent, filter) => {
 export async function getStaticProps({ params }) {
   let data = await getProject(params.slug);
 
-  data.project.projectFields.flexibleContent = await getOembeds(
-    data.project.projectFields.flexibleContent,
-    "project_Projectfields_FlexibleContent_EmbedBlock"
-  );
+  try {
+    data.project.projectFields.flexibleContent = await getOembeds(
+      data.project.projectFields.flexibleContent,
+      "project_Projectfields_FlexibleContent_EmbedBlock"
+    );
+  } catch (err) {
+    console.log("Error with requesting oembeds", err);
+  }
 
   return {
     props: {
