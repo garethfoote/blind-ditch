@@ -13,9 +13,9 @@ const settings = {
   slidesToShow: 1,
   slidesToScroll: 1,
   variableWidth: true,
-  beforeChange: (o, n) => {
-    console.log("beforeChange", o, n);
-  },
+  // beforeChange: (o, n) => {
+  //   console.log("beforeChange", o, n);
+  // },
 };
 
 export const GalleryCarousel = ({ images, height = 416 }) => {

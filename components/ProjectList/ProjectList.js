@@ -37,7 +37,6 @@ export const ProjectList = ({ projects }, idx) => {
   let previousYearStart;
 
   useEffect(() => {
-    // console.log(state.count);
     if (state.count === 0) {
       dispatch({ type: "reset", payload: projects.length });
       setScrollDirection(scrollDirection * -1);
@@ -57,24 +56,19 @@ export const ProjectList = ({ projects }, idx) => {
         const isFirstYear = previousYearStart !== details.yearStart;
         previousYearStart = details.yearStart;
         return (
-          <>
-            <div
-              className={classnames({ "": isFirstYear && idx > 0 })}
-              key={idx}
-            >
-              <ProjectListItem
-                title={project.title}
-                slug={project.slug}
-                image={image}
-                showYear={isFirstYear}
-                {...details}
-                index={idx}
-                hasComplete={() => {
-                  dispatch({ type: "decrement" });
-                }}
-              />
-            </div>
-          </>
+          <div className={classnames({ "": isFirstYear && idx > 0 })} key={idx}>
+            <ProjectListItem
+              title={project.title}
+              slug={project.slug}
+              image={image}
+              showYear={isFirstYear}
+              {...details}
+              index={idx}
+              hasComplete={() => {
+                dispatch({ type: "decrement" });
+              }}
+            />
+          </div>
         );
       })}
     </ScrollingDirContext.Provider>

@@ -36,6 +36,15 @@ export const ProjectListItem = ({
   );
 
   useEffect(() => {
+    async function animate() {
+      // console.log(`start anim ${index}`);
+      setIsScrolling(true);
+      await scrollTo(titleRef.current, scrollDirection);
+      // console.log(`finished anim ${index}`);
+      setIsScrolling(false);
+      hasComplete();
+    }
+
     if (isScrolling) {
       // console.log("Blocked! isScrolling", index);
       return;
@@ -45,15 +54,6 @@ export const ProjectListItem = ({
       // console.log("Direction doesn't match - CHANGE + animate");
       setInternalScrollDir(scrollDirection);
       animate();
-    }
-
-    async function animate() {
-      // console.log(`start anim ${index}`);
-      setIsScrolling(true);
-      await scrollTo(titleRef.current, scrollDirection);
-      // console.log(`finished anim ${index}`);
-      setIsScrolling(false);
-      hasComplete();
     }
   }, [isScrolling, internalScrollDir, scrollDirection, titleRef, hasComplete]);
 
