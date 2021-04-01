@@ -1,10 +1,11 @@
+import React, { useEffect, useState, useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import React, { useEffect, useState, useContext } from "react";
 import classnames from "classnames";
 import styles from "./ProjectList.module.css";
-import { ScrollingDirContext } from "./ProjectListContext";
+import { Media, MediaContextProvider } from "../../lib/media-queries";
 
+import { ScrollingDirContext } from "./ProjectListContext";
 import { ProjectTypes } from "../ProjectTypes";
 import { proportionalScale, scrollTo } from "../../lib/utils";
 
@@ -15,8 +16,8 @@ export const ProjectListItem = ({
   showYear,
   projectTypes,
   location,
+  locationShort,
   image,
-  index = 0,
   hasComplete,
 }) => {
   const [isImgVisible, setImgVisibility] = useState(false);
@@ -118,27 +119,42 @@ export const ProjectListItem = ({
       <div className="flex-grow self-end">
         <hr className="relative -top-1 mx-1 border border-black border-dashed" />
       </div>
+
       <div
         onMouseEnter={() => setTypeVisibility(true)}
         onMouseLeave={() => setTypeVisibility(false)}
         className="self-end leading-none font-accent truncate uppercase text-right text-xs sm:text-sm md:text-base select-none"
       >
-        <div
-          className={classnames("", {
-            ["hidden"]: isTypeVisible === true,
-            ["inline"]: isTypeVisible === false,
-          })}
-        >
-          {location}
-        </div>
-        <div
-          className={classnames("text-strong-yellow", {
-            ["inline"]: isTypeVisible === true,
-            ["hidden"]: isTypeVisible === false,
-          })}
-        >
-          <ProjectTypes types={projectTypes} />
-        </div>
+        <MediaContextProvider>
+          <div
+            className={classnames("", {
+              ["hidden"]: isTypeVisible === true,
+              ["inline"]: isTypeVisible === false,
+            })}
+          >
+            <Media at="base">{locationShort}</Media>
+            <Media greaterThanOrEqual="desktop">{location}</Media>
+          </div>
+          <div
+            className={classnames("text-strong-yellow", {
+              ["inline"]: isTypeVisible === true,
+              ["hidden"]: isTypeVisible === false,
+            })}
+          >
+            <Media at="base">
+              <ProjectTypes
+                types={
+                  projectTypes.length > 1
+                    ? projectTypes.slice(0, 1)
+                    : projectTypes
+                }
+              />
+            </Media>
+            <Media greaterThanOrEqual="desktop">
+              <ProjectTypes types={projectTypes} />
+            </Media>
+          </div>
+        </MediaContextProvider>
       </div>
     </article>
   );
