@@ -7,9 +7,9 @@ export const HomeHeader = ({ intro, testimonials }) => {
   const randTestimonial = Math.floor(Math.random() * testimonials.length);
   return (
     <div className={classnames(styles.headerCols)}>
-      <div className="sm:mx-0 pb-md sm:pb-0 sm:pr-lg md:pr-xl">
+      <div className="sm:mx-0 sm:pr-lg md:pr-xl">
         <div
-          className="text-base leading-7 sm:text-lg sm:leading-9 text-bg-black"
+          className="pt-md pb-lg sm:pb-md px-sm text-sm text-justify leading-6 sm:text-lg sm:leading-9 sm:text-left text-bg-black"
           dangerouslySetInnerHTML={{ __html: intro }}
         />
       </div>

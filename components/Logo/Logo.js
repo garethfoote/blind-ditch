@@ -7,7 +7,7 @@ export const Logo = () => {
     <div className={classnames(styles.logo)}>
       <div className="flex justify-center items-center relative z-10 h-full">
         <Link href="/">
-          <a className="inline-block h-10 mx-auto">
+          <a className="inline-block h-8 sm:h-10 mx-auto">
             <img
               alt="Blind Ditch logo in black"
               className="h-full w-auto"
