@@ -27,5 +27,5 @@
 }
 
 .context {
-  @apply relative top-2 text-right;
+  @apply relative top-2;
 }

@@ -26,7 +26,11 @@ export const HighlightBoxBlue = ({ html, context }) => {
       )}
     >
       <div dangerouslySetInnerHTML={{ __html: html }} />
-      {context && <div className={styles.context}>{context}</div>}
+      {context && (
+        <div className="relative top-2 text-right text-white">
+          <p className="bg-blue inline">{context}</p>
+        </div>
+      )}
     </div>
   );
 };
