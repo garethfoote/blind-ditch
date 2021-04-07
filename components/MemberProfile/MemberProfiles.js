@@ -12,7 +12,7 @@ export const MemberProfiles = ({ members }, idx) => {
     >
       {members.map((member, idx) => {
         return (
-          <div key={idx} className="max-w-sm mx-auto mb-lg sm:mb-0">
+          <div key={idx} className="max-w-sm mx-auto mb-lg sm:mb-0 px-lg">
             <MemberProfile {...member} />
           </div>
         );
