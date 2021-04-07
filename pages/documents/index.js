@@ -1,15 +1,14 @@
 import { getDocuments } from "../../lib/api";
 import { getOembed } from "../../lib/utils";
+import { useRouter } from "next/router";
 
 import Head from "next/head";
 import Layout from "../../components/layout";
-import Nav from "../../components/Nav/Nav";
-import { Logo } from "../../components/Logo";
-import { SectionTitle } from "../../components/SectionTitle";
 import { Documents } from "../../components/Documents";
-import { Button } from "../../components/Button";
 
 export default function Index({ allDocs: { nodes } }) {
+  const router = useRouter();
+
   return (
     <>
       <Layout>
@@ -17,16 +16,23 @@ export default function Index({ allDocs: { nodes } }) {
           <title>Blind Ditch</title>
         </Head>
         <div className="px-xs md:px-lg mx-auto mb-xl">
-          <div className="flex gap-4 py-md">
+          <div className="flex gap-4 py-md justify-between">
             <div className="flex-none w-24 px-sm">
-              <a className="button-shadow">
-                <span className="text-xs relative z-10 title-accent p-2 bg-mint border border-black border-solid">
+              <button className="h-4 button-shadow">
+                <span
+                  onClick={() => router.back()}
+                  className="text-xs relative z-10 title-accent p-2 bg-mint border border-black border-solid"
+                >
                   ← Back
                 </span>
-              </a>
+              </button>
             </div>
 
-            <div className="flex gap-4 max-w-2xl mx-auto">
+            <div className="flex gap-4 max-w-2xl pr-md">
+              <p>
+                A collection of documents and media produced over the course of
+                our 20+ years working with x, y & z.
+              </p>
               <div>
                 <svg
                   width="70"
@@ -43,10 +49,6 @@ export default function Index({ allDocs: { nodes } }) {
                   <path d="M49 22V1L69 22H49Z" fill="#1F1F1F" />
                 </svg>
               </div>
-              <p>
-                A collection of documents and media produced over the course of
-                our 20+ years working with x, y & z.
-              </p>
             </div>
           </div>
           <Documents documents={nodes} />

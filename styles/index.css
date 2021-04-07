@@ -160,6 +160,10 @@
     @apply bg-black;
     @apply z-0;
   }
+
+  button.button-shadow:after {
+    top: 2px;
+  }
 }
 
 /* Start purging... */
