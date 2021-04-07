@@ -60,7 +60,7 @@ export const DocumentsItem = ({
           </div>
         </div>
       </div>
-      <div className="w-full">
+      <div className="w-full max-w-3xl">
         {isVisible == true && (
           <div className="w-full pb-lg">
             {["video", "sound"].indexOf(type.toLowerCase()) >= 0 &&

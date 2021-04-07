@@ -21,7 +21,7 @@ export default function Index({ allDocs: { nodes } }) {
               <button className="h-4 button-shadow">
                 <span
                   onClick={() => router.back()}
-                  className="text-xs relative z-10 title-accent p-2 bg-mint border border-black border-solid"
+                  className="text-xs text-blue relative z-10 title-accent p-2 bg-white border border-blue border-solid"
                 >
                   ← Back
                 </span>
