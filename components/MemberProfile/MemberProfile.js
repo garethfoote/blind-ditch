@@ -12,7 +12,7 @@ export const MemberProfile = ({
 }) => {
   return (
     <div>
-      <div className="relative w-full h-80 mb-4">
+      <div className="relative w-full h-80 mb-4 image-border">
         {image && (
           <Image
             className="image-loading"
