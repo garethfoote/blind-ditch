@@ -1,10 +1,26 @@
-import { HighlightBoxBlue } from "../../components/HighlightBox";
+import React, { useEffect, useState } from "react";
 import styles from "./HomeHeader.module.css";
 import classnames from "classnames";
+import { wait } from "../../lib/utils";
+
+import { HighlightBoxBlue } from "../../components/HighlightBox";
+
+function reducer(state, action) {
+  switch (action.type) {
+    case "increment":
+      return { count: state.count + 1 };
+    default:
+      throw new Error();
+  }
+}
 
 export const HomeHeader = ({ intro, testimonials }) => {
-  // const readMore = '<a class="dash-underline" href="/about">Read more</a>  →';
-  const randTestimonial = Math.floor(Math.random() * testimonials.length);
+  const [selectedImage, setImage] = useState(1);
+
+  useEffect(() => {
+    setImage(Math.floor(Math.random() * testimonials.length));
+  }, []);
+
   return (
     <div className={classnames(styles.headerCols)}>
       <div className="sm:mx-0 sm:pr-lg md:pr-xl">
@@ -17,8 +33,8 @@ export const HomeHeader = ({ intro, testimonials }) => {
         <HighlightBoxBlue
           hasShadow={true}
           isQuote={true}
-          html={testimonials[randTestimonial].testimonial}
-          context={testimonials[randTestimonial].context}
+          html={testimonials[selectedImage].testimonial}
+          context={testimonials[selectedImage].context}
         />
       </div>
     </div>
