@@ -20,13 +20,13 @@ export default function Index({ allProjects: { nodes } }) {
         <Logo />
         <div className="container mx-auto mb-xl">
           <SectionTitle>Work</SectionTitle>
-          <div className=" mx-auto py-5 pr-5 pl-2">
+          <div className=" mx-auto pb-5 pr-5 pl-2">
             <ProjectList projects={nodes} />
           </div>
         </div>
         <div className="container mx-auto mb-xl">
           <SectionTitle>Workshops & Consultancy</SectionTitle>
-          <div className="max-w-5xl mx-auto py-5 pr-5 pl-2">
+          <div className="max-w-5xl mx-auto pb-5 pr-5 pl-2">
             {/* <ProjectListExtra projects={[]} /> */}
           </div>
         </div>

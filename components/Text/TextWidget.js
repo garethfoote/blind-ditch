@@ -9,8 +9,10 @@ export const TextWidget = (props) => {
     props.previousType === "project_Projectfields_FlexibleContent_TextBlock";
 
   return (
-    <Container spacing={isSubsequentText ? "md" : "xl"} max="2xl">
+    <div class="mx-auto px-5 mb-xl max-w-2xl">
+      {/* <Container spacing={isSubsequentText ? "md" : "xl"} max="2xl"> */}
       <Text {...props} />
-    </Container>
+      {/* </Container> */}
+    </div>
   );
 };

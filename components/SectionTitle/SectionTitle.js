@@ -1,5 +1,5 @@
 export const SectionTitle = ({ children, text }) => (
-  <div className="text-center px-5 max-w-2xl mx-auto mt-lg mb-md">
+  <div className="text-center px-5 max-w-2xl mx-auto mt-lg mb-lg  ">
     <h2 className="text-md sm:text-xl title-underline inline uppercase leading-10 sm:leading-14 tracking-wider">
       {text || children}
     </h2>
