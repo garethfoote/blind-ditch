@@ -9,6 +9,7 @@ export const HighlightBoxGreen = ({
   return (
     <div
       className={classnames(
+        "text-sm font-accent p-2 text-justify",
         { "inner-quote": isQuote, shadow: hasShadow },
         styles.containerGreen
       )}

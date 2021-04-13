@@ -16,7 +16,7 @@ export const MainImage = ({
   return (
     <Container max={isWide ? "4xl" : maxWidth} spacing="xl">
       <div
-        className={classnames("image-shadow", {
+        className={classnames("image-shadow mb-2xl", {
           "image-shadow-bl": contextPos === "br",
           "image-shadow-tl": contextPos === "tr",
           "image-shadow-tr": contextPos === "tl",
