@@ -1,4 +1,5 @@
 import { getOembed } from "../../lib/utils";
+import classnames from "classnames";
 
 import { useRouter } from "next/router";
 import Head from "next/head";
@@ -44,7 +45,7 @@ export default function Project({ project }) {
           </Head>
           <Nav />
           <Logo />
-          <article className="px-2 sm:px-5">
+          <article>
             <ProjectPageTitle title={project.title} date={date} />
 
             <div>

@@ -1,22 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import Slider from "react-slick";
 
-let sliderRef = React.createRef();
-
-const settings = {
-  className:
-    "slider gallery-slider variable-width h-104 box-content border-t-2 border-b-2 border-black border-dashed",
-  dots: true,
-  infinite: false,
-  centerMode: false,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  variableWidth: true,
-  // beforeChange: (o, n) => {
-  //   console.log("beforeChange", o, n);
-  // },
-};
+let container = React.createRef();
 
 export const GalleryCarousel = ({ images, height = 416 }) => {
   const [dimensions, setDimensions] = useState({
@@ -24,41 +9,47 @@ export const GalleryCarousel = ({ images, height = 416 }) => {
     width: undefined,
   });
 
-  const [slide, setSlide] = useState(0);
+  let pos = { top: 0, left: 0, x: 0, y: 0 };
 
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     setDimensions({
-  //       height: window.innerHeight,
-  //       width: window.innerWidth,
-  //     });
-  //   };
+  const mouseDownHandler = function (e) {
+    pos = {
+      // The current scroll
+      left: container.current.scrollLeft,
+      top: container.current.scrollTop,
+      // Get the current mouse position
+      x: e.clientX,
+      y: e.clientY,
+    };
 
-  //   window.addEventListener("resize", handleResize);
-  // });
+    document.addEventListener("mousemove", mouseMoveHandler);
+    document.addEventListener("mouseup", mouseUpHandler);
+  };
+
+  const mouseMoveHandler = function (e) {
+    // How far the mouse has been moved
+    const dx = e.clientX - pos.x;
+    const dy = e.clientY - pos.y;
+
+    console.log(container);
+    // Scroll the element
+    container.current.scrollTop = pos.top - dy;
+    container.current.scrollLeft = pos.left - dx;
+  };
+
+  const mouseUpHandler = function () {
+    container.current.style.cursor = "grab";
+    container.current.style.removeProperty("user-select");
+    document.removeEventListener("mousemove", mouseMoveHandler);
+    document.removeEventListener("mouseup", mouseUpHandler);
+  };
 
   return (
-    <div>
-      {/* <button
-        onClick={() => {
-          const last = slide > 1 ? slide - 1 : slide;
-          setSlide(last);
-          sliderRef.current.slickPrev();
-        }}
+    <>
+      <div
+        className="flex w-full overflow-auto border-black border-dashed"
+        ref={container}
+        onMouseDown={mouseDownHandler}
       >
-        Last
-      </button>
-      <button
-        onClick={() => {
-          const next = slide < images.length - 2 ? slide + 1 : slide;
-          setSlide(next);
-          sliderRef.current.slickNext();
-        }}
-      >
-        Next
-      </button> */}
-
-      <Slider ref={sliderRef} {...settings}>
         {images.map((image, idx) => {
           const w =
             height * (image.mediaDetails.width / image.mediaDetails.height);
@@ -66,16 +57,16 @@ export const GalleryCarousel = ({ images, height = 416 }) => {
           return (
             <div key={idx} className="outline-none">
               <div
-                className="border-r-2 border-black border-dashed"
+                className="box-content border-t-2 border-b-2 border-r-2 border-black border-dashed"
                 style={{
-                  // maxWidth: "100vw",
+                  maxWidth: "100vw",
                   height: "416px",
                   padding: `${0}px`,
                 }}
               >
                 <div
                   style={{
-                    maxWidth: "90vw",
+                    // maxWidth: "90vw",
                     height: `${height}px`,
                     width: `${w}px`,
                   }}
@@ -96,7 +87,7 @@ export const GalleryCarousel = ({ images, height = 416 }) => {
             </div>
           );
         })}
-      </Slider>
-    </div>
+      </div>
+    </>
   );
 };
