@@ -1,5 +1,5 @@
 module.exports = {
   images: {
-    domains: ["dev.blindditch.com", "bd.bowt.club"],
+    domains: ["dev.blindditch.org", "bd.bowt.club"],
   },
 };
