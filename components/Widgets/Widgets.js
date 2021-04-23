@@ -6,7 +6,8 @@ import { MainImage, mainImageDataMapper } from "../MainImage";
 import { GalleryCarousel, galleryCarouselDataMapper } from "../GalleryCarousel";
 import { GallerySingle, gallerySingleDataMapper } from "../GallerySingle";
 import { GalleryTwo, galleryTwoDataMapper } from "../GalleryTwo";
-import { SectionTitle, sectionTitleDataMapper } from "../SectionTitle";
+import { SectionTitleWidget } from "../SectionTitle/SectionTitleWidget";
+import { sectionTitleDataMapper } from "../SectionTitle";
 import { OEmbed, oembedDataMapper } from "../OEmbed";
 
 const widgetMapper = {
@@ -32,7 +33,7 @@ const widgetMapper = {
   },
   project_Projectfields_FlexibleContent_SectionTitleBlock: {
     dataMapper: sectionTitleDataMapper,
-    Component: SectionTitle,
+    Component: SectionTitleWidget,
   },
   project_Projectfields_FlexibleContent_GallerySingleBlock: {
     dataMapper: gallerySingleDataMapper,

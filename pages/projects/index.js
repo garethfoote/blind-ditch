@@ -18,7 +18,7 @@ export default function Index({ allProjects: { nodes } }) {
         </Head>
         <Nav />
         <Logo />
-        <div className="container mx-auto mb-xl">
+        <div className="mx-auto sm:mx-xl mb-xl">
           <SectionTitle>Work</SectionTitle>
           <div className=" mx-auto pb-5 pr-5 pl-2">
             <ProjectList projects={nodes} />
