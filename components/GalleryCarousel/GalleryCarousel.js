@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
-let container = React.createRef();
-
 export const GalleryCarousel = ({ images, height = 416 }) => {
   const [dimensions, setDimensions] = useState({
     height: undefined,
     width: undefined,
   });
 
+  let container = React.createRef();
   let pos = { top: 0, left: 0, x: 0, y: 0 };
 
   const mouseDownHandler = function (e) {
@@ -20,7 +19,7 @@ export const GalleryCarousel = ({ images, height = 416 }) => {
       x: e.clientX,
       y: e.clientY,
     };
-
+    console.log("down", container.current);
     document.addEventListener("mousemove", mouseMoveHandler);
     document.addEventListener("mouseup", mouseUpHandler);
   };
