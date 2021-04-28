@@ -1,6 +1,8 @@
-import { AnnouncementListItem } from "./AnnouncementListItem";
 import React, { useEffect, useState } from "react";
+import { AnnouncementListItem } from "./AnnouncementListItem";
+import { firstMainImage } from "../../lib/utils";
 import styles from "./AnnouncementList.module.css";
+
 import classnames from "classnames";
 import Slider from "react-slick";
 
@@ -51,6 +53,13 @@ export const AnnouncementList = ({ announcements }) => {
           </div>
           {announcements.map((announcement, idx) => {
             const details = announcement.announcementFields;
+            const image = announcement.featuredImage
+              ? announcement.featuredImage.node
+              : details.connected
+              ? firstMainImage(details.connected.projectFields.flexibleContent)
+                  ?.image
+              : null;
+
             return (
               <div
                 key={idx}
@@ -66,7 +75,7 @@ export const AnnouncementList = ({ announcements }) => {
                 <AnnouncementListItem
                   title={announcement.title}
                   slug={announcement.slug}
-                  image={announcement.featuredImage?.node}
+                  image={image}
                   isPriority={idx === 0}
                   {...details}
                 />

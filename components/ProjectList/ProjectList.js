@@ -1,18 +1,9 @@
 import { ProjectListItem } from "./ProjectListItem";
 import { ScrollingDirContext } from "./ProjectListContext";
+import { firstMainImage } from "../../lib/utils";
 
 import React, { useEffect, useReducer, useState } from "react";
 import classnames from "classnames";
-
-const firstMainImage = (content) => {
-  return content
-    .filter(
-      (item) =>
-        item.fieldGroupName ===
-        "project_Projectfields_FlexibleContent_MainImageBlock"
-    )
-    .shift();
-};
 
 function init(initialCount) {
   return { count: initialCount };
