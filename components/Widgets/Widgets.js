@@ -11,39 +11,39 @@ import { sectionTitleDataMapper } from "../SectionTitle";
 import { OEmbed, oembedDataMapper } from "../OEmbed";
 
 const widgetMapper = {
-  project_Projectfields_FlexibleContent_PullQuoteBlock: {
+  Project_Projectfields_FlexibleContent_PullQuoteBlock: {
     dataMapper: pullQuoteDataMapper,
     Component: PullQuote,
   },
-  project_Projectfields_FlexibleContent_TextBlock: {
+  Project_Projectfields_FlexibleContent_TextBlock: {
     dataMapper: textDataMapper,
     Component: TextWidget,
   },
-  project_Projectfields_FlexibleContent_MainImageBlock: {
+  Project_Projectfields_FlexibleContent_MainImageBlock: {
     dataMapper: mainImageDataMapper,
     Component: MainImage,
   },
-  project_Projectfields_FlexibleContent_EmbedBlock: {
+  Project_Projectfields_FlexibleContent_EmbedBlock: {
     dataMapper: oembedDataMapper,
     Component: OEmbed,
   },
-  project_Projectfields_FlexibleContent_BodyImageBlock: {
+  Project_Projectfields_FlexibleContent_BodyImageBlock: {
     dataMapper: mainImageDataMapper,
     Component: MainImage,
   },
-  project_Projectfields_FlexibleContent_SectionTitleBlock: {
+  Project_Projectfields_FlexibleContent_SectionTitleBlock: {
     dataMapper: sectionTitleDataMapper,
     Component: SectionTitleWidget,
   },
-  project_Projectfields_FlexibleContent_GallerySingleBlock: {
+  Project_Projectfields_FlexibleContent_GallerySingleBlock: {
     dataMapper: gallerySingleDataMapper,
     Component: GallerySingle,
   },
-  project_Projectfields_FlexibleContent_GalleryTwoBlock: {
+  Project_Projectfields_FlexibleContent_GalleryTwoBlock: {
     dataMapper: galleryTwoDataMapper,
     Component: GalleryTwo,
   },
-  project_Projectfields_FlexibleContent_Gallery: {
+  Project_Projectfields_FlexibleContent_Gallery: {
     dataMapper: galleryCarouselDataMapper,
     Component: GalleryCarousel,
   },
@@ -53,7 +53,7 @@ export const Widgets = ({ widgets }) => (
   <>
     {widgets.map((widget, idx) => {
       // See if we have a widget for this "typename" (widget ID)
-      const widgetElements = widgetMapper[widget.fieldGroupName];
+      const widgetElements = widgetMapper[widget.fieldGroupName.toLowerCase];
 
       // If we do, grab it's component and manipulate the data so
       // it's in the right shape for the component props
