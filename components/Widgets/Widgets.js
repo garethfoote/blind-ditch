@@ -53,7 +53,7 @@ export const Widgets = ({ widgets }) => (
   <>
     {widgets.map((widget, idx) => {
       // See if we have a widget for this "typename" (widget ID)
-      const widgetElements = widgetMapper[widget.fieldGroupName.toLowerCase];
+      const widgetElements = widgetMapper[widget.fieldGroupName];
 
       // If we do, grab it's component and manipulate the data so
       // it's in the right shape for the component props
