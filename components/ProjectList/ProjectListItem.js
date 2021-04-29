@@ -123,7 +123,7 @@ export const ProjectListItem = ({
       <div
         onMouseEnter={() => setTypeVisibility(true)}
         onMouseLeave={() => setTypeVisibility(false)}
-        className="self-end leading-none font-accent truncate uppercase text-right text-xs sm:text-sm md:text-base select-none"
+        className="self-end flex-shrink-0 leading-none font-accent uppercase text-right text-xs sm:text-sm md:text-base select-none"
       >
         <MediaContextProvider>
           <div
