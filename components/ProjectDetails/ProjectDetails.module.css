@@ -1,4 +1,4 @@
-.hoverTranslate:hover p {
+.hoverTranslate:hover + span {
   @apply translate-x-1;
 }
 

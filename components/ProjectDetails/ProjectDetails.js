@@ -10,10 +10,7 @@ export default function ProjectDetails({ date, location, projectTypes, slug }) {
         <div className="text-strong-yellow">
           <ProjectTypes types={projectTypes} />
         </div>
-        <dl className="lg:mt-md">
-          <dt className="text-blue">Date</dt>
-          <dd>{date}</dd>
-        </dl>
+
         <dl className="lg:mt-md">
           <dt className="text-blue">Location</dt>
           <dd>{location}</dd>
@@ -29,10 +26,12 @@ export default function ProjectDetails({ date, location, projectTypes, slug }) {
                 "inline-block hover:underline"
               )}
             >
-              See blogs, videos and writing associated with project{" "}
-              <p className="transition-transform transform text-md">→</p>
+              See blogs, videos and writing associated with project
             </a>
           </Link>
+          <span className="transition-transform transform text-md inline-block ml-sm lg:ml-0">
+            →
+          </span>
         </dd>
       </dl>
     </div>
