@@ -11,7 +11,7 @@ export const MemberProfile = ({
   projects,
 }) => {
   return (
-    <div>
+    <div className="border-b border-black h-full">
       <div className="relative w-full h-80 mb-4 image-border">
         {image && (
           <Image

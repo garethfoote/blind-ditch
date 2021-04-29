@@ -51,7 +51,9 @@ export default function About({ page }) {
             </div>
           </section>
           <section id="people" className="mx-auto container px-5">
-            <SectionTitle>People</SectionTitle>
+            <div className="mt-xl mb-2xl">
+              <SectionTitle>People</SectionTitle>
+            </div>
 
             <MemberProfiles members={page.speakerFields.members} />
           </section>
