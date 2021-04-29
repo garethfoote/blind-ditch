@@ -55,6 +55,10 @@
     @apply opacity-30 pointer-events-none;
   }
 
+  iframe {
+    max-width: 100%;
+  }
+
   @font-face {
     font-family: "TerminalGrotesque";
     src: url("/font/terminal-grotesque.eot");
@@ -215,7 +219,7 @@
   }
 
   .image-border img {
-    @apply border-3 border-black border-solid !important;
+    @apply border-2 border-black border-solid !important;
   }
 
   .title-accent {
