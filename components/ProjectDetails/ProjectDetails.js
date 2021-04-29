@@ -3,7 +3,12 @@ import Link from "next/link";
 import classnames from "classnames";
 import styles from "./ProjectDetails.module.css";
 
-export default function ProjectDetails({ date, location, projectTypes, slug }) {
+export default function ProjectDetails({
+  title,
+  location,
+  projectTypes,
+  slug,
+}) {
   return (
     <div className="uppercase font-accent text-xs leading-6 tracking-wide">
       <div className={classnames(styles.cols, "pb-md")}>
@@ -26,7 +31,7 @@ export default function ProjectDetails({ date, location, projectTypes, slug }) {
                 "inline-block hover:underline"
               )}
             >
-              See blogs, videos and writing associated with project
+              Find more videos, sounds and writing from {title}
             </a>
           </Link>
           <span className="transition-transform transform text-md inline-block ml-sm lg:ml-0">

@@ -81,9 +81,9 @@ export default function Project({ project }) {
                 </div>
                 <div className="mt-md lg:mt-0 lg:w-44 lg:absolute lg:top-0 lg:-right-48">
                   <ProjectDetails
+                    title={project.title}
                     projectTypes={details.projectTypes}
                     location={details.location}
-                    date={date}
                     slug={project.slug}
                   />
                 </div>
