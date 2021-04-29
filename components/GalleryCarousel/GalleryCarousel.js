@@ -19,7 +19,6 @@ export const GalleryCarousel = ({ images, height = 416 }) => {
       x: e.clientX,
       y: e.clientY,
     };
-    console.log("down", container.current);
     document.addEventListener("mousemove", mouseMoveHandler);
     document.addEventListener("mouseup", mouseUpHandler);
   };
@@ -29,7 +28,6 @@ export const GalleryCarousel = ({ images, height = 416 }) => {
     const dx = e.clientX - pos.x;
     const dy = e.clientY - pos.y;
 
-    console.log(container);
     // Scroll the element
     container.current.scrollTop = pos.top - dy;
     container.current.scrollLeft = pos.left - dx;
@@ -45,7 +43,7 @@ export const GalleryCarousel = ({ images, height = 416 }) => {
   return (
     <>
       <div
-        className="flex w-full overflow-auto border-black border-dashed"
+        className="flex w-full mb-lg overflow-auto border-black border-dashed"
         ref={container}
         onMouseDown={mouseDownHandler}
       >
