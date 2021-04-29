@@ -1,15 +1,12 @@
-import { getDocuments, getProjects } from "../../lib/api";
+import { getDocuments, getProjects, getProject } from "../../lib/api";
 import { getOembed } from "../../lib/utils";
 import { useRouter } from "next/router";
 
 import Head from "next/head";
 import Layout from "../../components/layout";
-import Nav from "../../components/Nav/Nav";
-import { Logo } from "../../components/Logo";
-import { SectionTitle } from "../../components/SectionTitle";
 import { Documents, DocumentHeader } from "../../components/Documents";
 
-export default function Document({ allDocs: { nodes } }) {
+export default function Document({ allDocs: { nodes }, project }) {
   const router = useRouter();
   const { slug } = router.query;
 
@@ -25,7 +22,8 @@ export default function Document({ allDocs: { nodes } }) {
         </Head>
         <div className="px-xs md:px-lg mx-auto mb-xl">
           <DocumentHeader />
-          <Documents documents={nodes} />
+          <div className="mx-auto pt-xl"></div>
+          <Documents documents={nodes} filteredBy={project.title} />
         </div>
       </Layout>
     </>
@@ -55,13 +53,13 @@ async function getOembeds(allDocs) {
   return Promise.all(promises);
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({ params }) {
   const allDocs = await getDocuments();
-
   allDocs.nodes = await getOembeds(allDocs.nodes);
+  const project = await getProject(params.slug[0]);
 
   return {
-    props: { allDocs },
+    props: { allDocs, ...project },
     revalidate: 1, // In seconds
   };
 }
