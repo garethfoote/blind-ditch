@@ -215,7 +215,7 @@
   }
 
   .image-border img {
-    @apply border-2 border-black border-solid !important;
+    @apply border-3 border-black border-solid !important;
   }
 
   .title-accent {
@@ -229,7 +229,6 @@
   .image-shadow img {
     @apply z-10;
     @apply bg-offwhite;
-    @apply border-2 border-black border-solid !important;
   }
 
   .image-shadow:after {
