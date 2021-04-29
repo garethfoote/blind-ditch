@@ -68,7 +68,7 @@ export const AnnouncementList = ({ announcements }) => {
                   styles.announcement,
                   {
                     ["opacity-100"]: idx + 1 == slide,
-                    ["opacity-80"]: idx + 1 != slide,
+                    ["opacity-100"]: idx + 1 != slide,
                   }
                 )}
               >
