@@ -14,13 +14,11 @@ import { HomeHeader } from "../components/HomeHeader";
 import Nav from "../components/Nav/Nav";
 import { Text } from "../components/Text";
 
-export default function Index({ hpProperties, preview }) {
-  const announcements = hpProperties.page.homepageFields.connectedAnnouncements;
-  const projects = [
-    ...hpProperties.page.homepageFields.connectedProjects,
-  ].reverse();
-  const article = hpProperties.page.homepageFields.connectedArticle;
-  const testimonials = hpProperties.page.homepageFields.testimonials;
+export default function Index({ homepageFields, content, preview }) {
+  const announcements = homepageFields.connectedAnnouncements;
+  const projects = [...homepageFields.connectedProjects].reverse();
+  const article = homepageFields.connectedArticle;
+  const testimonials = homepageFields.testimonials;
 
   return (
     <>
@@ -33,10 +31,7 @@ export default function Index({ hpProperties, preview }) {
         <Logo />
 
         <div className="mx-auto px-8 sm:px-5 mb-xl max-w-2xl md:max-w-3xl xl:max-w-4xl ">
-          <HomeHeader
-            intro={hpProperties.page.content}
-            testimonials={testimonials}
-          />
+          <HomeHeader intro={content} testimonials={testimonials} />
         </div>
 
         <hr className="page-break mt-lg" />
@@ -52,10 +47,7 @@ export default function Index({ hpProperties, preview }) {
         <SectionTitle>Our Work</SectionTitle>
 
         <div className="text-center px-5 max-w-xl mx-auto">
-          <Text
-            isCentred={true}
-            content="Short description or reminder of the type of work you ususally embark on with a reminder that there is a lot more if people visit the archive or explore by media type."
-          />
+          <Text isCentred={true} content={homepageFields.ourWorkIntroText} />
           <div className="text-center mb-xl">
             <div className="mb-md mt-lg">
               <Button href="/projects">
@@ -74,9 +66,12 @@ export default function Index({ hpProperties, preview }) {
 
 export async function getStaticProps({ preview = false }) {
   const hpProperties = await getHomepage();
+  const homepageFields = hpProperties.page.homepageFields;
+  const content = hpProperties.page.content;
   return {
     props: {
-      hpProperties,
+      homepageFields,
+      content,
       preview,
     },
     revalidate: 1, // In seconds
