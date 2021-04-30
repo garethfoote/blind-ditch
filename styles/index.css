@@ -403,6 +403,23 @@
   border-left-color: theme("colors.mint.DEFAULT");
 }
 
+.dark-scroll-bar::-webkit-scrollbar {
+  width: 10px;
+  padding-top: 2px;
+}
+
+.dark-scroll-bar::-webkit-scrollbar-track {
+  background: theme("colors.offwhite.dark");
+}
+
+.dark-scroll-bar::-webkit-scrollbar-thumb {
+  background: theme("colors.mint.DEFAULT");
+}
+
+.dark-scroll-bar::-webkit-scrollbar-thumb:hover {
+  background: theme("colors.mint.darker");
+}
+
 /* 
 .has-text-align-left {
   @apply text-left;

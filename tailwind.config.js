@@ -23,6 +23,7 @@ module.exports = {
         },
         mint: {
           dark: "#0CE9AA",
+          darker: "#8BF9DA",
           DEFAULT: "#B1FBE6",
         },
         blue: "#0044F3",

@@ -43,7 +43,7 @@ export const GalleryCarousel = ({ images, height = 416 }) => {
   return (
     <>
       <div
-        className="flex w-full mb-lg overflow-auto border-black border-dashed"
+        className="flex w-full mb-lg overflow-auto border-black border-dashed dark-scroll-bar"
         ref={container}
         onMouseDown={mouseDownHandler}
       >
