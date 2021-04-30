@@ -25,11 +25,11 @@ export const HomeHeader = ({ intro, testimonials }) => {
     <div className={classnames(styles.headerCols)}>
       <div className="sm:mx-0 sm:pr-lg md:pr-xl">
         <div
-          className="pt-md pb-lg sm:pb-md px-sm text-sm text-justify leading-6 sm:text-lg sm:leading-9 sm:text-left text-bg-black"
+          className="pt-md pb-lg sm:pb-md px-sm text-sm text-center leading-6 sm:text-md sm:leading-9 sm:text-left text-bg-black"
           dangerouslySetInnerHTML={{ __html: intro }}
         />
       </div>
-      <div className="sm:mx-0">
+      <div className="text-center sm:mx-0">
         <HighlightBoxBlue
           hasShadow={true}
           isQuote={true}

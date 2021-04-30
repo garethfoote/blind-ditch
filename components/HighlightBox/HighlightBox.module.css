@@ -19,7 +19,7 @@
 }
 
 .containerBlue > div * {
-  font-size: inherit;
+  /* font-size: inherit; */
   color: inherit;
 }
 
