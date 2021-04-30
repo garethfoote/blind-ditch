@@ -10,6 +10,7 @@ import { SectionTitle } from "../../components/SectionTitle";
 import { Text } from "../../components/Text";
 
 export default function Index({ allProjects: { nodes } }) {
+  const projects = [...nodes].reverse();
   return (
     <>
       <Layout>
@@ -19,9 +20,9 @@ export default function Index({ allProjects: { nodes } }) {
         <Nav />
         <Logo />
         <div className="mx-auto sm:mx-xl mb-xl">
-          <SectionTitle>Work</SectionTitle>
+          <SectionTitle>Our Work</SectionTitle>
           <div className=" mx-auto pb-5 pr-5 pl-2">
-            <ProjectList projects={nodes} />
+            <ProjectList projects={projects} />
           </div>
         </div>
         <div className="container mx-auto mb-xl">

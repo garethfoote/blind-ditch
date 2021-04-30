@@ -16,7 +16,9 @@ import { Text } from "../components/Text";
 
 export default function Index({ hpProperties, preview }) {
   const announcements = hpProperties.page.homepageFields.connectedAnnouncements;
-  const projects = hpProperties.page.homepageFields.connectedProjects;
+  const projects = [
+    ...hpProperties.page.homepageFields.connectedProjects,
+  ].reverse();
   const article = hpProperties.page.homepageFields.connectedArticle;
   const testimonials = hpProperties.page.homepageFields.testimonials;
 
@@ -47,7 +49,7 @@ export default function Index({ hpProperties, preview }) {
 
         <hr className="page-break my-lg sm:my-xl" />
 
-        <SectionTitle>Work</SectionTitle>
+        <SectionTitle>Our Work</SectionTitle>
 
         <div className="text-center px-5 max-w-xl mx-auto">
           <Text
@@ -62,7 +64,7 @@ export default function Index({ hpProperties, preview }) {
             </div>
           </div>
         </div>
-        <div className=" mx-auto pb-5 pr-5 pl-2">
+        <div className="mx-auto sm:mx-xl pb-5 pr-5 pl-2">
           <ProjectList projects={projects} />
         </div>
       </Layout>
