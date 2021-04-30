@@ -7,7 +7,7 @@ export const Documents = ({ documents, filteredBy }) => {
   return (
     <div className=" mx-auto pt-xl">
       {filteredBy && (
-        <p className="mb-sm">
+        <p className="ml-8 sm:ml-16 mb-sm">
           Filtered by: {filteredBy}{" "}
           <button
             onClick={() => router.replace("/documents")}
