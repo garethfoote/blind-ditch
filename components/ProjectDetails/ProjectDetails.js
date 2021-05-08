@@ -28,13 +28,13 @@ export default function ProjectDetails({
             <a
               className={classnames(
                 styles.hoverTranslate,
-                "inline-block hover:underline"
+                "inline hover:underline"
               )}
             >
               Find more videos, sounds and writing from {title}
             </a>
           </Link>
-          <span className="transition-transform transform text-md inline-block ml-sm lg:ml-0">
+          <span className="transition-transform transform text-md inline-block ml-sm">
             →
           </span>
         </dd>
