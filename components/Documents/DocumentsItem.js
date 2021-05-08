@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { formatBytes } from "../../lib/utils";
 
 import styles from "./Documents.module.css";
@@ -12,6 +13,10 @@ export const DocumentsItem = ({
 }) => {
   const [isVisible, setVisibility] = useState(false);
   const handleClick = () => setVisibility(!isVisible);
+
+  const imgWidth = 48 * 16; // max-w-3xl / 48rem
+  const imgHeight =
+    imgWidth * (image?.mediaDetails.height / image?.mediaDetails.width);
 
   return (
     <article>
@@ -63,13 +68,25 @@ export const DocumentsItem = ({
       <div className="w-full max-w-3xl">
         {isVisible == true && (
           <div className="w-full pb-lg">
-            {["video", "sound"].indexOf(type.toLowerCase()) >= 0 &&
-              !oembedDetails && <div>Sorry, this document is missing.</div>}
+            {["image"].indexOf(type.toLowerCase()) >= 0 && !oembedDetails && (
+              <div>
+                <Image
+                  className="image-loading"
+                  src={image.sourceUrl}
+                  width={imgWidth}
+                  height={imgHeight}
+                  layout="intrinsic"
+                  alt={image.altText || image.title}
+                />
+              </div>
+            )}
+
             {["video", "sound"].indexOf(type.toLowerCase()) >= 0 && (
               <div
                 className={classnames({
-                  [oembedStyles.ytEmbedContainer]:
-                    oembedDetails?.provider_name == "YouTube",
+                  [oembedStyles.iframeFill]: ["youtube", "vimeo"].some((v) =>
+                    oembedDetails?.provider_name.toLowerCase().includes(v)
+                  ),
                   [oembedStyles.soundcloud]:
                     oembedDetails?.provider_name == "SoundCloud",
                 })}

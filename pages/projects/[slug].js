@@ -126,10 +126,10 @@ export async function getStaticProps({ params }) {
   try {
     data.project.projectFields.flexibleContent = await getOembeds(
       data.project.projectFields.flexibleContent,
-      "project_Projectfields_FlexibleContent_EmbedBlock"
+      "Project_Projectfields_FlexibleContent_EmbedBlock"
     );
   } catch (err) {
-    console.log("Error requesting oembeds", err);
+    console.log("§Error requesting oembeds", err);
   }
 
   return {
