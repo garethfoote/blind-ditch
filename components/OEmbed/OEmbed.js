@@ -9,7 +9,7 @@ export const OEmbed = ({ oembedDetails }) => {
       <div
         className={classnames(styles.iframeCentre, {
           [styles.iframeFill]: ["youtube", "vimeo"].some((v) =>
-            oembedDetails?.provider_name.toLowerCase().includes(v)
+            oembedDetails?.provider_name?.toLowerCase().includes(v)
           ),
         })}
         dangerouslySetInnerHTML={{ __html: oembedDetails?.html }}

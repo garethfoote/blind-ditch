@@ -68,7 +68,7 @@ export const DocumentsItem = ({
       <div className="w-full max-w-3xl">
         {isVisible == true && (
           <div className="w-full pb-lg">
-            {["image"].indexOf(type.toLowerCase()) >= 0 && !oembedDetails && (
+            {["image"].indexOf(type?.toLowerCase()) >= 0 && (
               <div>
                 <Image
                   className="image-loading"
