@@ -28,8 +28,9 @@ export const ProjectListItem = ({
   const [internalScrollDir, setInternalScrollDir] = useState(-1);
   const { scrollDirection } = useContext(ScrollingDirContext);
 
+  let viewportParentOffset = 0;
+  let viewportOffset = 0;
   let titleRef = React.createRef();
-
   let scaled = proportionalScale(
     image?.mediaDetails.width,
     image?.mediaDetails.height,
@@ -38,11 +39,13 @@ export const ProjectListItem = ({
   );
 
   const moveHandler = (e) => {
-    const viewportParentOffset = e.target.parentElement.getBoundingClientRect();
-    const viewportOffset = e.target.getBoundingClientRect();
+    if (viewportParentOffset === 0) {
+      viewportParentOffset = e.target.parentElement.getBoundingClientRect();
+      viewportOffset = e.target.getBoundingClientRect();
+    }
     pos.x = e.clientX - viewportParentOffset.left + 30;
     pos.y = e.clientY - viewportOffset.top;
-    // console.log(e.clientY, viewportOffset.top);
+    // console.log(e.target.textContent);
     setPos(pos);
   };
 
@@ -100,7 +103,7 @@ export const ProjectListItem = ({
       <Link as={`/projects/${slug}`} href="/projects/[slug]">
         <a
           ref={titleRef}
-          onMouseMove={moveHandler}
+          // onMouseMove={moveHandler}
           onMouseEnter={() => setImgVisibility(true)}
           onMouseLeave={() => setImgVisibility(false)}
           className="self-end leading-none title-underline-hover text-sm sm:text-md md:text-lg uppercase leading-6 ml-lg whitespace-nowrap overflow-auto max-w-3/4 scrollbars-hidden"
@@ -110,7 +113,7 @@ export const ProjectListItem = ({
       </Link>
       {image && (
         <div
-          style={{ left: `${pos.x}px`, transform: `translateY(${pos.y}px)` }}
+          // style={{ left: `${pos.x}px`, transform: `translateY(${pos.y}px)` }}
           className={classnames(
             "h-0 pointer-events-none overflow-hidden absolute -top-12 left-1/4 image-border z-50",
             {
