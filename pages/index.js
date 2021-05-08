@@ -56,7 +56,7 @@ export default function Index({ homepageFields, content, preview }) {
             </div>
           </div>
         </div>
-        <div className="mx-auto sm:mx-xl pb-5 pr-5 pl-2">
+        <div className="mx-auto sm:mx-xl pb-10 pr-5 pl-2">
           <ProjectList projects={projects} />
         </div>
       </Layout>
