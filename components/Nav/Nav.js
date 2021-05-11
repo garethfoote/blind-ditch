@@ -33,7 +33,7 @@ export default function Nav() {
                 "h-0 pl-4 z-20 overflow-hidden outline-none"
               )}
             >
-              <ul className="mt-4 font-main font-bold text-base">
+              <ul className="mt-4 font-main font-bold ">
                 <li
                   className={classnames(styles.linkItem, {
                     [styles.active]: router.pathname == "/",
