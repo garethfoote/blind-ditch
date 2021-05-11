@@ -1,0 +1,9 @@
+.footer {
+  background: #000;
+}
+
+.footer video {
+  width: 100% !important;
+  height: 200px !important;
+  max-height: 100% !important;
+}

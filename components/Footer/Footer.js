@@ -5,21 +5,26 @@ import globalData from "../../data/global-manifest.json";
 
 export const Footer = () => {
   return (
-    <footer className={classnames(styles.footer, "bg-black w-full")}>
-      <div className="h-full justify-center items-center container mx-auto">
-        <div className="text-center py-lg">
-          {globalData.footer.map(({ node }, idx) => (
+    <footer className={classnames(styles.footer, "w-full")}>
+      <div className="flex h-full justify-center items-center container mx-auto">
+        <div className="flex-1">
+          <div className="pl-md max-w-xs">
+            {/* {globalData.footer.map(({ node }, idx) => (
             <Link key={idx} as={`/page/${node.slug}`} href="/page/[slug]">
               <a className="text-offwhite">{node.title}</a>
             </Link>
-          ))}
+          ))} */}
+            <img
+              alt="Arts Council England - Lottery Funded"
+              className="h-auto w-full"
+              src="/lottery_Logo_White_RGB.png"
+            />
+          </div>
         </div>
-        <div className="py-lg h-auto mx-auto px-md w-48">
-          <img
-            alt="Blind Ditch logo in black"
-            className="h-auto w-full"
-            src="/logo-white.png"
-          />
+        <div className="flex-1 max-h-56">
+          <video autoPlay loop muted>
+            <source src="/Blind_Ditch_anim.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
     </footer>
