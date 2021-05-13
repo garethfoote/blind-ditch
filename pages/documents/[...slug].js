@@ -22,7 +22,6 @@ export default function Document({ allDocs: { nodes }, project }) {
         </Head>
         <div className="px-xs md:px-lg mx-auto mb-xl">
           <DocumentHeader />
-          <div className="mx-auto pt-xl"></div>
           <Documents documents={nodes} filteredBy={project.title} />
         </div>
       </Layout>

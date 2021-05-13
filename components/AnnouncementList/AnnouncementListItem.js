@@ -38,6 +38,7 @@ export const AnnouncementListItem = ({
                 objectFit="cover"
                 priority={isPriority}
                 loading={isPriority ? "eager" : "lazy"}
+                alt={image.altText || image.title}
               />
             ) : (
               <div className="z-10 image-loading"></div>

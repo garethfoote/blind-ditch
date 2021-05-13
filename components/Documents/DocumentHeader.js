@@ -4,7 +4,7 @@ export const DocumentHeader = () => {
   const router = useRouter();
 
   return (
-    <div className="flex gap-4 py-md justify-between">
+    <div className="sm:flex gap-4 pt-md justify-between">
       <div className="flex-none w-24 px-sm">
         <button className="h-4 button-shadow">
           <span
@@ -16,11 +16,11 @@ export const DocumentHeader = () => {
         </button>
       </div>
 
-      <div className="flex gap-4 max-w-2xl pr-md">
-        <p>
+      <div className="flex gap-4 max-w-2xl pt-lg px-md sm:pl-0">
+        <h1 className="text-md sm:text-lg">
           A collection of documents and media produced over the course of our
           20+ years working with x, y & z.
-        </p>
+        </h1>
         <div>
           <svg
             width="70"
