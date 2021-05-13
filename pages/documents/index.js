@@ -47,7 +47,7 @@ export async function getStaticProps() {
   return {
     props: {
       allDocs: allDocs.nodes,
-      docsPageFields: docsPageFields.page.documentsFields,
+      docsPageFields: docsPageFields.page.documentsPageFields,
     },
     revalidate: 1, // In seconds
   };
