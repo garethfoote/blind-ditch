@@ -29,36 +29,47 @@ export default function Index({ homepageFields, content, preview }) {
         </Head>
         <Nav />
         <Logo />
+        <main>
+          <header className="mx-auto px-8 sm:px-5 mb-xl max-w-2xl md:max-w-3xl xl:max-w-4xl ">
+            <HomeHeader intro={content} testimonials={testimonials} />
+          </header>
 
-        <div className="mx-auto px-8 sm:px-5 mb-xl max-w-2xl md:max-w-3xl xl:max-w-4xl ">
-          <HomeHeader intro={content} testimonials={testimonials} />
-        </div>
+          <hr className="page-break mt-lg" />
 
-        <hr className="page-break mt-lg" />
+          <section>
+            <AnnouncementList announcements={announcements} />
+          </section>
 
-        <AnnouncementList announcements={announcements} />
+          <hr className="page-break mb-xl md:mb-2xl" />
 
-        <hr className="page-break mb-xl md:mb-2xl" />
+          <section>
+            <HomepageArticle page={article} />
+          </section>
 
-        <HomepageArticle page={article} />
+          <hr className="page-break my-lg sm:my-xl" />
 
-        <hr className="page-break my-lg sm:my-xl" />
+          <section>
+            <SectionTitle>Our Work</SectionTitle>
 
-        <SectionTitle>Our Work</SectionTitle>
-
-        <div className="text-center px-5 max-w-xl mx-auto">
-          <Text isCentred={true} content={homepageFields.ourWorkIntroText} />
-          <div className="text-center mb-xl">
-            <div className="mb-md mt-lg">
-              <Button href="/projects">
-                <span className="px-8">View Full Archive</span>
-              </Button>
+            <div className="text-center px-5 max-w-xl mx-auto">
+              <Text
+                isCentred={true}
+                content={homepageFields.ourWorkIntroText}
+              />
+              <div className="text-center mb-xl">
+                <div className="mb-md mt-lg">
+                  <Button href="/projects">
+                    <span className="px-8">View Full Archive</span>
+                  </Button>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div className="mx-auto sm:mx-xl pb-10 pr-5 pl-2">
-          <ProjectList projects={projects} />
-        </div>
+
+            <div className="mx-auto sm:mx-xl pb-10 pr-5 pl-2">
+              <ProjectList projects={projects} />
+            </div>
+          </section>
+        </main>
       </Layout>
     </>
   );

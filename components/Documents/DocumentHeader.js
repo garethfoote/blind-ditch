@@ -5,8 +5,16 @@ export const DocumentHeader = ({ title }) => {
 
   return (
     <div className="sm:flex gap-4 pt-md justify-between">
-      <div className="flex-none w-24 px-sm">
-        <button className="h-4 button-shadow">
+      <nav
+        role="navigation"
+        aria-label="Reduced and only navigation"
+        className="flex-none w-24 px-sm"
+      >
+        <button
+          role="button"
+          aria-label="Return to previous page"
+          className="h-4 button-shadow"
+        >
           <span
             onClick={() => router.back()}
             className="text-xs text-blue relative z-10 title-accent p-2 bg-white border border-blue border-solid"
@@ -14,7 +22,7 @@ export const DocumentHeader = ({ title }) => {
             ← Back
           </span>
         </button>
-      </div>
+      </nav>
 
       <div className="flex gap-4 max-w-2xl pt-lg px-md sm:pl-0">
         <h1 className="text-md sm:text-lg">{title}</h1>

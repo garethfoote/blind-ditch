@@ -41,57 +41,59 @@ export default function Project({ project }) {
       ) : (
         <>
           <Head>
-            <title>{project.title}</title>
+            <title>Blind Ditch - {project.title}</title>
           </Head>
           <Nav />
           <Logo />
-          <article>
-            <ProjectPageTitle title={project.title} date={date} />
+          <main>
+            <article>
+              <ProjectPageTitle title={project.title} date={date} />
 
-            <div>
-              {featuredImage && (
-                <div className="mx-auto px-5 my-lg md:container">
-                  <div
-                    style={{
-                      maxHeight: "90vh",
-                      overflow: "hidden",
-                    }}
-                  >
-                    <Image
-                      className="image-loading"
-                      src={featuredImage.sourceUrl}
-                      width={featuredImage.mediaDetails.width}
-                      height={featuredImage.mediaDetails.height}
-                      layout="responsive"
-                      style={{ objectFit: "cover" }}
-                      alt={featuredImage.altText || featuredImage.title}
-                      priority={true}
-                      loading={"eager"}
+              <div>
+                {featuredImage && (
+                  <div className="mx-auto px-5 my-lg md:container">
+                    <div
+                      style={{
+                        maxHeight: "90vh",
+                        overflow: "hidden",
+                      }}
+                    >
+                      <Image
+                        className="image-loading"
+                        src={featuredImage.sourceUrl}
+                        width={featuredImage.mediaDetails.width}
+                        height={featuredImage.mediaDetails.height}
+                        layout="responsive"
+                        style={{ objectFit: "cover" }}
+                        alt={featuredImage.altText || featuredImage.title}
+                        priority={true}
+                        loading={"eager"}
+                      />
+                    </div>
+                  </div>
+                )}
+
+                <div className="mx-auto px-5 mt-xl mb-md max-w-2xl relative">
+                  <div className="border-t border-black pt-md">
+                    <div
+                      className="text-base leading-7 sm:text-lg sm:leading-9"
+                      dangerouslySetInnerHTML={{ __html: project.content }}
+                    />
+                  </div>
+                  <div className="mt-md lg:mt-0 lg:w-44 lg:absolute lg:top-0 lg:-right-48">
+                    <ProjectDetails
+                      title={project.title}
+                      projectTypes={details.projectTypes}
+                      location={details.location}
+                      slug={project.slug}
                     />
                   </div>
                 </div>
-              )}
 
-              <div className="mx-auto px-5 mt-xl mb-md max-w-2xl relative">
-                <div className="border-t border-black pt-md">
-                  <div
-                    className="text-base leading-7 sm:text-lg sm:leading-9"
-                    dangerouslySetInnerHTML={{ __html: project.content }}
-                  />
-                </div>
-                <div className="mt-md lg:mt-0 lg:w-44 lg:absolute lg:top-0 lg:-right-48">
-                  <ProjectDetails
-                    title={project.title}
-                    projectTypes={details.projectTypes}
-                    location={details.location}
-                    slug={project.slug}
-                  />
-                </div>
+                <Widgets widgets={project.projectFields.flexibleContent} />
               </div>
-
-              <Widgets widgets={project.projectFields.flexibleContent} />
-            </div>
-          </article>
+            </article>
+          </main>
         </>
       )}
     </Layout>

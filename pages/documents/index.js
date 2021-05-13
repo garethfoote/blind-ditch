@@ -11,7 +11,11 @@ export default function Index({ allDocs, docsPageFields }) {
     <>
       <Layout>
         <Head>
-          <title>Blind Ditch</title>
+          <title>Blind Ditch - Documents</title>
+          <meta
+            name="description"
+            content={docsPageFields.documentsPageIntroText}
+          />
         </Head>
         <div className="px-xs md:px-lg mx-auto mb-xl">
           <DocumentHeader title={docsPageFields.documentsPageIntroText} />

@@ -15,7 +15,7 @@ export default function Layout({ preview, children }) {
   return (
     <>
       <Meta />
-      <main>{children}</main>
+      <div className="full-height">{children}</div>
       <Footer />
     </>
   );

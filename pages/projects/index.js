@@ -15,22 +15,26 @@ export default function Index({ allProjects: { nodes } }) {
     <>
       <Layout>
         <Head>
-          <title>Blind Ditch</title>
+          <title>
+            Blind Ditch - Archive of Projects, Workshops and Consultancy
+          </title>
         </Head>
         <Nav />
         <Logo />
-        <div className="mx-auto sm:mx-xl mb-xl">
-          <SectionTitle>Our Work</SectionTitle>
-          <div className=" mx-auto pb-5 pr-5 pl-2">
-            <ProjectList projects={projects} />
-          </div>
-        </div>
-        <div className="container mx-auto mb-xl">
-          <SectionTitle>Workshops & Consultancy</SectionTitle>
-          <div className="max-w-5xl mx-auto pb-5 pr-5 pl-2">
-            {/* <ProjectListExtra projects={[]} /> */}
-          </div>
-        </div>
+        <main>
+          <section className="mx-auto sm:mx-xl mb-xl">
+            <SectionTitle>Our Work</SectionTitle>
+            <div className=" mx-auto pb-5 pr-5 pl-2">
+              <ProjectList projects={projects} />
+            </div>
+          </section>
+          <section className="container mx-auto mb-xl">
+            <SectionTitle>Workshops & Consultancy</SectionTitle>
+            <div className="max-w-5xl mx-auto pb-5 pr-5 pl-2">
+              {/* <ProjectListExtra projects={[]} /> */}
+            </div>
+          </section>
+        </main>
       </Layout>
     </>
   );

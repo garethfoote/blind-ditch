@@ -25,38 +25,40 @@ export default function About({ page }) {
       ) : (
         <>
           <Head>
-            <title>{page.title}</title>
+            <title>Blind Ditch - {page.title}</title>
           </Head>
           <Nav />
           <Logo />
-          <section className="mx-auto px-0 max-w-2xl">
-            <SectionTitle>{page.title}</SectionTitle>
+          <main>
+            <section className="mx-auto px-0 max-w-2xl">
+              <SectionTitle>{page.title}</SectionTitle>
 
-            {page.featuredImage && (
-              <MainImage
-                contextPos="br"
-                maxWidth="4xl"
-                image={page.featuredImage.node}
-              />
-            )}
+              {page.featuredImage && (
+                <MainImage
+                  contextPos="br"
+                  maxWidth="4xl"
+                  image={page.featuredImage.node}
+                />
+              )}
 
-            <div className="mx-auto px-5 mt-xl mb-md max-w-2xl relative">
-              <div
-                className={classnames({
-                  "border-t border-black pt-md": page.featuredImage == null,
-                })}
-              >
-                <Text content={page.content} />
+              <div className="mx-auto px-5 mt-xl mb-md max-w-2xl relative">
+                <div
+                  className={classnames({
+                    "border-t border-black pt-md": page.featuredImage == null,
+                  })}
+                >
+                  <Text content={page.content} />
+                </div>
               </div>
-            </div>
-          </section>
-          <section id="people" className="mx-auto container px-5">
-            <div className="mt-xl mb-2xl">
-              <SectionTitle>People</SectionTitle>
-            </div>
+            </section>
+            <section id="people" className="mx-auto container px-5">
+              <div className="mt-xl mb-2xl">
+                <SectionTitle>People</SectionTitle>
+              </div>
 
-            <MemberProfiles members={page.speakerFields.members} />
-          </section>
+              <MemberProfiles members={page.speakerFields.members} />
+            </section>
+          </main>
         </>
       )}
     </Layout>

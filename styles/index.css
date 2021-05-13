@@ -17,7 +17,7 @@
     @apply h-full;
   }
 
-  main {
+  .full-height {
     min-height: calc(100vh - theme("height.56"));
     @apply mb-xl;
   }

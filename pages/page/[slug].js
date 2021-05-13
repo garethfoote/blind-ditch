@@ -24,11 +24,11 @@ export default function Page({ page }) {
       ) : (
         <>
           <Head>
-            <title>{page.title}</title>
+            <title>Blind Ditch - {page.title}</title>
           </Head>
           <Nav />
           <Logo />
-          <section className="mx-auto px-0 max-w-2xl">
+          <main className="mx-auto px-0 max-w-2xl">
             <SectionTitle>{page.title}</SectionTitle>
 
             {page.featuredImage && (
@@ -39,7 +39,7 @@ export default function Page({ page }) {
               />
             )}
 
-            <div className="mx-auto px-5 mt-xl mb-md max-w-2xl relative">
+            <article className="mx-auto px-5 mt-xl mb-md max-w-2xl relative">
               <div
                 className={classnames({
                   "border-t border-black pt-md": page.featuredImage == null,
@@ -47,8 +47,8 @@ export default function Page({ page }) {
               >
                 <Text content={page.content} />
               </div>
-            </div>
-          </section>
+            </article>
+          </main>
         </>
       )}
     </Layout>
