@@ -7,8 +7,6 @@ import Layout from "../../components/layout";
 import { Documents, DocumentHeader } from "../../components/Documents";
 
 export default function Index({ allDocs, docsPageFields }) {
-  const router = useRouter();
-
   return (
     <>
       <Layout>

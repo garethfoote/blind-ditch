@@ -1,4 +1,9 @@
-import { getDocuments, getProjects, getProject } from "../../lib/api";
+import {
+  getDocuments,
+  getProjects,
+  getProject,
+  getDocumentsPageFields,
+} from "../../lib/api";
 import { getOembed } from "../../lib/utils";
 import { useRouter } from "next/router";
 
@@ -6,11 +11,11 @@ import Head from "next/head";
 import Layout from "../../components/layout";
 import { Documents, DocumentHeader } from "../../components/Documents";
 
-export default function Document({ allDocs: { nodes }, project }) {
+export default function Document({ allDocs, project, docsPageFields }) {
   const router = useRouter();
   const { slug } = router.query;
 
-  nodes = nodes.filter((item) => {
+  allDocs = allDocs.filter((item) => {
     return item.documentsFields.project.slug == slug[0];
   });
 
@@ -21,8 +26,8 @@ export default function Document({ allDocs: { nodes }, project }) {
           <title>Blind Ditch</title>
         </Head>
         <div className="px-xs md:px-lg mx-auto mb-xl">
-          <DocumentHeader />
-          <Documents documents={nodes} filteredBy={project.title} />
+          <DocumentHeader title={docsPageFields.documentsPageIntroText} />
+          <Documents documents={allDocs} filteredBy={project.title} />
         </div>
       </Layout>
     </>
@@ -54,11 +59,17 @@ async function getOembeds(allDocs) {
 
 export async function getStaticProps({ params }) {
   const allDocs = await getDocuments();
-  allDocs.nodes = await getOembeds(allDocs.nodes);
   const project = await getProject(params.slug[0]);
+  const docsPageFields = await getDocumentsPageFields();
+
+  allDocs.nodes = await getOembeds(allDocs.nodes);
 
   return {
-    props: { allDocs, ...project },
+    props: {
+      allDocs: allDocs.nodes,
+      docsPageFields: docsPageFields.page.documentsPageFields,
+      ...project,
+    },
     revalidate: 1, // In seconds
   };
 }
