@@ -7,7 +7,7 @@ export const DocumentsNoItems = ({ projectTitle }) => {
 
   return (
     <article>
-      <div class="ml-8 sm:ml-16 mr-md">
+      <div className="ml-8 sm:ml-16 mr-md">
         <div
           className={classnames(
             styles.cols,
