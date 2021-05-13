@@ -6,14 +6,9 @@ import globalData from "../../data/global-manifest.json";
 export const Footer = () => {
   return (
     <footer className={classnames(styles.footer, "w-full")}>
-      <div className="flex h-full justify-center items-center container mx-auto">
+      <div className="flex h-full justify-center items-center mx-0 sm:mx-xl">
         <div className="flex-1">
           <div className="pl-md max-w-xs">
-            {/* {globalData.footer.map(({ node }, idx) => (
-            <Link key={idx} as={`/page/${node.slug}`} href="/page/[slug]">
-              <a className="text-offwhite">{node.title}</a>
-            </Link>
-          ))} */}
             <img
               alt="Arts Council England - Lottery Funded"
               className="h-auto w-full"
