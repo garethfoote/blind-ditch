@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 
-export const DocumentHeader = () => {
+export const DocumentHeader = ({ title }) => {
   const router = useRouter();
 
   return (
@@ -17,10 +17,7 @@ export const DocumentHeader = () => {
       </div>
 
       <div className="flex gap-4 max-w-2xl pt-lg px-md sm:pl-0">
-        <h1 className="text-md sm:text-lg">
-          A collection of documents and media produced over the course of our
-          20+ years working with x, y & z.
-        </h1>
+        <h1 className="text-md sm:text-lg">{title}</h1>
         <div>
           <svg
             width="70"

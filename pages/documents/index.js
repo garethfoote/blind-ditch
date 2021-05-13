@@ -1,4 +1,4 @@
-import { getDocuments } from "../../lib/api";
+import { getDocuments, getDocumentsPageFields } from "../../lib/api";
 import { getOembed } from "../../lib/utils";
 import { useRouter } from "next/router";
 
@@ -6,7 +6,7 @@ import Head from "next/head";
 import Layout from "../../components/layout";
 import { Documents, DocumentHeader } from "../../components/Documents";
 
-export default function Index({ allDocs: { nodes } }) {
+export default function Index({ allDocs, docsPageFields }) {
   const router = useRouter();
 
   return (
@@ -16,8 +16,8 @@ export default function Index({ allDocs: { nodes } }) {
           <title>Blind Ditch</title>
         </Head>
         <div className="px-xs md:px-lg mx-auto mb-xl">
-          <DocumentHeader />
-          <Documents documents={nodes} />
+          <DocumentHeader title={docsPageFields.documentsPageIntroText} />
+          <Documents documents={allDocs} />
         </div>
       </Layout>
     </>
@@ -40,11 +40,15 @@ async function getOembeds(allDocs) {
 
 export async function getStaticProps() {
   const allDocs = await getDocuments();
+  const docsPageFields = await getDocumentsPageFields();
 
   allDocs.nodes = await getOembeds(allDocs.nodes);
 
   return {
-    props: { allDocs },
+    props: {
+      allDocs: allDocs.nodes,
+      docsPageFields: docsPageFields.page.documentsFields,
+    },
     revalidate: 1, // In seconds
   };
 }
