@@ -39,6 +39,7 @@ export const ProjectList = ({ projects }, idx) => {
       value={{ scrollDirection, setScrollDirection }}
     >
       {projects.map((project, idx) => {
+        if (!project) return <div>Project deleted</div>;
         const details = project.projectFields.details;
         const image = project.featuredImage
           ? project.featuredImage.node
