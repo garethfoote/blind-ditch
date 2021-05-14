@@ -49,7 +49,9 @@ export async function getStaticProps() {
   return {
     props: {
       allDocs: allDocs.nodes,
-      docsPageFields: docsPageFields.page.documentsPageFields,
+      docsPageFields: docsPageFields
+        ? docsPageFields.page.documentsPageFields
+        : { documentsPageIntroText: "Intro dummy text" },
     },
     revalidate: 1, // In seconds
   };
