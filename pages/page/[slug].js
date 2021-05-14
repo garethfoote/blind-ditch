@@ -10,6 +10,13 @@ import { getPage, getPages } from "../../lib/api";
 import Head from "next/head";
 import classnames from "classnames";
 
+import consolere from "console-remote-client";
+
+const console_re = consolere.connect({
+  server: "https://console.re",
+  channel: "8ffe-dfbf-be7e",
+});
+
 export default function Page({ page }) {
   const router = useRouter();
 
