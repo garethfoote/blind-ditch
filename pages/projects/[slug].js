@@ -103,7 +103,9 @@ export default function Project({ project }) {
 
 export async function getStaticPaths() {
   const allProjects = await getProjects();
-
+  console.re.log(
+    allProjects.nodes.map((project) => `/projects/${project.slug}`) || []
+  );
   return {
     paths:
       allProjects.nodes.map((project) => `/projects/${project.slug}`) || [],
@@ -132,7 +134,7 @@ export async function getStaticProps({ params }) {
       "Project_Projectfields_FlexibleContent_EmbedBlock"
     );
   } catch (err) {
-    console.log("§Error requesting oembeds", err);
+    console.re.log("§Error requesting oembeds", err);
   }
 
   return {
