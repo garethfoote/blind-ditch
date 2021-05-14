@@ -15,7 +15,7 @@ export default function Document({ allDocs, project, docsPageFields }) {
   const router = useRouter();
   const { slug } = router.query;
 
-  allDocs = allDocs.filter((item) => {
+  allDocs = allDocs?.filter((item) => {
     return item.documentsFields.project.slug == slug[0];
   });
 
