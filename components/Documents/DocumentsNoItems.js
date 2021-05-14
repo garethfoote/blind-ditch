@@ -17,12 +17,6 @@ export const DocumentsNoItems = ({ projectTitle }) => {
           <span className="cursor-none select-none pb-4">
             <p className="inline uppercase text-xs">
               No documents found. <br />
-              <button
-                className="inline underline text-xs"
-                onClick={() => router.replace("/documents")}
-              >
-                Remove the filter to see all documents.
-              </button>
             </p>
           </span>
         </div>
