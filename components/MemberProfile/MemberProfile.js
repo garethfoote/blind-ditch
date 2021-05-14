@@ -35,19 +35,22 @@ export const MemberProfile = ({
           <div className="flex-grow">
             <dl>
               <dt className="text-blue">Projects</dt>
-              {projects.map((project, idx) => (
-                <>
-                  <dd className="inline bg-yellow" key={idx}>
-                    <Link
-                      as={`/projects/${project.slug}`}
-                      href="/projects/[slug]"
-                    >
-                      <a>{project.title}</a>
-                    </Link>
-                  </dd>
-                  {idx != projects.length - 1 && ", "}
-                </>
-              ))}
+              {projects.map(
+                (project, idx) =>
+                  project && (
+                    <>
+                      <dd className="inline bg-yellow" key={idx}>
+                        <Link
+                          as={`/projects/${project.slug}`}
+                          href="/projects/[slug]"
+                        >
+                          <a>{project.title}</a>
+                        </Link>
+                      </dd>
+                      {idx != projects.length - 1 && ", "}
+                    </>
+                  )
+              )}
             </dl>
           </div>
         )}
