@@ -19,7 +19,6 @@ export default function Project({ project }) {
   const router = useRouter();
 
   if (!router.isFallback && !project?.slug) {
-    console.re.log("404??", project);
     return <ErrorPage statusCode={404} />;
   }
 
@@ -103,9 +102,7 @@ export default function Project({ project }) {
 
 export async function getStaticPaths() {
   const allProjects = await getProjects();
-  console.re.log(
-    allProjects.nodes.map((project) => `/projects/${project.slug}`) || []
-  );
+
   return {
     paths:
       allProjects.nodes.map((project) => `/projects/${project.slug}`) || [],
@@ -134,7 +131,7 @@ export async function getStaticProps({ params }) {
       "Project_Projectfields_FlexibleContent_EmbedBlock"
     );
   } catch (err) {
-    console.re.log("§Error requesting oembeds", err);
+    console.log("Error requesting oembeds", err);
   }
 
   return {

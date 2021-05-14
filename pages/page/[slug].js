@@ -14,6 +14,7 @@ export default function Page({ page }) {
   const router = useRouter();
 
   if (!router.isFallback && !page?.slug) {
+    console.re.log("Page 404");
     return <ErrorPage statusCode={404} />;
   }
 
@@ -67,15 +68,20 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const allPages = await getPages();
+
+  const paths =
+    allPages.edges
+      .filter((page) => {
+        return page.node.slug !== "about";
+      })
+      .map(({ node }) => {
+        return `/page/${node.slug}`;
+      }) || [];
+
+  console.re.log("Page paths", paths);
+
   return {
-    paths:
-      allPages.edges
-        .filter((page) => {
-          return page.node.slug !== "about";
-        })
-        .map(({ node }) => {
-          return `/page/${node.slug}`;
-        }) || [],
+    paths,
     fallback: false,
   };
 }
