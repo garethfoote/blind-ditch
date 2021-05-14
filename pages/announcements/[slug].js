@@ -12,12 +12,6 @@ import { Text } from "../../components/Text";
 export default function Project({ announcement }) {
   const router = useRouter();
 
-  if (!router.isFallback && !announcement?.slug) {
-    return <ErrorPage statusCode={404} />;
-  }
-
-  const details = announcement.announcementFields;
-
   return (
     <Layout>
       {router.isFallback ? (
@@ -68,6 +62,6 @@ export async function getStaticPaths() {
     paths:
       allAnnouncements.edges.map(({ node }) => `/announcements/${node.slug}`) ||
       [],
-    fallback: true,
+    fallback: "blocking",
   };
 }

@@ -13,10 +13,6 @@ import classnames from "classnames";
 export default function Page({ page }) {
   const router = useRouter();
 
-  if (!router.isFallback && !page?.slug) {
-    return <ErrorPage statusCode={404} />;
-  }
-
   return (
     <Layout>
       {router.isFallback ? (
@@ -79,6 +75,6 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: true,
+    fallback: "blocking",
   };
 }

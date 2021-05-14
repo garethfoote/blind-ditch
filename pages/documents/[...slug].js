@@ -23,7 +23,7 @@ export default function Document({ allDocs, project, docsPageFields }) {
     <>
       <Layout>
         <Head>
-          <title>Blind Ditch - Documents related to {project.title}</title>
+          <title>Blind Ditch - Documents related to {project?.title}</title>
           <meta
             name="description"
             content={docsPageFields.documentsPageIntroText}
@@ -31,7 +31,7 @@ export default function Document({ allDocs, project, docsPageFields }) {
         </Head>
         <main className="px-xs md:px-lg mx-auto mb-xl">
           <DocumentHeader title={docsPageFields.documentsPageIntroText} />
-          <Documents documents={allDocs} filteredBy={project.title} />
+          <Documents documents={allDocs} filteredBy={project?.title} />
         </main>
       </Layout>
     </>
@@ -43,7 +43,7 @@ export async function getStaticPaths() {
   return {
     paths:
       allProjects.nodes.map((project) => `/documents/${project.slug}`) || [],
-    fallback: true,
+    fallback: "blocking",
   };
 }
 

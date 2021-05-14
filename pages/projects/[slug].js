@@ -18,10 +18,6 @@ import { Widgets } from "../../components/Widgets";
 export default function Project({ project }) {
   const router = useRouter();
 
-  if (!router.isFallback && !project?.slug) {
-    return <ErrorPage statusCode={404} />;
-  }
-
   const details = project.projectFields.details;
   const featuredImage = project.featuredImage?.node;
 
@@ -106,7 +102,7 @@ export async function getStaticPaths() {
   return {
     paths:
       allProjects.nodes.map((project) => `/projects/${project.slug}`) || [],
-    fallback: true,
+    fallback: "blocking",
   };
 }
 
