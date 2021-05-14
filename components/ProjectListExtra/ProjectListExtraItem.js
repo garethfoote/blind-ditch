@@ -6,10 +6,6 @@ import styles from "./ProjectListExtra.module.css";
 
 import { ProjectTypes } from "../ProjectTypes";
 import { proportionalScale } from "../../lib/utils";
-// const handleMouseMove = (ev) => {
-//   let boundsX = ev.currentTarget.getBoundingClientRect().x;
-//   // console.log(ev.clientX - boundsX);
-// };
 
 export const ProjectListExtraItem = ({
   title,
