@@ -19,6 +19,7 @@ export default function Project({ project }) {
   const router = useRouter();
 
   if (!router.isFallback && !project?.slug) {
+    console.re.log("404??", project);
     return <ErrorPage statusCode={404} />;
   }
 
