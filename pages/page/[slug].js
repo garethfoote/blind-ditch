@@ -85,10 +85,8 @@ export async function getStaticPaths() {
         return `/page/${node.slug}`;
       }) || [];
 
-  console.re.log("Page paths", paths);
-
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }

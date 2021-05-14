@@ -43,7 +43,7 @@ export async function getStaticPaths() {
   return {
     paths:
       allProjects.nodes.map((project) => `/documents/${project.slug}`) || [],
-    fallback: false,
+    fallback: true,
   };
 }
 

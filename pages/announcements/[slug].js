@@ -68,6 +68,6 @@ export async function getStaticPaths() {
     paths:
       allAnnouncements.edges.map(({ node }) => `/announcements/${node.slug}`) ||
       [],
-    fallback: false,
+    fallback: true,
   };
 }
