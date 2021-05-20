@@ -7,7 +7,7 @@ import { Media, MediaContextProvider } from "../../lib/media-queries";
 
 import { ScrollingDirContext } from "./ProjectListContext";
 import { ProjectTypes } from "../ProjectTypes";
-import { proportionalScale, scrollTo } from "../../lib/utils";
+import { proportionalScale, scrollTo, wait } from "../../lib/utils";
 
 export const ProjectListItem = ({
   title,
@@ -49,7 +49,7 @@ export const ProjectListItem = ({
     setPos(pos);
   };
 
-  useEffect(() => {
+  useEffect(async () => {
     async function animate() {
       // console.log(`start anim ${index}`);
       setIsScrolling(true);
@@ -66,6 +66,7 @@ export const ProjectListItem = ({
 
     if (internalScrollDir !== scrollDirection) {
       // console.log("Direction doesn't match - CHANGE + animate");
+      // await wait(1000);
       setInternalScrollDir(scrollDirection);
       animate();
     }
@@ -75,6 +76,7 @@ export const ProjectListItem = ({
     <article
       className={classnames(
         styles.flexItem,
+        // { "has-gradient": isScrolling === false },
         "relative flex self-end align-end h-8 sm:h-12"
       )}
     >
@@ -102,13 +104,17 @@ export const ProjectListItem = ({
       </time>
       <Link as={`/projects/${slug}`} href="/projects/[slug]">
         <a
-          ref={titleRef}
+          className="self-end leading-none title-underline-hover text-sm sm:text-md md:text-lg uppercase leading-6 ml-lg whitespace-nowrap max-w-3/4 scrollbars-hidden overflow-hidden"
           // onMouseMove={moveHandler}
-          onMouseEnter={() => setImgVisibility(true)}
-          onMouseLeave={() => setImgVisibility(false)}
-          className="self-end leading-none title-underline-hover text-sm sm:text-md md:text-lg uppercase leading-6 ml-lg whitespace-nowrap overflow-auto max-w-3/4 scrollbars-hidden"
+          // onMouseEnter={() => setImgVisibility(true)}
+          // onMouseLeave={() => setImgVisibility(false)}
         >
-          {title}
+          <span
+            className="w-full block overflow-auto whitespace-nowrap pl-2  scrollbars-hidden"
+            ref={titleRef}
+          >
+            {title}
+          </span>
         </a>
       </Link>
       {image && (
