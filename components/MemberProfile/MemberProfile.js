@@ -33,7 +33,7 @@ export const MemberProfile = ({
         </div>
         {projects && (
           <div className="flex-grow">
-            <dl>
+            <dl key={projects.length}>
               <dt className="text-blue">Projects</dt>
               {projects.map(
                 (project, idx) =>
