@@ -8,8 +8,9 @@
     @apply font-main;
     @apply text-black;
   }
-  body.document {
-    /* background-color: theme("colors.yellow.light"); */
+
+  html {
+    scroll-behavior: smooth;
   }
 
   height,
@@ -317,6 +318,12 @@
     background-size: 16px 2px;
     background-repeat: repeat-x;
     border: none;
+  }
+
+  .page-break-thin {
+    @apply page-break;
+    height: 1px;
+    background-size: 16px 1px;
   }
 
   .visually-hidden {

@@ -11,10 +11,10 @@ import Head from "next/head";
 import { MemberProfiles } from "../../components/MemberProfile";
 import classnames from "classnames";
 
-export default function About({ page }) {
+export default function About({ about, contact }) {
   const router = useRouter();
 
-  if (!router.isFallback && !page?.slug) {
+  if (!router.isFallback && !about?.slug) {
     return <ErrorPage statusCode={404} />;
   }
 
@@ -25,29 +25,43 @@ export default function About({ page }) {
       ) : (
         <>
           <Head>
-            <title>Blind Ditch - {page.title}</title>
+            <title>Blind Ditch - {about.title}</title>
           </Head>
           <Nav />
           <Logo />
           <main>
             <section className="mx-auto px-0 max-w-2xl">
-              <SectionTitle>{page.title}</SectionTitle>
+              <SectionTitle>{about.title}</SectionTitle>
 
-              {page.featuredImage && (
+              {about.featuredImage && (
                 <MainImage
                   contextPos="br"
                   maxWidth="4xl"
-                  image={page.featuredImage.node}
+                  image={about.featuredImage.node}
                 />
               )}
 
               <div className="mx-auto px-5 mt-xl mb-md max-w-2xl relative">
                 <div
                   className={classnames({
-                    "border-t border-black pt-md": page.featuredImage == null,
+                    "border-t border-black pt-md": about.featuredImage == null,
                   })}
                 >
-                  <Text content={page.content} />
+                  <Text content={about.content} />
+                </div>
+              </div>
+            </section>
+            <section id="contact" className="mx-auto container px-5">
+              <div className="mt-2xl mb-2xl">
+                <SectionTitle>Contact Us</SectionTitle>
+              </div>
+
+              <div className="mx-auto px-5 mt-xl mb-md max-w-2xl relative">
+                <div>
+                  <Text content={contact?.content} />
+                  <hr className="page-break-thin my-lg" />
+
+                  <Text content="Or subscribe to our newsletter below:" />
                 </div>
               </div>
             </section>
@@ -56,7 +70,7 @@ export default function About({ page }) {
                 <SectionTitle>People</SectionTitle>
               </div>
 
-              <MemberProfiles members={page.speakerFields.members} />
+              <MemberProfiles members={about.speakerFields.members} />
             </section>
           </main>
         </>
@@ -66,10 +80,12 @@ export default function About({ page }) {
 }
 
 export async function getStaticProps({ params }) {
-  const data = await getPage("about");
+  const about = await getPage("about");
+  const contact = await getPage("contact");
   return {
     props: {
-      page: data.page,
+      about: about.page,
+      contact: contact.page,
     },
     revalidate: 1, // In seconds
   };
