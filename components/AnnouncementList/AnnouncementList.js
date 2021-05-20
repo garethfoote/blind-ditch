@@ -82,7 +82,7 @@ export const AnnouncementList = ({ announcements }) => {
               </div>
             );
           })}
-          <div className="ml-4">
+          {/* <div className="ml-4">
             <article className="flex">
               <div className="relative w-36 sm:w-40 h-60 sm:h-48 bg-offwhite bg-tictactoe bg-10"></div>
               <div className="w-44 sm:w-64 h-60 sm:h-48 p-4 bg-offwhite">
@@ -94,7 +94,7 @@ export const AnnouncementList = ({ announcements }) => {
                 </p>
               </div>
             </article>
-          </div>
+          </div> */}
         </Slider>
       </div>
     </div>
