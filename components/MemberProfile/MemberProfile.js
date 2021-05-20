@@ -33,22 +33,22 @@ export const MemberProfile = ({
         </div>
         {projects && (
           <div className="flex-grow">
-            <dl key={projects.length}>
+            <dl>
               <dt className="text-blue">Projects</dt>
               {projects.map(
                 (project, idx) =>
                   project && (
-                    <>
-                      <dd className="inline bg-yellow" key={idx}>
+                    <dd key={idx}>
+                      <span className="inline bg-yellow">
                         <Link
                           as={`/projects/${project.slug}`}
                           href="/projects/[slug]"
                         >
                           <a>{project.title}</a>
                         </Link>
-                      </dd>
+                      </span>
                       {idx != projects.length - 1 && ", "}
-                    </>
+                    </dd>
                   )
               )}
             </dl>
