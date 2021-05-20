@@ -26,8 +26,8 @@
 }
 
 .text a {
-  border-bottom: 2px dashed theme("colors.mint.dark");
-  padding: 3px 2px 1px;
+  border-bottom: 1px dashed theme("colors.mint.dark");
+  /* padding: 3px 2px 1px; */
 }
 
 .text strong::selection {
