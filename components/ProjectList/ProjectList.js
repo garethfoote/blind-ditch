@@ -1,6 +1,6 @@
 import { ProjectListItem } from "./ProjectListItem";
 import { ScrollingDirContext } from "./ProjectListContext";
-import { firstMainImage } from "../../lib/utils";
+import { firstMainImage, wait } from "../../lib/utils";
 
 import React, { useEffect, useReducer, useState } from "react";
 import classnames from "classnames";
@@ -28,10 +28,14 @@ export const ProjectList = ({ projects }, idx) => {
   let previousYearStart;
 
   useEffect(() => {
-    if (state.count === 0) {
-      dispatch({ type: "reset", payload: projects.length });
-      setScrollDirection(scrollDirection * -1);
-    }
+    const checkForReset = async () => {
+      if (state.count === 0) {
+        await wait(1000);
+        dispatch({ type: "reset", payload: projects.length });
+        setScrollDirection(scrollDirection * -1);
+      }
+    };
+    checkForReset();
   }, [state.count, setScrollDirection, scrollDirection]);
 
   return (

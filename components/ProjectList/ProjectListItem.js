@@ -104,13 +104,19 @@ export const ProjectListItem = ({
       </time>
       <Link as={`/projects/${slug}`} href="/projects/[slug]">
         <a
-          className="self-end leading-none title-underline-hover text-sm sm:text-md md:text-lg uppercase leading-6 ml-lg whitespace-nowrap max-w-3/4 scrollbars-hidden overflow-hidden"
+          className="self-end leading-none text-sm sm:text-md md:text-lg uppercase leading-6 ml-lg whitespace-nowrap max-w-3/4 scrollbars-hidden overflow-hidden"
           // onMouseMove={moveHandler}
-          // onMouseEnter={() => setImgVisibility(true)}
-          // onMouseLeave={() => setImgVisibility(false)}
+          onMouseEnter={() => {
+            setTypeVisibility(true);
+            setImgVisibility(true);
+          }}
+          onMouseLeave={() => {
+            setTypeVisibility(false);
+            setImgVisibility(false);
+          }}
         >
           <span
-            className="w-full block overflow-auto whitespace-nowrap pl-2  scrollbars-hidden"
+            className="title-underline-hover w-full block overflow-auto whitespace-nowrap pl-2  scrollbars-hidden"
             ref={titleRef}
           >
             {title}
