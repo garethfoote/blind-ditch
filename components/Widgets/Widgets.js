@@ -27,10 +27,6 @@ const widgetMapper = {
     dataMapper: oembedDataMapper,
     Component: OEmbed,
   },
-  Project_Projectfields_FlexibleContent_BodyImageBlock: {
-    dataMapper: mainImageDataMapper,
-    Component: MainImage,
-  },
   Project_Projectfields_FlexibleContent_SectionTitleBlock: {
     dataMapper: sectionTitleDataMapper,
     Component: SectionTitleWidget,
