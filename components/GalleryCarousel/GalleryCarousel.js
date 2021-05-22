@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import classnames from "classnames";
 
 export const GalleryCarousel = ({ images, height = 416 }) => {
   const [dimensions, setDimensions] = useState({
@@ -43,7 +44,7 @@ export const GalleryCarousel = ({ images, height = 416 }) => {
   return (
     <>
       <div
-        className="flex w-full mb-lg overflow-auto border-black border-dashed dark-scroll-bar"
+        className="flex w-full mb-lg overflow-auto border-black border-dashed dark-scroll-bar overflow-y-hidden"
         ref={container}
         onMouseDown={mouseDownHandler}
       >
@@ -52,34 +53,32 @@ export const GalleryCarousel = ({ images, height = 416 }) => {
             height * (image.mediaDetails.width / image.mediaDetails.height);
           const randomAlpha = Math.random();
           return (
-            <div key={idx} className="outline-none">
+            <div
+              key={idx}
+              className={classnames(
+                {
+                  ["border-r-2"]: idx < images.length - 1,
+                },
+                "outline-none box-content border-t-2 border-b-2 border-black border-dashed"
+              )}
+            >
               <div
-                className="box-content border-t-2 border-b-2 border-r-2 border-black border-dashed"
                 style={{
-                  maxWidth: "100vw",
-                  height: "416px",
-                  padding: `${0}px`,
+                  height: `${height}px`,
+                  width: `${w}px`,
                 }}
               >
-                <div
-                  style={{
-                    // maxWidth: "90vw",
-                    height: `${height}px`,
-                    width: `${w}px`,
-                  }}
-                >
-                  <Image
-                    draggable={false}
-                    className="image-loading"
-                    src={image.sourceUrl}
-                    width={
-                      height *
-                      (image.mediaDetails.width / image.mediaDetails.height)
-                    }
-                    height={height}
-                    layout="intrinsic"
-                  />
-                </div>
+                <Image
+                  draggable={false}
+                  className="image-loading"
+                  src={image.sourceUrl}
+                  width={
+                    height *
+                    (image.mediaDetails.width / image.mediaDetails.height)
+                  }
+                  height={height}
+                  layout="intrinsic"
+                />
               </div>
             </div>
           );
