@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import Container from "../container";
 import { Text } from "../Text";
 import { Button } from "../Button";
 import { proportionalScale } from "../../lib/utils";
