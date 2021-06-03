@@ -20,12 +20,7 @@ export const HighlightBoxGreen = ({
 
 export const HighlightBoxBlue = ({ html, context }) => {
   return (
-    <div
-      className={classnames(
-        "text-xs sm:text-sm p-3 sm:p-4",
-        styles.containerBlue
-      )}
-    >
+    <div className={classnames("text-xs sm:text-sm p-3", styles.containerBlue)}>
       <div dangerouslySetInnerHTML={{ __html: "&hellip;<br/>" + html }} />
       {context && (
         <div className="relative top-2 text-right text-white">

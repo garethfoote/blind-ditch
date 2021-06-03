@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./HomeHeader.module.css";
 import classnames from "classnames";
-import { wait } from "../../lib/utils";
+import Link from "next/link";
 
 import { HighlightBoxBlue } from "../../components/HighlightBox";
 
@@ -23,19 +23,32 @@ export const HomeHeader = ({ intro, testimonials }) => {
 
   return (
     <div className={classnames(styles.headerCols)}>
-      <div className="sm:mx-0 sm:pr-lg md:pr-xl">
+      <div className="sm:mx-0 pb-md sm:pb-0 sm:pr-lg md:pr-xl">
         <div
-          className="pt-md pb-lg sm:pb-md px-sm text-sm text-center leading-6 sm:text-md sm:leading-9 sm:text-left text-bg-black"
+          className={classnames(
+            styles.paragraphPhrasing,
+            "pt-md pb-sm sm:pb-md text-sm text-justify leading-6 sm:text-md sm:text-left sm:leading-9"
+          )}
           dangerouslySetInnerHTML={{ __html: intro }}
         />
+        <Link href="/page/about">
+          <a className="title-underline-hover text-sm sm:text-md">More →</a>
+        </Link>
       </div>
-      <div className="text-center sm:mx-0">
+      <div className="sm:mx-0">
         <HighlightBoxBlue
           hasShadow={true}
           isQuote={true}
           html={testimonials[selectedImage].testimonial}
           context={testimonials[selectedImage].context}
         />
+        <div
+          className={classnames(
+            "transform -translate-x-5 origin-top-left -rotate-90 font-accent text-blue uppercase text-xs"
+          )}
+        >
+          Things people say...
+        </div>
       </div>
     </div>
   );
