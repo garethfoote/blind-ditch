@@ -49,9 +49,8 @@ export const GalleryCarousel = ({ images, height = 416 }) => {
         onMouseDown={mouseDownHandler}
       >
         {images.map((image, idx) => {
-          const w =
+          const width =
             height * (image.mediaDetails.width / image.mediaDetails.height);
-          const randomAlpha = Math.random();
           return (
             <div
               key={idx}
@@ -65,7 +64,7 @@ export const GalleryCarousel = ({ images, height = 416 }) => {
               <div
                 style={{
                   height: `${height}px`,
-                  width: `${w}px`,
+                  width: `${width}px`,
                 }}
               >
                 <Image
