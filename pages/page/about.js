@@ -61,7 +61,7 @@ export default function About({ about, contact }) {
                   <Text content={contact?.content} />
                   <hr className="page-break-thin my-lg" />
 
-                  <Text content="Or subscribe to our newsletter below:" />
+                  {/* <Text content="Or subscribe to our newsletter below:" /> */}
                 </div>
               </div>
             </section>
