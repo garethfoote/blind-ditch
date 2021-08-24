@@ -9,7 +9,7 @@ export default function Nav() {
   const [isOpen, setOpen] = useState(false);
   const router = useRouter();
   return (
-    <nav role="navigation" aria-label="Main">
+    <nav>
       <CSSTransition
         classNames={{
           appearActive: styles["nav-appear-active"],
