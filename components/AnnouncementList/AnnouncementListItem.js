@@ -51,7 +51,7 @@ export const AnnouncementListItem = ({
             })}
           >
             <div className="font-accent flex border-b border-black pb-2">
-              <h2 className="flex-grow text-xs uppercase leading-4">{type}</h2>
+              <h3 className="flex-grow text-xs uppercase leading-4">{type}</h3>
               {date && (
                 <time className="text-2xs leading-4" dateTime={date}>
                   {date}
