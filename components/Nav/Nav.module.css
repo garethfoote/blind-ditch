@@ -38,6 +38,9 @@
 }
 
 @screen md {
+  .nav {
+    @apply visible;
+  }
   .linkItem {
     font-size: 18px;
     @apply h-6;
@@ -71,7 +74,7 @@
     transition-property: none;
     transition-duration: 0ms;
     height: calc(theme("margin.4") + theme("height.6") * 6);
-    @apply absolute block;
+    @apply absolute block visible;
   }
 }
 
