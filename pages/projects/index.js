@@ -30,12 +30,6 @@ export default function Index({ allProjects: { nodes } }) {
               <ProjectList projects={projects} />
             </div>
           </section>
-          {/* <section className="container mx-auto mb-xl">
-            <SectionTitle>Workshops & Consultancy</SectionTitle>
-            <div className="max-w-5xl mx-auto pb-5 pr-5 pl-2">
-              <ProjectListExtra projects={[]} />
-            </div>
-          </section> */}
         </main>
       </Layout>
     </>
