@@ -17,10 +17,10 @@ export default function Index({ allDocs, docsPageFields }) {
             content={docsPageFields.documentsPageIntroText}
           />
         </Head>
-        <div className="px-xs md:px-lg mx-auto mb-xl">
+        <main className="px-xs md:px-lg mx-auto mb-xl">
           <DocumentHeader title={docsPageFields.documentsPageIntroText} />
           <Documents documents={allDocs} />
-        </div>
+        </main>
       </Layout>
     </>
   );
