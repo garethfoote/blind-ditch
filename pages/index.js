@@ -59,17 +59,18 @@ export default function Index({ homepageFields, content, preview }) {
                 isCentred={true}
                 content={homepageFields.ourWorkIntroText}
               />
-              <div className="text-center mb-xl">
-                <div className="mb-md mt-lg">
-                  <Button href="/projects">
-                    <span className="px-8">View Full Archive</span>
-                  </Button>
-                </div>
-              </div>
             </div>
 
-            <div className="mx-auto sm:mx-xl pb-10 pr-5 pl-2">
+            <div className="mx-auto sm:mx-xl mt-lg pb-10 pr-5 pl-2">
               <ProjectList projects={projects} />
+            </div>
+
+            <div className="text-center mb-xl">
+              <div className="mb-2xl mt-md">
+                <Button href="/projects">
+                  <span className="px-8">Full Project Archive</span>
+                </Button>
+              </div>
             </div>
           </section>
         </main>

@@ -134,7 +134,7 @@ export const ProjectListItem = ({
           )}
         >
           <Image
-            className="image-loading opacity-90"
+            className="image-loading opacity-100"
             width={scaled.width}
             height={scaled.height}
             alt={image.altText || image.title}
