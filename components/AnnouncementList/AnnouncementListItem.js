@@ -36,8 +36,6 @@ export const AnnouncementListItem = ({
                 src={image.sourceUrl}
                 layout="fill"
                 objectFit="cover"
-                priority={isPriority}
-                loading={isPriority ? "eager" : "lazy"}
                 alt={image.altText || image.title}
               />
             ) : (
