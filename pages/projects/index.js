@@ -15,9 +15,11 @@ export default function Index({ allProjects: { nodes } }) {
     <>
       <Layout>
         <Head>
-          <title>
-            Blind Ditch - Archive of Projects, Workshops and Consultancy
-          </title>
+          <title>Blind Ditch - Projects</title>
+          <meta
+            name="description"
+            content="Our projects, workshops and consultancy work from 2001 to present"
+          />
         </Head>
         <Nav />
         <Logo />

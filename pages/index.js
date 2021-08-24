@@ -20,12 +20,15 @@ export default function Index({ homepageFields, content, preview }) {
   const article = homepageFields.connectedArticle;
   const testimonials = homepageFields.testimonials;
 
+  const strippedDescription = content.replace(/(<([^>]+)>)/gi, "");
+
   return (
     <>
       <SVGFilters />
       <Layout preview={preview}>
         <Head>
           <title>Blind Ditch</title>
+          <meta name="description" content={strippedDescription} />
         </Head>
         <Nav />
         <Logo />

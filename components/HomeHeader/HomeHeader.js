@@ -24,7 +24,7 @@ export const HomeHeader = ({ intro, testimonials }) => {
   return (
     <div className={classnames(styles.headerCols)}>
       <div className="sm:mx-0 pb-md sm:pb-0 sm:pr-lg md:pr-xl">
-        <div
+        <h2
           className={classnames(
             styles.paragraphPhrasing,
             "pt-md pb-sm sm:pb-md text-sm text-justify leading-6 sm:text-md sm:text-left sm:leading-9"

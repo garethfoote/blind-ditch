@@ -5,18 +5,17 @@ import classnames from "classnames";
 export const Logo = () => {
   return (
     <div className={classnames(styles.logo)}>
-      <div className="flex justify-center items-center relative z-10 h-full">
+      <h1 className="flex justify-center items-center relative z-10 h-full">
         <Link href="/">
           <a className="inline-block h-8 sm:h-10 mx-auto">
             <img
-              alt="Blind Ditch logo in black"
+              alt="Blind Ditch"
               className="h-full w-auto"
               src="/logo-black.png"
             />
-            <span className="visually-hidden">Blind Ditch</span>
           </a>
         </Link>
-      </div>
+      </h1>
     </div>
   );
 };
