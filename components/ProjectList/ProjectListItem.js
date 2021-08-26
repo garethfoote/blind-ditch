@@ -108,7 +108,12 @@ export const ProjectListItem = ({
       </time>
       <Link as={`/projects/${slug}`} href="/projects/[slug]">
         <a
-          className="self-end leading-none text-sm sm:text-md md:text-lg uppercase leading-6 ml-lg whitespace-nowrap max-w-3/4 scrollbars-hidden overflow-hidden"
+          className={classnames(
+            "self-end leading-none text-sm sm:text-md md:text-lg uppercase leading-6 ml-lg whitespace-nowrap max-w-3/4 scrollbars-hidden overflow-hidden",
+            {
+              ["pointer-events-none"]: noLink == true,
+            }
+          )}
           // onMouseMove={moveHandler}
           onMouseEnter={() => {
             setTypeVisibility(true);
@@ -153,7 +158,11 @@ export const ProjectListItem = ({
         </div>
       )}
       <div className="flex-grow self-end">
-        <hr className="relative -top-1 mx-1 border border-black border-dashed" />
+        <hr
+          onMouseEnter={() => setTypeVisibility(true)}
+          onMouseLeave={() => setTypeVisibility(false)}
+          className="relative h-8 -top-1 mx-1 border-t-0 border-b border-black border-dashed"
+        />
       </div>
 
       <div
