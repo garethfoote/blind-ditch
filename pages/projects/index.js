@@ -9,8 +9,10 @@ import { getProjects } from "../../lib/api";
 import { SectionTitle } from "../../components/SectionTitle";
 import { Text } from "../../components/Text";
 
-export default function Index({ allProjects: { nodes } }) {
-  const projects = [...nodes].reverse();
+export default function Index({ projects, workshops }) {
+  projects = [...projects].reverse();
+  workshops = [...workshops].reverse();
+
   return (
     <>
       <Layout>
@@ -30,6 +32,13 @@ export default function Index({ allProjects: { nodes } }) {
               <ProjectList projects={projects} />
             </div>
           </section>
+
+          <section className="mx-auto sm:mx-xl mb-xl">
+            <SectionTitle>Consultancy & Workshops</SectionTitle>
+            <div className=" mx-auto pb-5 pr-5 pl-2">
+              <ProjectList projects={workshops} />
+            </div>
+          </section>
         </main>
       </Layout>
     </>
@@ -38,8 +47,12 @@ export default function Index({ allProjects: { nodes } }) {
 
 export async function getStaticProps() {
   const allProjects = await getProjects();
+  const allWorkshops = await getProjects({ filterByWorkshops: true });
   return {
-    props: { allProjects },
+    props: {
+      projects: allProjects.nodes,
+      workshops: allWorkshops.nodes,
+    },
     revalidate: 1, // In seconds
   };
 }

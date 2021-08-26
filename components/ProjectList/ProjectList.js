@@ -44,6 +44,7 @@ export const ProjectList = ({ projects }, idx) => {
     >
       {projects.map((project, idx) => {
         if (!project) return <div>Project deleted</div>;
+        const isWorkshop = !!project.projectFields.isWorkshopConsultancy;
         const details = project.projectFields.details;
         const image = project.featuredImage
           ? project.featuredImage.node
@@ -60,6 +61,7 @@ export const ProjectList = ({ projects }, idx) => {
               showYear={isFirstYear}
               {...details}
               index={idx}
+              noLink={isWorkshop}
               hasComplete={() => {
                 dispatch({ type: "decrement" });
               }}

@@ -19,6 +19,7 @@ export const ProjectListItem = ({
   locationShort,
   image,
   hasComplete,
+  noLink = false,
 }) => {
   const [isImgVisible, setImgVisibility] = useState(false);
   const [isTypeVisible, setTypeVisibility] = useState(false);
@@ -116,7 +117,12 @@ export const ProjectListItem = ({
           }}
         >
           <span
-            className="title-underline-hover w-full block overflow-auto whitespace-nowrap pl-2  scrollbars-hidden"
+            className={classnames(
+              "w-full block overflow-auto whitespace-nowrap pl-2  scrollbars-hidden",
+              {
+                ["title-underline-hover"]: noLink == false,
+              }
+            )}
             ref={titleRef}
           >
             {title}
