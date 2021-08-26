@@ -14,6 +14,7 @@ export const ProjectListItem = ({
   slug,
   yearStart,
   showYear,
+  singleYearArrow = false,
   projectTypes,
   location,
   locationShort,
@@ -84,22 +85,24 @@ export const ProjectListItem = ({
       <time
         className={classnames(
           styles.year,
-          { invisible: showYear === false },
-          "font-accent text-xs leading-3 text-blue relative top-2 sm:top-5 tracking-wide pointer-events-none"
+          {
+            [styles.yearSingle]: singleYearArrow,
+            invisible: showYear === false,
+          },
+          "w-4 sm:w-9 font-accent text-xs sm:text-sm leading-3 text-blue relative top-4 sm:top-6 tracking-wide pointer-events-none"
         )}
         dateTime={yearStart}
       >
-        <span className="w-1/2 inline-block text-center">
+        <span className="w-1/2 sm:w-1/4 inline-block text-center">
           {yearStart.substr(0, 1)}
         </span>
-        <span className="w-1/2 inline-block text-center">
+        <span className="w-1/2 sm:w-1/4 inline-block text-center">
           {yearStart.substr(1, 1)}
         </span>
-        <br />
-        <span className="w-1/2 inline-block text-center">
+        <span className="w-1/2 sm:w-1/4 inline-block text-center">
           {yearStart.substr(2, 1)}
         </span>
-        <span className="w-1/2 inline-block text-center">
+        <span className="w-1/2 sm:w-1/4 inline-block text-center">
           {yearStart.substr(3, 1)}
         </span>
       </time>

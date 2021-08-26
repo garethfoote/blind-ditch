@@ -46,11 +46,13 @@ export const ProjectList = ({ projects }, idx) => {
         if (!project) return <div>Project deleted</div>;
         const isWorkshop = !!project.projectFields.isWorkshopConsultancy;
         const details = project.projectFields.details;
+        const nextDetails = projects[idx + 1]?.projectFields.details;
         const image = project.featuredImage
           ? project.featuredImage.node
           : firstMainImage(project.projectFields.flexibleContent)?.image;
 
         const isFirstYear = previousYearStart !== details.yearStart;
+        const isLastYear = details.yearStart !== nextDetails?.yearStart;
         previousYearStart = details.yearStart;
         return (
           <div className={classnames({ "": isFirstYear && idx > 0 })} key={idx}>
@@ -59,6 +61,7 @@ export const ProjectList = ({ projects }, idx) => {
               slug={project.slug}
               image={image}
               showYear={isFirstYear}
+              singleYearArrow={isFirstYear && isLastYear}
               {...details}
               index={idx}
               noLink={isWorkshop}
