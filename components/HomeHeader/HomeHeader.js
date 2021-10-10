@@ -35,7 +35,7 @@ export const HomeHeader = ({ intro, testimonials }) => {
           <a className="title-underline-hover text-sm sm:text-md">More →</a>
         </Link>
       </div>
-      <div className="sm:mx-0 pt-md">
+      <div className="sm:mx-0 sm:pt-md">
         <HighlightBoxBlue
           hasShadow={true}
           isQuote={true}
