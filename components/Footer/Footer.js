@@ -1,7 +1,6 @@
-import Link from "next/link";
 import classnames from "classnames";
 import styles from "./Footer.module.css";
-import globalData from "../../data/global-manifest.json";
+// import globalData from "../../data/global-manifest.json";
 
 export const Footer = () => {
   return (
