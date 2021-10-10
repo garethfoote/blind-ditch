@@ -41,9 +41,9 @@ export const Footer = () => {
           </div>
         </div>
         <div
+          style={{ opacity: 0 }}
           className={classnames("flex-1 max-h-56", {
-            ["hidden"]: !inView,
-            ["block"]: inView,
+            [styles.videoLoaded]: inView,
           })}
         >
           <video autoPlay loop muted>

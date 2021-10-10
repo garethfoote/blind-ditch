@@ -7,3 +7,7 @@
   height: 200px !important;
   max-height: 100% !important;
 }
+
+.videoLoaded {
+  opacity: 1 !important;
+}
