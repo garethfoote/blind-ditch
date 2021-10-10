@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { AnnouncementListItem } from "./AnnouncementListItem";
 import { firstMainImage } from "../../lib/utils";
 import styles from "./AnnouncementList.module.css";
