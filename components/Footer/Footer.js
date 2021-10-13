@@ -1,35 +1,20 @@
 import classnames from "classnames";
 import styles from "./Footer.module.css";
-import { useRef, useState } from "react";
-import { useInView } from "react-intersection-observer";
+import { useRef, useEffect } from "react";
 // import globalData from "../../data/global-manifest.json";
 
-export default function useOnScreen(ref) {
-  const [isIntersecting, setIntersecting] = useState(false);
-
-  const observer = new IntersectionObserver(([entry]) =>
-    setIntersecting(entry.isIntersecting)
-  );
+export const Footer = () => {
+  const vidSrcRef = useRef();
 
   useEffect(() => {
-    observer.observe(ref.current);
-    // Remove the observer as soon as the component is unmounted
-    return () => {
-      observer.disconnect();
-    };
+    vidSrcRef.current.setAttribute("src", "/Blind_Ditch_anim.mp4");
+    vidSrcRef.current.parentElement.load();
+    // vidSrcRef.current.parentElement.play();
+    console.log(vidSrcRef.current.parentElement);
   }, []);
 
-  return isIntersecting;
-}
-
-export const Footer = () => {
-  // const footerRef = useRef();
-  const [footerRef, inView, entry] = useInView({
-    threshold: 0,
-  });
-
   return (
-    <footer ref={footerRef} className={classnames(styles.footer, "w-full")}>
+    <footer className={classnames(styles.footer, "w-full")}>
       <div className="flex h-full justify-center items-center mx-0 sm:mx-xl">
         <div className="flex-1">
           <div className="pl-md max-w-xs">
@@ -40,14 +25,9 @@ export const Footer = () => {
             />
           </div>
         </div>
-        <div
-          style={{ opacity: 0 }}
-          className={classnames("flex-1 max-h-56", {
-            [styles.videoLoaded]: inView,
-          })}
-        >
+        <div className={classnames("flex-1 max-h-56")}>
           <video autoPlay loop muted>
-            <source src="/Blind_Ditch_anim.mp4" type="video/mp4" />
+            <source ref={vidSrcRef} src="" type="video/mp4" />
           </video>
         </div>
       </div>
