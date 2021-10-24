@@ -6,12 +6,10 @@ import { useRef, useEffect } from "react";
 export const Footer = () => {
   const vidSrcRef = useRef();
 
-  useEffect(() => {
-    vidSrcRef.current.setAttribute("src", "/Blind_Ditch_anim.mp4");
-    vidSrcRef.current.parentElement.load();
-    // vidSrcRef.current.parentElement.play();
-    console.log(vidSrcRef.current.parentElement);
-  }, []);
+  // useEffect(() => {
+  //   vidSrcRef.current.setAttribute("src", "/Blind_Ditch_anim.mp4");
+  //   vidSrcRef.current.parentElement.load();
+  // }, []);
 
   return (
     <footer className={classnames(styles.footer, "w-full")}>
@@ -26,9 +24,11 @@ export const Footer = () => {
           </div>
         </div>
         <div className={classnames("flex-1 max-h-56")}>
-          <video autoPlay loop muted>
-            <source ref={vidSrcRef} src="" type="video/mp4" />
-          </video>
+          <img
+            alt="Blind Ditch logo"
+            className="max-h-10 w-auto p-r-12 p-l-10 m-t-4 float-right"
+            src="/logo-white.png"
+          />
         </div>
       </div>
     </footer>
