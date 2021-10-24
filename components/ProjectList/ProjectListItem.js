@@ -21,6 +21,7 @@ export const ProjectListItem = ({
   image,
   hasComplete,
   noLink = false,
+  projectSummary = "",
 }) => {
   const [isImgVisible, setImgVisibility] = useState(false);
   const [isTypeVisible, setTypeVisibility] = useState(false);
@@ -75,132 +76,140 @@ export const ProjectListItem = ({
   }, [isScrolling, internalScrollDir, scrollDirection, titleRef, hasComplete]);
 
   return (
-    <article
-      className={classnames(
-        styles.flexItem,
-        // { "has-gradient": isScrolling === false },
-        "relative flex self-end align-end h-8 sm:h-12"
-      )}
-    >
-      <time
+    <article>
+      <header
         className={classnames(
-          styles.year,
-          {
-            [styles.yearSingle]: singleYearArrow,
-            invisible: showYear === false,
-          },
-          "w-4 sm:w-9 font-accent text-xs sm:text-sm leading-3 text-blue relative top-4 sm:top-6 tracking-wide pointer-events-none"
+          styles.flexItem,
+          // { "has-gradient": isScrolling === false },
+          "relative flex self-end align-end h-8 sm:h-12"
         )}
-        dateTime={yearStart}
       >
-        <span className="w-1/2 sm:w-1/4 inline-block text-center">
-          {yearStart.substr(0, 1)}
-        </span>
-        <span className="w-1/2 sm:w-1/4 inline-block text-center">
-          {yearStart.substr(1, 1)}
-        </span>
-        <span className="w-1/2 sm:w-1/4 inline-block text-center">
-          {yearStart.substr(2, 1)}
-        </span>
-        <span className="w-1/2 sm:w-1/4 inline-block text-center">
-          {yearStart.substr(3, 1)}
-        </span>
-      </time>
-      <Link as={`/projects/${slug}`} href="/projects/[slug]">
-        <a
+        <time
           className={classnames(
-            "self-end leading-none text-sm sm:text-md md:text-lg uppercase leading-6 ml-lg whitespace-nowrap max-w-3/4 scrollbars-hidden overflow-hidden",
+            styles.year,
             {
-              ["pointer-events-none"]: noLink == true,
-            }
+              [styles.yearSingle]: singleYearArrow,
+              invisible: showYear === false,
+            },
+            "w-4 sm:w-9 font-accent text-xs sm:text-sm leading-3 text-blue relative top-4 sm:top-6 tracking-wide pointer-events-none"
           )}
-          // onMouseMove={moveHandler}
-          onMouseEnter={() => {
-            setTypeVisibility(true);
-            setImgVisibility(true);
-          }}
-          onMouseLeave={() => {
-            setTypeVisibility(false);
-            setImgVisibility(false);
-          }}
+          dateTime={yearStart}
         >
-          <span
+          <span className="w-1/2 sm:w-1/4 inline-block text-center">
+            {yearStart.substr(0, 1)}
+          </span>
+          <span className="w-1/2 sm:w-1/4 inline-block text-center">
+            {yearStart.substr(1, 1)}
+          </span>
+          <span className="w-1/2 sm:w-1/4 inline-block text-center">
+            {yearStart.substr(2, 1)}
+          </span>
+          <span className="w-1/2 sm:w-1/4 inline-block text-center">
+            {yearStart.substr(3, 1)}
+          </span>
+        </time>
+        <Link as={`/projects/${slug}`} href="/projects/[slug]">
+          <a
             className={classnames(
-              "w-full block overflow-auto whitespace-nowrap pl-2  scrollbars-hidden",
+              "self-end leading-none text-sm sm:text-md md:text-lg uppercase leading-6 ml-6 whitespace-nowrap max-w-3/4 scrollbars-hidden overflow-hidden",
               {
-                ["title-underline-hover"]: noLink == false,
+                ["pointer-events-none"]: noLink == true,
               }
             )}
-            ref={titleRef}
+            // onMouseMove={moveHandler}
+            onMouseEnter={() => {
+              setTypeVisibility(true);
+              setImgVisibility(true);
+            }}
+            onMouseLeave={() => {
+              setTypeVisibility(false);
+              setImgVisibility(false);
+            }}
           >
-            {title}
-          </span>
-        </a>
-      </Link>
-      {image && (
-        <div
-          // style={{ left: `${pos.x}px`, transform: `translateY(${pos.y}px)` }}
-          className={classnames(
-            "h-0 pointer-events-none overflow-hidden absolute -top-12 left-1/4 image-border z-50",
-            {
-              ["h-auto"]: isImgVisible === true,
-            }
-          )}
-        >
-          <Image
-            className="image-loading opacity-100"
-            width={scaled.width}
-            height={scaled.height}
-            alt={image.altText || image.title}
-            src={image.sourceUrl}
-            layout="intrinsic"
+            <span
+              className={classnames(
+                "w-full block overflow-auto whitespace-nowrap pl-2  scrollbars-hidden",
+                {
+                  ["title-underline-hover"]: noLink == false,
+                }
+              )}
+              ref={titleRef}
+            >
+              {title}
+            </span>
+          </a>
+        </Link>
+        {image && (
+          <div
+            // style={{ left: `${pos.x}px`, transform: `translateY(${pos.y}px)` }}
+            className={classnames(
+              "h-0 pointer-events-none overflow-hidden absolute -top-12 left-1/4 image-border z-50",
+              {
+                ["h-auto"]: isImgVisible === true,
+              }
+            )}
+          >
+            <Image
+              className="image-loading opacity-100"
+              width={scaled.width}
+              height={scaled.height}
+              alt={image.altText || image.title}
+              src={image.sourceUrl}
+              layout="intrinsic"
+            />
+          </div>
+        )}
+        <div className="flex-grow self-end">
+          <hr
+            onMouseEnter={() => setTypeVisibility(true)}
+            onMouseLeave={() => setTypeVisibility(false)}
+            className="relative h-8 -top-1 mx-1 border-t-0 border-b border-black border-dashed"
           />
         </div>
-      )}
-      <div className="flex-grow self-end">
-        <hr
+
+        <div
           onMouseEnter={() => setTypeVisibility(true)}
           onMouseLeave={() => setTypeVisibility(false)}
-          className="relative h-8 -top-1 mx-1 border-t-0 border-b border-black border-dashed"
-        />
-      </div>
-
-      <div
-        onMouseEnter={() => setTypeVisibility(true)}
-        onMouseLeave={() => setTypeVisibility(false)}
-        className="self-end flex-shrink-0 leading-none font-accent uppercase text-right text-xs sm:text-sm md:text-base select-none"
-      >
-        <MediaContextProvider>
-          <div
-            className={classnames("", {
-              ["hidden"]: isTypeVisible === true,
-              ["inline"]: isTypeVisible === false,
-            })}
-          >
-            <Media at="base">{locationShort}</Media>
-            <Media greaterThanOrEqual="desktop">{location}</Media>
-          </div>
-          <div
-            className={classnames("text-strong-yellow", {
-              ["inline"]: isTypeVisible === true,
-              ["hidden"]: isTypeVisible === false,
-            })}
-          >
-            <Media at="base">
-              <ProjectTypes
-                types={
-                  projectTypes.length > 1
-                    ? projectTypes.slice(0, 1)
-                    : projectTypes
-                }
-              />
-            </Media>
-            <Media greaterThanOrEqual="desktop">
-              <ProjectTypes types={projectTypes} />
-            </Media>
-          </div>
-        </MediaContextProvider>
-      </div>
+          className="self-end flex-shrink-0 leading-none font-accent uppercase text-right text-xs sm:text-sm md:text-base select-none"
+        >
+          <MediaContextProvider>
+            <div
+              className={classnames("", {
+                ["hidden"]: isTypeVisible === true,
+                ["inline"]: isTypeVisible === false,
+              })}
+            >
+              <Media at="base">{locationShort}</Media>
+              <Media greaterThanOrEqual="desktop">{location}</Media>
+            </div>
+            <div
+              className={classnames("text-strong-yellow", {
+                ["inline"]: isTypeVisible === true,
+                ["hidden"]: isTypeVisible === false,
+              })}
+            >
+              <Media at="base">
+                <ProjectTypes
+                  types={
+                    projectTypes.length > 1
+                      ? projectTypes.slice(0, 1)
+                      : projectTypes
+                  }
+                />
+              </Media>
+              <Media greaterThanOrEqual="desktop">
+                <ProjectTypes types={projectTypes} />
+              </Media>
+            </div>
+          </MediaContextProvider>
+        </div>
+      </header>
+      {projectSummary !== "" && (
+        <div
+          className={classnames(styles.summary, "ml-10 sm:ml-14 mt-2")}
+          dangerouslySetInnerHTML={{ __html: projectSummary }}
+        ></div>
+      )}
     </article>
   );
 };

@@ -65,6 +65,7 @@ export const ProjectList = ({ projects }, idx) => {
               {...details}
               index={idx}
               noLink={isWorkshop}
+              projectSummary={isWorkshop ? project.content : ""}
               hasComplete={() => {
                 dispatch({ type: "decrement" });
               }}
