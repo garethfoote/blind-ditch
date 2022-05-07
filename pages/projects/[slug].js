@@ -20,7 +20,7 @@ export default function Project({ project }) {
 
   const details = project.projectFields.details;
   const featuredImage = project.featuredImage?.node;
-  const strippedDescription = project.content.replace(/(<([^>]+)>)/gi, "");
+  const strippedDescription = project.content?.replace(/(<([^>]+)>)/gi, "");
 
   const date = (
     <>
