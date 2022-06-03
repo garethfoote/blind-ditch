@@ -10,7 +10,7 @@ export default function Nav() {
   const router = useRouter();
 
   return (
-    <nav aria-labelledby="mainmenulabel">
+    <nav aria-label="Main Navigation">
       <CSSTransition
         classNames={{
           appearActive: styles["nav-appear-active"],
@@ -23,17 +23,18 @@ export default function Nav() {
           exitDone: styles["nav-exit-done"],
         }}
         in={isOpen}
-        timeout={1000}
+        timeout={500}
       >
         {(state) => {
           return (
             <div
+              id="global-navigation-menu"
               className={classnames(
                 styles.nav,
-                "h-0 pl-4 z-20 overflow-hidden"
+                "hidden lg:block h-0 pl-4 z-20 overflow-hidden"
               )}
             >
-              <ul className="mt-4 font-main font-bold ">
+              <ul tabIndex="-1" className="mt-4 font-main font-bold ">
                 <li
                   className={classnames(styles.linkItem, {
                     [styles.active]: router.asPath == "/",
@@ -126,13 +127,18 @@ export default function Nav() {
           );
         }}
       </CSSTransition>
-      <button
-        tabIndex="0"
+      <a
+        href="#"
+        aria-label="More menu"
+        aria-expanded={isOpen.toString()}
+        aria-controls="global-navigation-menu"
+        role="button"
         className={classnames(
           styles.arrow,
-          "lg:hidden z-40 w-3 h-3 left-0 m-2 ml-4 mt-3 absolute outline-none"
+          "lg:hidden z-40 w-3 h-3 left-0 m-2 ml-4 mt-3 absolute"
         )}
-        onClick={() => {
+        onClick={(e) => {
+          e.preventDefault();
           setOpen(!isOpen);
         }}
       >
@@ -145,14 +151,15 @@ export default function Nav() {
           <path fill="#1F1F1F" d="M19.5 0l19.486 33.75H.014L19.5 0z" />
         </svg>{" "}
         <span
-          aria-haspopup="true"
-          aria-expanded={isOpen.toString()}
-          aria-label={isOpen ? "Open site navigation" : "Close site navigation"}
+          aria-hidden="true"
           className="title-underline-after absolute -top-1 left-4 text-xs"
         >
           Nav
         </span>
-      </button>
+        <span className="sr-only">
+          {isOpen ? "Open Main Navigation" : "Close Main Navigation"}
+        </span>
+      </a>
     </nav>
   );
 }

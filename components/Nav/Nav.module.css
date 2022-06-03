@@ -25,20 +25,27 @@
   font-size: 20px;
 }
 
-.nav {
-  @apply duration-300 invisible;
-  transition-property: height;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .nav-enter-active {
-  @apply static block visible;
-  height: calc(theme("margin.4") + theme("height.7") * 6);
+  @apply static block;
+  animation: navAnimSm 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation-fill-mode: forwards;
 }
 
 .nav-enter-done {
-  @apply static block visible;
+  @apply static block;
   height: calc(theme("margin.4") + theme("height.7") * 6);
+}
+
+.nav-exit-active {
+  animation: navAnimSm 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+  @apply static block;
+  @apply h-0;
+}
+
+.nav-exit-done {
+  @apply static hidden;
 }
 
 @screen md {
@@ -51,22 +58,20 @@
   }
   .nav-enter-active {
     @apply static block;
-    height: calc(theme("margin.4") + theme("height.6") * 6);
+    animation: navAnimMd 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation-fill-mode: forwards;
   }
 
   .nav-enter-done {
     @apply static block;
     height: calc(theme("margin.4") + theme("height.6") * 6);
   }
-}
 
-.nav-exit-active {
-  @apply static block visible;
-  @apply h-0;
-}
-
-.nav-exit-done {
-  @apply static block invisible;
+  .nav-exit-active {
+    animation: navAnimMd 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation-fill-mode: forwards;
+    animation-direction: reverse;
+  }
 }
 
 @screen lg {
@@ -78,7 +83,8 @@
     transition-property: none;
     transition-duration: 0ms;
     height: calc(theme("margin.4") + theme("height.6") * 6);
-    @apply absolute block visible;
+    @apply absolute;
+    display: block !important;
   }
 }
 
@@ -92,10 +98,29 @@
 }
 
 .arrow svg {
-  @apply transform transition-transform delay-200 duration-500;
+  @apply transform transition-transform delay-300 duration-500;
+  @apply rotate-180;
 }
 
 .nav-enter-done + .arrow svg,
 .nav-enter-active + .arrow svg {
-  @apply rotate-180;
+  @apply rotate-0;
+}
+
+@keyframes navAnimSm {
+  from {
+    height: 0;
+  }
+  to {
+    height: calc(theme("margin.4") + theme("height.7") * 6);
+  }
+}
+
+@keyframes navAnimMd {
+  from {
+    height: 0;
+  }
+  to {
+    height: calc(theme("margin.4") + theme("height.6") * 6);
+  }
 }
