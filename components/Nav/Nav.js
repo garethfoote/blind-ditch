@@ -10,7 +10,7 @@ export default function Nav() {
   const router = useRouter();
 
   return (
-    <nav>
+    <nav aria-labelledby="mainmenulabel">
       <CSSTransition
         classNames={{
           appearActive: styles["nav-appear-active"],
@@ -36,30 +36,44 @@ export default function Nav() {
               <ul className="mt-4 font-main font-bold ">
                 <li
                   className={classnames(styles.linkItem, {
-                    [styles.active]: router.pathname == "/",
+                    [styles.active]: router.asPath == "/",
                   })}
                 >
                   <Link href="/">
-                    <a>Home</a>
+                    <a aria-current={router.asPath == "/" ? "page" : false}>
+                      Home
+                    </a>
                   </Link>
                 </li>
                 <li
                   className={classnames(styles.linkItem, {
-                    [styles.active]: router.pathname.includes("/projects"),
+                    [styles.active]: router.asPath == "/projects",
                   })}
                 >
                   <Link href="/projects">
-                    <a>Work</a>
+                    <a
+                      aria-current={
+                        router.asPath == "/projects" ? "page" : false
+                      }
+                    >
+                      Work
+                    </a>
                   </Link>
                 </li>
                 <li
                   className={classnames(styles.linkItem, styles.linkItemDoc, {
-                    [styles.active]: router.pathname.includes("/documents"),
-                    [styles.activeDoc]: router.pathname.includes("/documents"),
+                    [styles.active]: router.asPath == "/documents",
+                    [styles.activeDoc]: router.asPath == "/documents",
                   })}
                 >
                   <Link href="/documents">
-                    <a>Documents</a>
+                    <a
+                      aria-current={
+                        (router.asPath = "/documents" ? "page" : false)
+                      }
+                    >
+                      Documents
+                    </a>
                   </Link>
                 </li>
                 <li
@@ -68,7 +82,13 @@ export default function Nav() {
                   })}
                 >
                   <Link href="/page/about">
-                    <a>About</a>
+                    <a
+                      aria-current={
+                        router.asPath == "/page/about" ? "page" : false
+                      }
+                    >
+                      About
+                    </a>
                   </Link>
                 </li>
                 <li
@@ -77,7 +97,13 @@ export default function Nav() {
                   })}
                 >
                   <Link href="/page/about#contact">
-                    <a>Contact</a>
+                    <a
+                      aria-current={
+                        router.asPath == "/page/about#contact" ? "page" : false
+                      }
+                    >
+                      Contact
+                    </a>
                   </Link>
                 </li>
                 <li
@@ -86,7 +112,13 @@ export default function Nav() {
                   })}
                 >
                   <Link href="/page/about#people">
-                    <a>People</a>
+                    <a
+                      aria-current={
+                        router.asPath == "/page/about#people" ? "page" : false
+                      }
+                    >
+                      People
+                    </a>
                   </Link>
                 </li>
               </ul>
