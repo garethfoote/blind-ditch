@@ -33,7 +33,7 @@ export const AnnouncementList = ({ announcements }) => {
             sliderRef.current.slickPrev();
           }}
         >
-          <span class="sr-only">Previous </span>←
+          <span className="sr-only">Previous </span>←
         </button>
         <button
           disabled={slide >= announcements.length + 1}
@@ -42,7 +42,7 @@ export const AnnouncementList = ({ announcements }) => {
             sliderRef.current.slickNext();
           }}
         >
-          <span class="sr-only">Next </span>→
+          <span className="sr-only">Next </span>→
         </button>
 
         <Slider ref={sliderRef} {...settings}>
