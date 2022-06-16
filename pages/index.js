@@ -68,7 +68,7 @@ export default function Index({ homepageFields, content, preview }) {
             <div className="text-center mb-xl">
               <div className="mb-2xl mt-md">
                 <Button href="/projects">
-                  <span className="px-8">Full Project Archive</span>
+                  <span className="px-8">View All Projects</span>
                 </Button>
               </div>
             </div>

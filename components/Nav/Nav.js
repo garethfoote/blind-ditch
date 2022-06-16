@@ -62,22 +62,6 @@ export default function Nav() {
                   </Link>
                 </li>
                 <li
-                  className={classnames(styles.linkItem, styles.linkItemDoc, {
-                    [styles.active]: router.asPath == "/documents",
-                    [styles.activeDoc]: router.asPath == "/documents",
-                  })}
-                >
-                  <Link href="/documents">
-                    <a
-                      aria-current={
-                        (router.asPath = "/documents" ? "page" : false)
-                      }
-                    >
-                      Documents
-                    </a>
-                  </Link>
-                </li>
-                <li
                   className={classnames(styles.linkItem, {
                     [styles.active]: router.asPath == "/page/about",
                   })}
@@ -119,6 +103,22 @@ export default function Nav() {
                       }
                     >
                       People
+                    </a>
+                  </Link>
+                </li>
+                <li
+                  className={classnames(styles.linkItem, styles.linkItemDoc, {
+                    [styles.active]: router.asPath == "/documents",
+                    [styles.activeDoc]: router.asPath == "/documents",
+                  })}
+                >
+                  <Link href="/documents">
+                    <a
+                      aria-current={
+                        (router.asPath = "/documents" ? "page" : false)
+                      }
+                    >
+                      Documents
                     </a>
                   </Link>
                 </li>

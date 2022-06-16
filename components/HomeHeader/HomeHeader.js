@@ -32,8 +32,8 @@ export const HomeHeader = ({ intro, testimonials }) => {
           dangerouslySetInnerHTML={{ __html: intro }}
         />
         <Link href="/page/about">
-          <a className="title-underline-hover text-sm sm:text-md">
-            More about Blind Ditch →
+          <a className="text-sm sm:text-md">
+            <span className="title-underline">More about Blind Ditch</span> →
           </a>
         </Link>
       </div>
