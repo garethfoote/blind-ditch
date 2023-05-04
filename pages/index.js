@@ -37,11 +37,11 @@ export default function Index({ homepageFields, content, preview }) {
             <HomeHeader intro={content} testimonials={testimonials} />
           </header>
 
-          <hr className="page-break mt-lg" />
+          {/* <hr className="page-break mt-lg" />
 
           <section>
             <AnnouncementList announcements={announcements} />
-          </section>
+          </section> */}
 
           <hr className="page-break mb-xl md:mb-2xl" />
 
